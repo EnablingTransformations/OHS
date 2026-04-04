@@ -115,7 +115,7 @@
 
     /* ── SPEAKERS ── */
     .speakers { padding: 80px 0; background: var(--cream); }
-    .speakers-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .speakers-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .sp-card { text-align: center; padding: 24px 16px; border-radius: 18px; transition: all 0.3s ease; }
     .sp-card:hover { background: var(--white); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
     .sp-photo { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 14px; background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 3px; }
@@ -278,6 +278,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .speakers-row { grid-template-columns: 1fr 1fr; }
+      .sp-card .role { font-size: 0.72rem; }
       .highlight-grid, .vendor-grid, .media-grid, .card-grid { grid-template-columns: 1fr; }
       .gallery-row { grid-template-columns: 1fr 1fr; }
       .hero-stats { gap: 24px; }
@@ -339,7 +340,7 @@
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
       <div class="hero-stats">
-        <div><div class="stat-num">6+</div><div class="stat-label">Speakers</div></div>
+        <div><div class="stat-num">7+</div><div class="stat-label">Speakers</div></div>
         <div><div class="stat-num">120+</div><div class="stat-label">Attendees</div></div>
         <div><div class="stat-num">9 Hours</div><div class="stat-label">Content & Networking</div></div>
       </div>
@@ -450,39 +451,51 @@
       <div class="speakers-row">
         <div class="sp-card rv">
           <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Dr. Sarah Chen</h3>
-          <div class="role">Longevity Researcher</div>
-          <p class="bio">Leading expert in cellular aging and regenerative medicine.</p>
+          <h3>Jill Wheaton</h3>
+          <div class="role">Tony Robbins Director of Biz Solutions</div>
+          <p class="bio">Empowering entrepreneurs and leaders through the transformative frameworks of Tony Robbins.</p>
         </div>
         <div class="sp-card rv">
           <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Marcus Williams</h3>
-          <div class="role">Functional Nutritionist</div>
-          <p class="bio">Personalized nutrition through metabolic profiling and genomics.</p>
+          <h3>Dr. Neville Campbell</h3>
+          <div class="role">MD, MBA, CEO · Philanthropist, Author, Professor & IFBB Pro Athlete</div>
+          <p class="bio">A rare fusion of medical excellence, executive leadership, and elite athletic achievement.</p>
         </div>
         <div class="sp-card rv">
           <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Dr. Amara Osei</h3>
-          <div class="role">Neuroscientist & Author</div>
-          <p class="bio">Exploring the gut-brain connection and mental clarity.</p>
+          <h3>Dr. Nick Delgado</h3>
+          <div class="role">Bestselling Author & Performance Expert</div>
+          <p class="bio">Decades of research into hormones, longevity, and peak human performance.</p>
         </div>
         <div class="sp-card rv">
           <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>James Park</h3>
-          <div class="role">Performance Coach</div>
-          <p class="bio">Former Olympic trainer helping people achieve peak performance.</p>
+          <h3>Dr. Chelsea Grow</h3>
+          <div class="role">Board Certified Neurologist</div>
+          <p class="bio">Bridging neuroscience and lifestyle medicine to optimize brain health and cognitive performance.</p>
         </div>
         <div class="sp-card rv">
           <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Dr. Elena Vasquez</h3>
-          <div class="role">Hormone & Peptide Specialist</div>
-          <p class="bio">Pioneer in peptide therapy and hormonal optimization for peak vitality.</p>
+          <h3>Joel Huizenga</h3>
+          <div class="role">CEO at EgaCeutical · Longevity Scientist</div>
+          <p class="bio">Pioneering next-generation longevity science and cellular health breakthroughs.</p>
         </div>
         <div class="sp-card rv">
           <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Ryan Holloway</h3>
-          <div class="role">Biohacking & Longevity Coach</div>
-          <p class="bio">Helping high performers unlock cellular health through cutting-edge biohacking protocols.</p>
+          <h3>Dr. Elena Eustache</h3>
+          <div class="role">❤️ Love Doctor · Global Matchmaker · TV Host & Bestselling Author</div>
+          <p class="bio">The world's leading authority on love, relationships, and the mind-body-soul connection.</p>
+        </div>
+        <div class="sp-card rv">
+          <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
+          <h3>Dr. Karolina Pras</h3>
+          <div class="role">Root-Cause Medicine</div>
+          <p class="bio">Uncovering the hidden root causes of chronic illness to restore lasting health and vitality.</p>
+        </div>
+        <div class="sp-card rv" style="opacity:0.85;">
+          <div class="sp-photo"><div class="sp-photo-inner" style="font-size:2rem;">🎤</div></div>
+          <h3>Surprise Speaker</h3>
+          <div class="role">To Be Announced</div>
+          <p class="bio">Stay tuned — an exciting addition to our world-class lineup is coming soon.</p>
         </div>
       </div>
     </div>
