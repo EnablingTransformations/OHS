@@ -25,67 +25,67 @@
     a { text-decoration: none; color: inherit; }
     .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
 
-    /* ── CTA ── */
-    .cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent); color: var(--dark);
-      font-weight: 700; font-size: 1rem;
-      padding: 14px 32px; border-radius: 50px; border: none; cursor: pointer;
-      transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(232,145,58,0.3);
-    }
+    .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--dark); font-weight: 700; font-size: 1rem; padding: 14px 32px; border-radius: 50px; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(232,145,58,0.3); }
     .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,145,58,0.45); background: #d6802e; }
     .cta svg { transition: transform 0.3s; }
     .cta:hover svg { transform: translateX(3px); }
     .arrow { width: 18px; height: 18px; }
 
+    /* ── NAV ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15,15,42,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); transition: all 0.3s ease; }
+    .nav.scrolled { background: rgba(10,8,30,0.97); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-head); font-size: 1.05rem; color: var(--white); white-space: nowrap; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.65); font-size: 0.88rem; font-weight: 500; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--accent); color: var(--dark) !important; font-weight: 700 !important; padding: 8px 20px; border-radius: 50px; }
+    .nav-cta:hover { background: #d6802e !important; transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; }
+    .nav-mobile { display: none; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-mobile.open { display: flex; flex-direction: column; padding: 12px 0 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+      .nav-mobile a { display: block; padding: 12px 20px; color: rgba(255,255,255,0.75); font-size: 0.95rem; font-weight: 500; }
+      .nav-mobile .nav-cta { margin: 8px 20px 0; text-align: center; border-radius: 50px; padding: 12px 20px; background: var(--accent); color: var(--dark); font-weight: 700; }
+    }
+
     /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(155deg, #1a1a3e 0%, #2d2a6e 45%, #4a3f8a 100%);
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute;
-      top: -30%; right: -15%; width: 65vw; height: 65vw;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,145,58,0.1), transparent 70%);
-      animation: drift 12s ease-in-out infinite;
-    }
+    .hero { min-height: 100vh; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -30%; right: -15%; width: 65vw; height: 65vw; border-radius: 50%; background: radial-gradient(circle, rgba(232,145,58,0.12), transparent 70%); animation: drift 12s ease-in-out infinite; }
+    .hero::after { content: ''; position: absolute; bottom: -20%; left: -10%; width: 50vw; height: 50vw; border-radius: 50%; background: radial-gradient(circle, rgba(120,80,220,0.15), transparent 70%); animation: drift 16s ease-in-out infinite reverse; }
     @keyframes drift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-30px,20px); } }
     .hero-content { position: relative; z-index: 2; padding: 100px 0 80px; text-align: center; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(232,145,58,0.14); border: 1px solid rgba(232,145,58,0.3);
-      color: var(--accent); padding: 6px 18px; border-radius: 100px;
-      font-weight: 600; font-size: 0.82rem; letter-spacing: 1px; margin-bottom: 10px;
-    }
-    .hero h1 {
-      font-family: var(--font-head); font-size: clamp(2.6rem, 6vw, 4.4rem);
-      color: var(--white); line-height: 1.08; margin-bottom: 20px;
-    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(232,145,58,0.14); border: 1px solid rgba(232,145,58,0.3); color: var(--accent); padding: 6px 18px; border-radius: 100px; font-weight: 600; font-size: 0.82rem; letter-spacing: 1px; margin-bottom: 10px; }
+    .hero h1 { font-family: var(--font-head); font-size: clamp(2.6rem, 6vw, 4.4rem); color: var(--white); line-height: 1.08; margin-bottom: 20px; }
     .hero h1 em { color: var(--accent); font-style: italic; }
-    .hero-sub { color: rgba(255,255,255,0.6); font-size: 1.1rem; max-width: 580px; margin: 0 auto 36px; line-height: 1.7; }
+    .hero-sub { color: rgba(255,255,255,0.65); font-size: 1.1rem; max-width: 580px; margin: 0 auto 36px; line-height: 1.7; }
     .hero-stats { display: flex; justify-content: center; gap: 44px; margin-top: 48px; }
     .stat-num { font-family: var(--font-head); font-size: 2rem; color: var(--accent); }
     .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
 
-    /* ── SECTION COMMON ── */
-    .section-tag {
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 2.5px;
-      text-transform: uppercase; color: var(--primary);
-      background: rgba(74,63,138,0.1); padding: 5px 14px;
-      border-radius: 100px; display: inline-block; margin-bottom: 10px;
-    }
-    .section-heading { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--dark); margin-bottom: 40px; }
+    /* ── COUNTDOWN ── */
+    .countdown { display: flex; justify-content: center; gap: 24px; margin: 32px 0 40px; }
+    .cd-unit { text-align: center; }
+    .cd-num { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3rem); color: var(--white); line-height: 1; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 14px 20px; min-width: 72px; display: block; }
+    .cd-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 8px; }
 
-    /* ── VALUE ── */
-    .value { background: var(--cream); padding: 30px 0 70px; }
+    /* ── SECTION TAGS ── */
+    .section-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; display: inline-block; margin-bottom: 10px; }
+    .tag-purple { color: var(--primary); background: rgba(74,63,138,0.1); }
+    .tag-orange { color: var(--accent); background: rgba(232,145,58,0.12); }
+    .tag-teal { color: #0ea5a0; background: rgba(14,165,160,0.1); }
+    .tag-rose { color: #d946a8; background: rgba(217,70,168,0.1); }
+    .section-heading { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--dark); margin-bottom: 40px; }
+    .section-heading-light { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--white); margin-bottom: 40px; }
+
+    /* ── VALUE — cream bg ── */
+    .value { background: var(--cream); padding: 70px 0; }
     .value-intro { font-size: 1.15rem; color: var(--text); line-height: 1.8; margin-bottom: 28px; text-align: center; }
-    .guarantee-box {
-      background: linear-gradient(135deg, #2d2a6e, #4a3f8a); border-radius: 16px;
-      padding: 20px 28px; margin-bottom: 36px; text-align: center;
-    }
+    .guarantee-box { background: linear-gradient(135deg, #2d2a6e, #4a3f8a); border-radius: 16px; padding: 20px 28px; margin-bottom: 36px; text-align: center; }
     .guarantee-box p { color: #fff; font-size: 1rem; line-height: 1.7; }
     .card { background: var(--white); border-radius: 20px; padding: 32px 36px; margin-bottom: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
     .card h3 { font-family: var(--font-head); font-size: 1.3rem; color: var(--dark); margin-bottom: 18px; text-align: center; }
@@ -95,49 +95,60 @@
     .card-item span:last-child { font-size: 0.93rem; color: var(--text); }
     .card-list { display: grid; gap: 13px; }
 
-    /* ── HIGHLIGHT BOXES ── */
-    .highlights { background: var(--white); padding: 70px 0; }
+    /* ── WHY ATTEND — deep indigo ── */
+    .highlights { background: linear-gradient(160deg, #13103a 0%, #1e1a5e 100%); padding: 80px 0; }
     .highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
-    .hl-box {
-      background: var(--cream); border-radius: 16px; padding: 28px 24px;
-      border-left: 4px solid var(--primary);
-    }
-    .hl-box h3 { font-family: var(--font-head); font-size: 1.1rem; color: var(--dark); margin-bottom: 12px; }
-    .hl-box ul { list-style: none; display: grid; gap: 8px; }
-    .hl-box ul li { font-size: 0.9rem; color: var(--text); display: flex; gap: 8px; }
+    .hl-box { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 28px 24px; border: 1px solid rgba(255,255,255,0.1); border-left: 4px solid var(--accent); }
+    .hl-box h3 { font-family: var(--font-head); font-size: 1.1rem; color: var(--white); margin-bottom: 12px; }
+    .hl-box ul { list-style: none; display: grid; gap: 10px; }
+    .hl-box ul li { font-size: 0.9rem; color: rgba(255,255,255,0.7); display: flex; gap: 8px; }
 
-    /* ── IMPACT ── */
-    .impact { background: linear-gradient(135deg, #2d2a6e, #1a1a3e); padding: 60px 0; text-align: center; }
+    /* ── IMPACT — teal gradient ── */
+    .impact { background: linear-gradient(135deg, #0a4a4a 0%, #0e7a6a 50%, #0a5a8a 100%); padding: 70px 0; text-align: center; }
     .impact h2 { font-family: var(--font-head); color: var(--white); font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 14px; }
-    .impact p { color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto 10px; font-size: 0.95rem; line-height: 1.7; }
-    .impact .accent-text { color: var(--accent); font-weight: 700; }
+    .impact p { color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto 10px; font-size: 0.95rem; line-height: 1.7; }
+    .impact .accent-text { color: #5ef0d0; font-weight: 700; }
 
-    /* ── SPEAKERS ── */
-    .speakers { padding: 80px 0; background: var(--cream); }
-    .speakers-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .sp-card { text-align: center; padding: 24px 16px; border-radius: 18px; transition: all 0.3s ease; }
-    .sp-card:hover { background: var(--white); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+    /* ── SPEAKERS — soft lavender ── */
+    .speakers { padding: 80px 0; background: linear-gradient(180deg, #f0eeff 0%, #faf7ff 100%); }
+    .speakers-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .sp-card { text-align: center; padding: 24px 16px; border-radius: 18px; background: var(--white); box-shadow: 0 4px 20px rgba(74,63,138,0.08); transition: all 0.3s ease; border: 1px solid rgba(74,63,138,0.08); }
+    .sp-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(74,63,138,0.18); border-color: rgba(74,63,138,0.2); }
     .sp-photo { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 14px; background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 3px; }
     .sp-photo-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: var(--white); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 1.6rem; }
     .sp-photo-inner img { width: 100%; height: 100%; object-fit: cover; }
-    .sp-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
-    .sp-card .role { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
-    .sp-card .bio { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+    .sp-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .sp-card .role { font-size: 0.75rem; color: var(--accent); font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+    .sp-card .bio { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
 
-    /* ── VENDOR ── */
-    .vendor { background: var(--white); padding: 70px 0; }
+    /* ── SCHEDULE — white ── */
+    .schedule { background: var(--white); padding: 80px 0; }
+    .timeline { display: grid; gap: 0; max-width: 720px; margin: 0 auto; }
+    .tl-item { display: grid; grid-template-columns: 90px 1fr; position: relative; }
+    .tl-item:not(:last-child)::before { content: ''; position: absolute; left: 44px; top: 36px; bottom: -12px; width: 2px; background: linear-gradient(to bottom, var(--primary), rgba(74,63,138,0.1)); }
+    .tl-time { font-size: 0.78rem; font-weight: 700; color: var(--primary); padding-top: 14px; text-align: right; padding-right: 20px; line-height: 1.3; }
+    .tl-body { background: linear-gradient(135deg, #f8f6ff, #fff); border-radius: 14px; padding: 16px 20px; margin: 0 0 12px 10px; border-left: 3px solid var(--primary); position: relative; }
+    .tl-body::before { content: ''; position: absolute; left: -19px; top: 16px; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); border: 2px solid var(--white); box-shadow: 0 0 0 3px rgba(74,63,138,0.2); }
+    .tl-body h4 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .tl-body p { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+    .tl-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 100px; margin-bottom: 6px; }
+    .tag-keynote { background: rgba(74,63,138,0.12); color: var(--primary); }
+    .tag-break { background: rgba(232,145,58,0.12); color: var(--accent); }
+    .tag-panel { background: rgba(14,165,160,0.1); color: #0ea5a0; }
+    .tag-social { background: rgba(217,70,168,0.1); color: #d946a8; }
+
+    /* ── VENDOR — warm amber gradient ── */
+    .vendor { background: linear-gradient(160deg, #2a1a0a 0%, #3d2510 50%, #1a1530 100%); padding: 70px 0; }
     .vendor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
-    .vendor-item { display: flex; gap: 12px; align-items: flex-start; background: var(--cream); border-radius: 12px; padding: 14px 18px; }
+    .vendor-item { display: flex; gap: 12px; align-items: flex-start; background: rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 18px; border: 1px solid rgba(232,145,58,0.2); }
     .vendor-item span:first-child { font-size: 1.3rem; flex-shrink: 0; }
-    .vendor-item span:last-child { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+    .vendor-item span:last-child { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
 
-    /* ── MEDIA ── */
-    .media { padding: 80px 0; background: #1a1a3e; }
-    .media .section-tag { background: rgba(232,145,58,0.14); color: var(--accent); }
-    .media .section-heading { color: var(--white); }
+    /* ── MEDIA — deep navy ── */
+    .media { padding: 80px 0; background: linear-gradient(160deg, #090920 0%, #12103a 60%, #1a1050 100%); }
     .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .vid-card { border-radius: 16px; overflow: hidden; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; }
-    .vid-card:hover { border-color: rgba(232,145,58,0.25); }
+    .vid-card:hover { border-color: rgba(232,145,58,0.3); transform: translateY(-3px); }
     .vid-embed { aspect-ratio: 16/9; background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; }
     .vid-embed iframe { width: 100%; height: 100%; border: none; }
     .vid-ph { color: rgba(255,255,255,0.25); font-size: 0.85rem; text-align: center; }
@@ -151,8 +162,8 @@
     .g-item img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
 
     /* ── FINAL CTA ── */
-    .final { padding: 100px 0; background: linear-gradient(155deg, #2d2a6e 0%, #1a1a3e 60%, #0f0f2a 100%); text-align: center; position: relative; overflow: hidden; }
-    .final::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 50vw; height: 50vw; border-radius: 50%; background: radial-gradient(circle, rgba(232,145,58,0.07), transparent 70%); }
+    .final { padding: 100px 0; background: linear-gradient(155deg, #3b0f6e 0%, #1a0a3e 50%, #0a0a2a 100%); text-align: center; position: relative; overflow: hidden; }
+    .final::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 60vw; height: 60vw; border-radius: 50%; background: radial-gradient(circle, rgba(232,145,58,0.08), transparent 70%); }
     .final-inner { position: relative; z-index: 2; }
     .final h2 { font-family: var(--font-head); font-size: clamp(2rem, 4.5vw, 3.2rem); color: var(--white); margin-bottom: 14px; }
     .final h2 em { color: var(--accent); font-style: italic; }
@@ -161,21 +172,42 @@
     .fd-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
     .fd-value { font-weight: 700; font-size: 1rem; color: var(--white); }
 
-    /* ── SOCIAL + FOOTER ── */
+    /* ── SOCIAL BAR ── */
     .social-bar { background: #1e1b4b; border-top: 1px solid rgba(167,139,250,0.2); padding: 36px 0; text-align: center; }
     .social-bar p { color: rgba(255,255,255,0.7); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
     .social-icons { display: flex; justify-content: center; gap: 32px; align-items: center; }
-    .footer { background: #1e1b4b; border-top: 1px solid rgba(167,139,250,0.2); padding: 28px 0; }
+
+    /* ── FOOTER ── */
+    .footer { background: #12102e; border-top: 1px solid rgba(167,139,250,0.15); padding: 28px 0; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; }
     .footer-text { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
     .footer-links { display: flex; gap: 20px; list-style: none; }
     .footer-links a { color: rgba(255,255,255,0.7); font-size: 0.8rem; transition: color 0.3s; }
     .footer-links a:hover { color: var(--accent); }
 
-    /* ── MODAL ── */
-    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(10,8,30,0.75); backdrop-filter: blur(6px); align-items: center; justify-content: center; }
+    /* ── POLICY MODAL ── */
+  .policy-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(10,8,30,0.8); backdrop-filter: blur(6px); align-items: center; justify-content: center; }
+  .policy-overlay.open { display: flex; }
+  .policy-modal { background: #fff; border-radius: 20px; padding: 40px; width: 100%; max-width: 580px; margin: 20px; box-shadow: 0 24px 60px rgba(0,0,0,0.3); position: relative; animation: popIn 0.35s cubic-bezier(0.16,1,0.3,1); max-height: 85vh; overflow-y: auto; }
+  .policy-modal h2 { font-family: var(--font-head); font-size: 1.5rem; color: var(--dark); margin-bottom: 20px; }
+  .policy-modal h3 { font-family: var(--font-head); font-size: 1.05rem; color: var(--primary); margin: 20px 0 8px; }
+  .policy-modal p { font-size: 0.92rem; color: var(--text); line-height: 1.75; }
+  .policy-close { position: absolute; top: 14px; right: 16px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--muted); line-height: 1; }
+  .policy-close:hover { color: var(--dark); }
+
+  /* ── TICKET MODAL ── */
+  .ticket-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(10,8,30,0.8); backdrop-filter: blur(6px); align-items: center; justify-content: center; }
+  .ticket-overlay.open { display: flex; }
+  .ticket-modal { background: #fff; border-radius: 20px; padding: 24px; width: 100%; max-width: 640px; margin: 20px; box-shadow: 0 24px 60px rgba(0,0,0,0.3); position: relative; animation: popIn 0.35s cubic-bezier(0.16,1,0.3,1); }
+  .ticket-modal h2 { font-family: var(--font-head); font-size: 1.4rem; color: var(--dark); margin-bottom: 16px; text-align: center; }
+  .ticket-modal iframe { width: 100%; border-radius: 8px; display: block; }
+  .ticket-close { position: absolute; top: 14px; right: 16px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--muted); line-height: 1; }
+  .ticket-close:hover { color: var(--dark); }
+
+  /* ── MODAL ── */
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(10,8,30,0.8); backdrop-filter: blur(6px); align-items: center; justify-content: center; }
     .modal-overlay.open { display: flex; }
-    .modal { background: #fff; border-radius: 20px; padding: 40px; width: 100%; max-width: 460px; margin: 20px; box-shadow: 0 24px 60px rgba(0,0,0,0.25); position: relative; animation: popIn 0.35s cubic-bezier(0.16,1,0.3,1); }
+    .modal { background: #fff; border-radius: 20px; padding: 40px; width: 100%; max-width: 460px; margin: 20px; box-shadow: 0 24px 60px rgba(0,0,0,0.3); position: relative; animation: popIn 0.35s cubic-bezier(0.16,1,0.3,1); }
     @keyframes popIn { from { opacity:0; transform:scale(0.92) translateY(16px); } to { opacity:1; transform:none; } }
     .modal-close { position: absolute; top: 16px; right: 18px; background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--muted); }
     .modal-close:hover { color: var(--dark); }
@@ -194,94 +226,21 @@
     .form-success h3 { font-family: var(--font-head); font-size: 1.4rem; color: var(--dark); margin-bottom: 6px; }
     .form-success p { color: var(--muted); font-size: 0.88rem; }
 
-    /* ── NAV ── */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(15,15,42,0.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: all 0.3s ease;
-    }
-    .nav.scrolled { background: rgba(10,8,30,0.97); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { font-family: var(--font-head); font-size: 1.05rem; color: var(--white); white-space: nowrap; }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.65); font-size: 0.88rem; font-weight: 500; transition: color 0.25s; }
-    .nav-links a:hover { color: var(--white); }
-    .nav-cta { background: var(--accent); color: var(--dark) !important; font-weight: 700 !important; padding: 8px 20px; border-radius: 50px; transition: all 0.25s !important; }
-    .nav-cta:hover { background: #d6802e; color: var(--dark) !important; transform: translateY(-1px); }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: all 0.3s; }
-    .nav-mobile { display: none; }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-toggle { display: block; }
-      .nav-mobile.open { display: flex; flex-direction: column; gap: 0; padding: 12px 0 20px; border-top: 1px solid rgba(255,255,255,0.07); }
-      .nav-mobile a { display: block; padding: 12px 20px; color: rgba(255,255,255,0.75); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
-      .nav-mobile a:hover { color: var(--white); }
-      .nav-mobile .nav-cta { margin: 8px 20px 0; text-align: center; border-radius: 50px; padding: 12px 20px; background: var(--accent); color: var(--dark); font-weight: 700; }
-    }
-
-    /* ── COUNTDOWN ── */
-    .countdown { display: flex; justify-content: center; gap: 24px; margin: 32px 0 40px; }
-    .cd-unit { text-align: center; }
-    .cd-num {
-      font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3rem);
-      color: var(--white); line-height: 1;
-      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px; padding: 14px 20px; min-width: 72px; display: block;
-    }
-    .cd-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 8px; }
-
-    /* ── SCHEDULE ── */
-    .schedule { background: var(--white); padding: 80px 0; }
-    .timeline { display: grid; gap: 0; max-width: 720px; margin: 0 auto; }
-    .tl-item { display: grid; grid-template-columns: 90px 1fr; gap: 0; position: relative; }
-    .tl-item:not(:last-child)::before {
-      content: ''; position: absolute; left: 44px; top: 36px; bottom: -12px;
-      width: 2px; background: linear-gradient(to bottom, var(--primary), rgba(74,63,138,0.15));
-    }
-    .tl-time {
-      font-size: 0.78rem; font-weight: 700; color: var(--primary);
-      padding-top: 14px; text-align: right; padding-right: 20px; line-height: 1.3;
-    }
-    .tl-body {
-      background: var(--cream); border-radius: 14px; padding: 16px 20px;
-      margin: 0 0 12px 10px; border-left: 3px solid var(--primary);
-      position: relative;
-    }
-    .tl-body::before {
-      content: ''; position: absolute; left: -19px; top: 16px;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--primary); border: 2px solid var(--white);
-      box-shadow: 0 0 0 3px rgba(74,63,138,0.2);
-    }
-    .tl-body h4 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-    .tl-body p { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
-    .tl-tag {
-      display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; padding: 2px 8px; border-radius: 100px;
-      margin-bottom: 6px;
-    }
-    .tag-keynote { background: rgba(74,63,138,0.12); color: var(--primary); }
-    .tag-break { background: rgba(232,145,58,0.12); color: var(--accent); }
-    .tag-panel { background: rgba(0,160,120,0.1); color: #00a078; }
-    .tag-expo { background: rgba(220,80,150,0.1); color: #d04096; }
-    .tag-social { background: rgba(50,150,220,0.1); color: #2a8bd4; }
-
     /* ── REVEAL ── */
     .rv { opacity: 0; transform: translateY(28px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
     .rv.show { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 900px) { .speakers-row { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
-      .speakers-row { grid-template-columns: 1fr 1fr; }
       .highlight-grid, .vendor-grid, .media-grid, .card-grid { grid-template-columns: 1fr; }
       .gallery-row { grid-template-columns: 1fr 1fr; }
       .hero-stats { gap: 24px; }
       .stat-num { font-size: 1.5rem; }
       .final-details { flex-direction: column; gap: 14px; }
       .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+      .countdown { gap: 12px; }
+      .cd-num { padding: 10px 14px; min-width: 56px; }
     }
   </style>
 </head>
@@ -297,7 +256,7 @@
         <li><a href="#expo">Expo</a></li>
         <li><a href="#media">Media</a></li>
         <li><a href="#" onclick="openModal(); return false;">Contact</a></li>
-        <li><a href="https://luma.com/bbp4hd1g" class="nav-cta" target="_blank" rel="noopener">Get Tickets</a></li>
+        <li><a href="#" onclick="openTicket(); return false;" class="nav-cta">Get Tickets</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" onclick="toggleNav()">
         <span></span><span></span><span></span>
@@ -309,39 +268,38 @@
       <a href="#expo" onclick="closeNav()">Expo</a>
       <a href="#media" onclick="closeNav()">Media</a>
       <a href="#" onclick="closeNav(); openModal(); return false;">Contact</a>
-      <a href="https://luma.com/bbp4hd1g" class="nav-cta" target="_blank" rel="noopener" onclick="closeNav()">Get Tickets</a>
+      <a href="#" onclick="openTicket(); return false;" class="nav-cta" onclick="closeNav()">Get Tickets</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-content">
-      <div class="hero-badge">📅 JUNE 27, 2026 · 9 AM – 6 PM</div>
-      <div class="hero-badge" style="margin-bottom:40px;">📍 UC San Diego Park & Market, San Diego, CA</div>
-      <h1>The <em>Optimal Health</em> Summit</h1>
+      <h1><em>Optimal Health</em> Summit 2026</h1>
+      <div style="text-align:center; margin-bottom:40px;">
+        <div class="hero-badge" style="display:inline-flex; margin-bottom:10px;">📅 JUNE 27, 2026 · 9 AM – 6 PM</div><br/>
+        <div class="hero-badge" style="display:inline-flex;">📍 UC San Diego Park &amp; Market, San Diego, CA</div>
+      </div>
       <p class="hero-sub">One transformative day with world-class experts in biohacking, longevity, hormones, peptides, strength, vitality and peak performance.</p>
-
-      <!-- COUNTDOWN -->
       <div class="countdown" id="countdown">
         <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><div class="cd-label">Days</div></div>
         <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><div class="cd-label">Hours</div></div>
         <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><div class="cd-label">Minutes</div></div>
         <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><div class="cd-label">Seconds</div></div>
       </div>
-
-      <a href="https://luma.com/bbp4hd1g" class="cta">
+      <a href="#" onclick="openTicket(); return false;" class="cta">
         Get Your Tickets
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
       <div class="hero-stats">
-        <div><div class="stat-num">6+</div><div class="stat-label">Speakers</div></div>
+        <div><div class="stat-num">8</div><div class="stat-label">Speakers</div></div>
         <div><div class="stat-num">120+</div><div class="stat-label">Attendees</div></div>
-        <div><div class="stat-num">9 Hours</div><div class="stat-label">Content & Networking</div></div>
+        <div><div class="stat-num">9 Hours</div><div class="stat-label">Content &amp; Networking</div></div>
       </div>
     </div>
   </section>
 
-  <!-- VALUE -->
+  <!-- VALUE — cream -->
   <section class="value">
     <div class="wrap" style="max-width:780px;">
       <p class="value-intro rv"><em>This event is for anyone who refuses to settle</em> — from wellness-curious beginners to experienced biohackers, health professionals, entrepreneurs, and executives who want to live and perform at their highest level.</p>
@@ -349,7 +307,6 @@
       <div class="guarantee-box rv">
         <p>✨ <strong>All Tickets are refundable</strong> up to 7 days before the event and include a <strong>100% Satisfaction Guarantee!*</strong></p>
       </div>
-
       <div class="card rv">
         <h3>Your Ticket Includes:</h3>
         <div class="card-grid">
@@ -363,37 +320,36 @@
           <div class="card-item" style="grid-column:span 2"><span>🎉</span><span>Access to an after-event networking social</span></div>
         </div>
       </div>
-
       <div class="card rv">
-        <h3>Learn From Experts & Connect About:</h3>
+        <h3>Learn From Experts &amp; Connect About:</h3>
         <div class="card-list">
-          <div class="card-item"><span>🔥</span><span>Inflammation, Oxidative Stress, BioHacking, Longevity & Age Reversal</span></div>
-          <div class="card-item"><span>⚖️</span><span>Hormones, Peptides, Stem Cells, Metabolism & Weight Optimization</span></div>
-          <div class="card-item"><span>❤️</span><span>Mind-Body-Soul Connection, Relationships, Love & Dating</span></div>
-          <div class="card-item"><span>🧠</span><span>Neuro-Linguistic Programming (NLP) & Emotional Resilience</span></div>
-          <div class="card-item"><span>🏃</span><span>Flexibility, Mobility, Musculoskeletal Strength & Marginal Decade Strategies</span></div>
-          <div class="card-item"><span>⚡</span><span>Mold, Lyme Disease, Gut Health, Detoxification, Cellular Energy & Vitality</span></div>
-          <div class="card-item"><span>🤖</span><span>Artificial Intelligence (AI) & Your Health</span></div>
+          <div class="card-item"><span>🔥</span><span>Inflammation, Oxidative Stress, BioHacking, Longevity &amp; Age Reversal</span></div>
+          <div class="card-item"><span>⚖️</span><span>Hormones, Peptides, Stem Cells, Metabolism &amp; Weight Optimization</span></div>
+          <div class="card-item"><span>❤️</span><span>Mind-Body-Soul Connection, Relationships, Love &amp; Dating</span></div>
+          <div class="card-item"><span>🧠</span><span>Neuro-Linguistic Programming (NLP) &amp; Emotional Resilience</span></div>
+          <div class="card-item"><span>🏃</span><span>Flexibility, Mobility, Musculoskeletal Strength &amp; Marginal Decade Strategies</span></div>
+          <div class="card-item"><span>⚡</span><span>Mold, Lyme Disease, Gut Health, Detoxification, Cellular Energy &amp; Vitality</span></div>
+          <div class="card-item"><span>🤖</span><span>Artificial Intelligence (AI) &amp; Your Health</span></div>
         </div>
         <p style="font-size:0.82rem; color:var(--muted); margin-top:16px; text-align:center;">More topics will be addressed, including audience questions.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHY BE HERE -->
+  <!-- WHY ATTEND — deep indigo -->
   <section class="highlights">
     <div class="wrap" style="text-align:center;">
-      <span class="section-tag">Why Attend</span>
-      <h2 class="section-heading rv">Step Into Your <em style="font-style:italic; color:var(--primary);">Optimal Health</em></h2>
-      <p class="rv" style="max-width:640px; margin: -20px auto 36px; color:var(--muted); font-size:0.97rem; line-height:1.8;">Experience a powerful, immersive, high-energy day designed to elevate your health physically, mentally, emotionally, and spiritually.</p>
+      <span class="section-tag tag-orange">Why Attend</span>
+      <h2 class="section-heading-light rv">Step Into Your <em style="font-style:italic; color:var(--accent);">Optimal Health</em></h2>
+      <p class="rv" style="max-width:640px; margin: -20px auto 36px; color:rgba(255,255,255,0.55); font-size:0.97rem; line-height:1.8;">Experience a powerful, immersive, high-energy day designed to elevate your health physically, mentally, emotionally, and spiritually.</p>
       <div class="highlight-grid rv">
         <div class="hl-box">
           <h3>✅ Why You Need To Be Here</h3>
           <ul>
-            <li><span>💡</span><span><strong>Expert Insights</strong> — Proven strategies from leaders in health and performance</span></li>
-            <li><span>🛠️</span><span><strong>Actionable Tools</strong> — Practical steps you can apply immediately</span></li>
-            <li><span>🌐</span><span><strong>Elite Networking</strong> — Connect with growth-minded, health-focused individuals</span></li>
-            <li><span>🍽️</span><span><strong>Fuel Included</strong> — Breakfast, lunch, snacks, and energy for the entire day</span></li>
+            <li><span>💡</span><span><strong style="color:#fff;">Expert Insights</strong> — Proven strategies from leaders in health and performance</span></li>
+            <li><span>🛠️</span><span><strong style="color:#fff;">Actionable Tools</strong> — Practical steps you can apply immediately</span></li>
+            <li><span>🌐</span><span><strong style="color:#fff;">Elite Networking</strong> — Connect with growth-minded, health-focused individuals</span></li>
+            <li><span>🍽️</span><span><strong style="color:#fff;">Fuel Included</strong> — Breakfast, lunch, snacks, and energy for the entire day</span></li>
           </ul>
         </div>
         <div class="hl-box">
@@ -428,7 +384,7 @@
     </div>
   </section>
 
-  <!-- IMPACT -->
+  <!-- IMPACT — teal -->
   <section class="impact">
     <div class="wrap">
       <h2 class="rv">Make an Impact Together 🤝</h2>
@@ -437,185 +393,71 @@
     </div>
   </section>
 
-  <!-- SPEAKERS -->
+  <!-- SPEAKERS — lavender -->
   <section class="speakers" id="speakers">
     <div class="wrap" style="text-align:center;">
-      <span class="section-tag">Speakers</span>
+      <span class="section-tag tag-purple">Speakers</span>
       <h2 class="section-heading rv">Who You'll Learn From</h2>
       <div class="speakers-row">
-        <div class="sp-card rv">
-          <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Dr. Sarah Chen</h3>
-          <div class="role">Longevity Researcher</div>
-          <p class="bio">Leading expert in cellular aging and regenerative medicine.</p>
-        </div>
-        <div class="sp-card rv">
-          <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Marcus Williams</h3>
-          <div class="role">Functional Nutritionist</div>
-          <p class="bio">Personalized nutrition through metabolic profiling and genomics.</p>
-        </div>
-        <div class="sp-card rv">
-          <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Dr. Amara Osei</h3>
-          <div class="role">Neuroscientist & Author</div>
-          <p class="bio">Exploring the gut-brain connection and mental clarity.</p>
-        </div>
-        <div class="sp-card rv">
-          <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>James Park</h3>
-          <div class="role">Performance Coach</div>
-          <p class="bio">Former Olympic trainer helping people achieve peak performance.</p>
-        </div>
-        <div class="sp-card rv">
-          <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Dr. Elena Vasquez</h3>
-          <div class="role">Hormone & Peptide Specialist</div>
-          <p class="bio">Pioneer in peptide therapy and hormonal optimization for peak vitality.</p>
-        </div>
-        <div class="sp-card rv">
-          <div class="sp-photo"><div class="sp-photo-inner">👤</div></div>
-          <h3>Ryan Holloway</h3>
-          <div class="role">Biohacking & Longevity Coach</div>
-          <p class="bio">Helping high performers unlock cellular health through cutting-edge biohacking protocols.</p>
-        </div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://i.ibb.co/FkMHrtGS/Jill-W.jpg" alt="Jill Wheaton" /></div></div><h3>Jill Wheaton</h3><div class="role">Tony Robbins Director of Biz Solutions</div><p class="bio">Bringing world-class business and peak performance strategies from the Tony Robbins organization.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://i.ibb.co/Csp7k0jS/Neville.png" alt="Dr. Neville Campbell" /></div></div><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine, business, and elite athletic performance.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://i.ibb.co/99BmMdkG/Nick.jpg" alt="Dr. Nick Delgado" /></div></div><h3>Dr. Nick Delgado</h3><div class="role">Bestselling Author &amp; Performance Expert</div><p class="bio">Pioneering expert in hormones, longevity, and peak human performance with decades of research.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://i.ibb.co/XfL1vkQb/chelsea.png" alt="Dr. Chelsea Grow" /></div></div><h3>Dr. Chelsea Grow</h3><div class="role">Board Certified Neurologist</div><p class="bio">Specializing in brain health, cognitive performance, and neurological wellness strategies.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://i.ibb.co/pvMp8tJY/Joel-1.jpg" alt="Joel Huizenga" /></div></div><h3>Joel Huizenga</h3><div class="role">CEO at EgaCeutical &amp; Longevity Scientist</div><p class="bio">Cutting-edge longevity science and breakthrough pharmaceutical solutions for age reversal.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://i.ibb.co/6RmvmLBN/Eusta.jpg" alt="Dr. Elena Eustache" /></div></div><h3>Dr. Elena Eustache</h3><div class="role">❤️ Love Doctor, Global Matchmaker, TV Host &amp; Bestselling Author</div><p class="bio">World-renowned expert in relationships, love, and the mind-body-soul connection.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://i.ibb.co/cKvr8M4m/Dr-Karolina.png" alt="Dr. Karolina Pras" /></div></div><h3>Dr. Karolina Pras</h3><div class="role">Root-Cause Medicine</div><p class="bio">Functional medicine physician uncovering the root causes of chronic illness for lasting health transformation.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://i.ibb.co/60sWCjK2/iamge-3.jpg" alt="Surprise Speaker" /></div></div><h3>Surprise Speaker</h3><div class="role">To Be Announced</div><p class="bio">A very special guest will be revealed at the event — you won't want to miss it!</p></div>
       </div>
     </div>
   </section>
 
-  <!-- SCHEDULE -->
+  <!-- SCHEDULE — white -->
   <section class="schedule" id="schedule">
     <div class="wrap" style="text-align:center;">
-      <span class="section-tag">Agenda</span>
+      <span class="section-tag tag-purple">Agenda</span>
       <h2 class="section-heading rv">Day-of Schedule</h2>
       <p class="rv" style="max-width:580px; margin: -20px auto 40px; color:var(--muted); font-size:0.97rem; line-height:1.8;">A full day of expert talks, hands-on demos, and meaningful connections — June 27, 2026.</p>
       <div class="timeline">
-        <div class="tl-item rv">
-          <div class="tl-time">8:30 AM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-break">Arrival</span>
-            <h4>Doors Open &amp; Breakfast</h4>
-            <p>Registration, nutritious breakfast, and early networking with fellow attendees and vendors.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">9:30 AM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-keynote">Keynote</span>
-            <h4>Opening Keynote — The State of Optimal Health</h4>
-            <p>Setting the vision for the day: what it truly means to optimize your health in 2026 and beyond.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">10:30 AM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-keynote">Talk</span>
-            <h4>Longevity &amp; Age Reversal: What the Science Says</h4>
-            <p>Deep dive into the latest research on cellular aging, NAD+, senolytics, and practical anti-aging protocols.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">11:30 AM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-keynote">Talk</span>
-            <h4>Hormones, Peptides &amp; Metabolic Optimization</h4>
-            <p>Understand how hormonal balance, peptide therapy, and metabolic testing can transform your performance and body composition.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">12:30 PM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-break">Break</span>
-            <h4>Lunch &amp; Expo Hall Open</h4>
-            <p>Energizing lunch, vendor demos, metabolic testing, PCM blood testing, and open networking.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">2:00 PM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-keynote">Talk</span>
-            <h4>Gut Health, Detoxification &amp; Cellular Energy</h4>
-            <p>From mold and Lyme disease to microbiome optimization — strategies to restore and sustain peak cellular vitality.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">3:00 PM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-keynote">Talk</span>
-            <h4>Mind-Body Connection: NLP, Resilience &amp; Relationships</h4>
-            <p>Harness neuro-linguistic programming, emotional resilience strategies, and the science of meaningful connection.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">4:00 PM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-panel">Panel</span>
-            <h4>Expert Panel + Open Q&amp;A</h4>
-            <p>All speakers on stage together. Audience questions, hot takes, and real-world health strategies debated live.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">5:00 PM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-keynote">Keynote</span>
-            <h4>Closing Keynote — Your Healthiest Chapter Starts Now</h4>
-            <p>Synthesizing the day's insights into an actionable 90-day health roadmap you can take home.</p>
-          </div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-time">6:00 PM</div>
-          <div class="tl-body">
-            <span class="tl-tag tag-social">Social</span>
-            <h4>After-Event Networking Social</h4>
-            <p>Celebrate the day with fellow attendees at a nearby off-site location. Dinner available (not included in ticket price).</p>
-          </div>
-        </div>
+        <div class="tl-item rv"><div class="tl-time">8:30 AM</div><div class="tl-body"><span class="tl-tag tag-break">Arrival</span><h4>Doors Open &amp; Breakfast</h4><p>Registration, nutritious breakfast, and early networking with fellow attendees and vendors.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">9:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Keynote</span><h4>Opening Keynote — The State of Optimal Health</h4><p>Setting the vision for the day: what it truly means to optimize your health in 2026 and beyond.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">10:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Longevity &amp; Age Reversal: What the Science Says</h4><p>Deep dive into the latest research on cellular aging, NAD+, senolytics, and practical anti-aging protocols.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">11:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Hormones, Peptides &amp; Metabolic Optimization</h4><p>Understand how hormonal balance, peptide therapy, and metabolic testing can transform your performance.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">12:30 PM</div><div class="tl-body"><span class="tl-tag tag-break">Break</span><h4>Lunch &amp; Expo Hall Open</h4><p>Energizing lunch, vendor demos, metabolic testing, PCM blood testing, and open networking.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">2:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Gut Health, Detoxification &amp; Cellular Energy</h4><p>From mold and Lyme disease to microbiome optimization — strategies to restore and sustain peak cellular vitality.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">3:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Mind-Body Connection: NLP, Resilience &amp; Relationships</h4><p>Harness neuro-linguistic programming, emotional resilience strategies, and the science of meaningful connection.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">4:00 PM</div><div class="tl-body"><span class="tl-tag tag-panel">Panel</span><h4>Expert Panel + Open Q&amp;A</h4><p>All speakers on stage together. Audience questions, hot takes, and real-world health strategies debated live.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">5:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Keynote</span><h4>Closing Keynote — Your Healthiest Chapter Starts Now</h4><p>Synthesizing the day's insights into an actionable 90-day health roadmap you can take home.</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">6:00 PM</div><div class="tl-body"><span class="tl-tag tag-social">Social</span><h4>After-Event Networking Social</h4><p>Celebrate the day with fellow attendees at a nearby off-site location. Dinner available (not included).</p></div></div>
       </div>
       <p class="rv" style="font-size:0.8rem; color:var(--muted); margin-top:28px;">Schedule subject to change. All registered attendees will receive final agenda by email.</p>
     </div>
   </section>
 
-  <!-- VENDOR LOUNGE -->
+  <!-- VENDOR — warm dark amber -->
   <section class="vendor" id="expo">
     <div class="wrap" style="text-align:center;">
-      <span class="section-tag">Expo</span>
-      <h2 class="section-heading rv">Vendor Experience Lounge</h2>
+      <span class="section-tag tag-orange">Expo</span>
+      <h2 class="section-heading-light rv">Vendor Experience Lounge</h2>
       <div class="vendor-grid rv">
         <div class="vendor-item"><span>💆</span><span>Massage Therapy and Chiropractic Adjustments</span></div>
         <div class="vendor-item"><span>📊</span><span>Metabolic Testing — included with VIP tickets</span></div>
         <div class="vendor-item"><span>🩸</span><span>Phase Contrast Microscopy (PCM) Blood Testing — included with VIP tickets</span></div>
-        <div class="vendor-item"><span>⚡</span><span>Electrolyte Drinks & Clean Protein Bars</span></div>
+        <div class="vendor-item"><span>⚡</span><span>Electrolyte Drinks &amp; Clean Protein Bars</span></div>
         <div class="vendor-item"><span>✨</span><span>Additional wellness vendors coming soon</span></div>
         <div class="vendor-item"><span>🍽️</span><span>After-event off-site social dinner at a nearby location (dinner cost not included)</span></div>
       </div>
-      <p class="rv" style="font-size:0.8rem; color:var(--muted); margin-top:20px;">*Vendor services are provided directly by practitioners. Some services may require payment for non-VIP ticket holders.</p>
+      <p class="rv" style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:20px;">*Vendor services are provided directly by practitioners. Some services may require payment for non-VIP ticket holders.</p>
     </div>
   </section>
 
-  <!-- MEDIA -->
+  <!-- MEDIA — deep navy -->
   <section class="media" id="media">
     <div class="wrap" style="text-align:center;">
-      <span class="section-tag">Previous Event</span>
-      <h2 class="section-heading rv">See What You Missed</h2>
+      <span class="section-tag tag-orange">Previous Event</span>
+      <h2 class="section-heading-light rv">See What You Missed</h2>
       <div class="media-grid">
-        <div class="vid-card rv">
-          <div class="vid-embed">
-            <div class="vid-ph">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21"/></svg>
-              YOUR-VIDEO-1
-            </div>
-          </div>
-          <div class="vid-body"><h3>Summit Highlights Reel</h3><p>Best moments from last year's event.</p></div>
-        </div>
-        <div class="vid-card rv">
-          <div class="vid-embed">
-            <div class="vid-ph">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21"/></svg>
-              YOUR-VIDEO-2
-            </div>
-          </div>
-          <div class="vid-body"><h3>Opening Keynote</h3><p>Last year's talk that set the tone.</p></div>
-        </div>
+        <div class="vid-card rv"><div class="vid-embed"><div class="vid-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21"/></svg>YOUR-VIDEO-1</div></div><div class="vid-body"><h3>Summit Highlights Reel</h3><p>Best moments from last year's event.</p></div></div>
+        <div class="vid-card rv"><div class="vid-embed"><div class="vid-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21"/></svg>YOUR-VIDEO-2</div></div><div class="vid-body"><h3>Opening Keynote</h3><p>Last year's talk that set the tone.</p></div></div>
       </div>
       <div class="gallery-row">
         <div class="g-item rv"><span>YOUR-IMAGE-1</span></div>
@@ -626,7 +468,7 @@
     </div>
   </section>
 
-  <!-- FINAL CTA -->
+  <!-- FINAL CTA — deep purple -->
   <section class="final">
     <div class="wrap final-inner">
       <h2 class="rv">Your Healthiest Chapter Starts <em>Here</em></h2>
@@ -636,7 +478,7 @@
         <div><div class="fd-label">Time</div><div class="fd-value">9 AM – 6 PM</div></div>
         <div><div class="fd-label">Location</div><div class="fd-value">San Diego, CA</div></div>
       </div>
-      <a href="https://luma.com/bbp4hd1g" class="cta rv" style="font-size:1.1rem; padding:16px 40px;">
+      <a href="#" onclick="openTicket(); return false;" class="cta rv" style="font-size:1.1rem; padding:16px 40px;">
         Get Your Tickets Now
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
@@ -645,7 +487,7 @@
 
   <!-- SOCIAL BAR -->
   <div class="social-bar">
-    <p>Follow & Connect</p>
+    <p>Follow &amp; Connect</p>
     <div class="social-icons">
       <a href="https://www.youtube.com/@EnablingTransformations" target="_blank" rel="noopener" aria-label="YouTube" style="color:rgba(255,255,255,0.4); transition:color 0.3s;" onmouseover="this.style.color='#FF0000'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'; this.style.transform='none'">
         <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
@@ -667,15 +509,110 @@
     <div class="wrap footer-inner">
       <div>
         <p class="footer-text">&copy; 2026 Optimal Health Summit</p>
-        <p style="font-size:0.72rem; color:rgba(255,255,255,0.45); margin-top:4px;">*See cancellation and refund policy at checkout.</p>
+        <p style="font-size:0.72rem; color:rgba(255,255,255,0.45); margin-top:4px;"><a href="#" onclick="openPolicy(); return false;" style="color:rgba(255,255,255,0.5); text-decoration:underline;">Refund and Cancellation Policy</a></p>
       </div>
       <ul class="footer-links">
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Terms</a></li>
+        <li><a href="#" onclick="openPrivacy(); return false;">Privacy Policy</a></li>
+        <li><a href="#" onclick="openTerms(); return false;">Terms of Service</a></li>
         <li><a href="#" onclick="openModal(); return false;">Contact</a></li>
       </ul>
     </div>
   </footer>
+
+  <!-- PRIVACY MODAL -->
+  <div class="policy-overlay" id="privacyModal">
+    <div class="policy-modal">
+      <button class="policy-close" onclick="closePrivacy()">&times;</button>
+      <h2>Privacy Policy</h2>
+      <p style="font-size:0.78rem; color:var(--muted); margin-bottom:16px;">Last updated: April 2026</p>
+
+      <h3>1. Who We Are</h3>
+      <p>This website is operated by <strong>Enabling Transformations</strong>, located in San Diego, California 92129. For privacy-related questions, contact us at <a href="mailto:info@enablingtransformations.com" style="color:var(--primary);">info@enablingtransformations.com</a>.</p>
+
+      <h3>2. Information We Collect</h3>
+      <p>We only collect information you voluntarily provide through our contact form: your name, email address, and message. We do not collect payment information — all ticket purchases are handled securely by Luma.</p>
+
+      <h3>3. How We Use Your Information</h3>
+      <p>Information submitted through the contact form is used solely to respond to your inquiry. We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+      <h3>4. Analytics & Tracking</h3>
+      <p>We use <strong>Google Analytics</strong> and <strong>Facebook Pixel</strong> to understand how visitors interact with our website. These tools may collect anonymous data such as pages visited, time on site, and general location. You can opt out of Google Analytics tracking at <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color:var(--primary);">tools.google.com/dlpage/gaoptout</a>.</p>
+
+      <h3>5. Cookies</h3>
+      <p>Google Analytics and Facebook Pixel use cookies to collect anonymous usage data. By using this website, you consent to the use of these cookies. You may disable cookies in your browser settings at any time.</p>
+
+      <h3>6. Third-Party Services</h3>
+      <p>Ticket purchases are processed through <strong>Luma</strong>. Contact form submissions are handled by <strong>Formspree</strong>. These services have their own privacy policies which govern data collected through their platforms.</p>
+
+      <h3>7. Data Retention</h3>
+      <p>Contact form submissions are retained only as long as necessary to respond to your inquiry. We do not maintain a mailing list or marketing database.</p>
+
+      <h3>8. Your Rights</h3>
+      <p>You have the right to request access to, correction of, or deletion of any personal information you have submitted to us. To make a request, email us at <a href="mailto:info@enablingtransformations.com" style="color:var(--primary);">info@enablingtransformations.com</a>.</p>
+
+      <h3>9. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date.</p>
+    </div>
+  </div>
+
+  <!-- TERMS MODAL -->
+  <div class="policy-overlay" id="termsModal">
+    <div class="policy-modal">
+      <button class="policy-close" onclick="closeTerms()">&times;</button>
+      <h2>Terms of Service</h2>
+      <p style="font-size:0.78rem; color:var(--muted); margin-bottom:16px;">Last updated: April 2026</p>
+
+      <h3>1. Acceptance of Terms</h3>
+      <p>By attending or purchasing a ticket to the Optimal Health Summit 2026 ("the Event"), organized by <strong>Enabling Transformations</strong> (San Diego, California 92129), you agree to be bound by these Terms of Service. If you do not agree, please do not purchase a ticket or attend the Event.</p>
+
+      <h3>2. Age Requirement</h3>
+      <p>Attendees must be at least 14 years of age. Attendees under the age of 18 must be accompanied by a parent or legal guardian who assumes full responsibility for the minor throughout the Event.</p>
+
+      <h3>3. Tickets & Refunds</h3>
+      <p>All ticket sales are subject to our Refund and Cancellation Policy. Tickets are fully refundable up to 7 days before the Event. All tickets include a 100% Satisfaction Guarantee as described in our Refund and Cancellation Policy. Ticket prices are subject to change without notice.</p>
+
+      <h3>4. Photography & Recording</h3>
+      <p>By attending the Event, you acknowledge and consent that photography, audio recording, and video recording may take place throughout the Event by both organizers and other attendees. Images or recordings in which you appear may be used by Enabling Transformations for promotional, educational, or marketing purposes without compensation or further notice.</p>
+
+      <h3>5. Assumption of Risk & Liability Waiver</h3>
+      <p>Attendance at the Optimal Health Summit 2026 is entirely voluntary. By attending, you acknowledge and agree that:</p>
+      <p style="margin-top:10px;">Enabling Transformations, its organizers, speakers, staff, volunteers, partners, and vendors <strong>assume no liability whatsoever</strong> for any injury, illness, loss, damage, accident, or adverse outcome — physical, mental, emotional, financial, or otherwise — arising from or related to your attendance at or participation in the Event, including but not limited to: information presented by speakers, wellness products or services offered by vendors, physical activities, networking interactions, or travel to and from the Event.</p>
+      <p style="margin-top:10px;">You attend and participate entirely at your own risk. Nothing presented at the Event constitutes medical, legal, or financial advice. Always consult a qualified professional before making health or lifestyle decisions.</p>
+
+      <h3>6. Code of Conduct</h3>
+      <p>All attendees are expected to behave respectfully toward other attendees, speakers, staff, and vendors. Enabling Transformations reserves the right to remove any attendee from the Event without refund for disruptive, harmful, or inappropriate behavior.</p>
+
+      <h3>7. Event Changes</h3>
+      <p>Enabling Transformations reserves the right to modify the Event schedule, speakers, venue, or format at any time. In the unlikely event of cancellation by the organizer, ticket holders will be notified and refunds issued.</p>
+
+      <h3>8. Governing Law</h3>
+      <p>These Terms are governed by the laws of the State of California. Any disputes arising from these Terms or the Event shall be resolved exclusively in the courts of San Diego County, California.</p>
+
+      <h3>9. Contact</h3>
+      <p>For questions regarding these Terms, contact us at <a href="mailto:info@enablingtransformations.com" style="color:var(--primary);">info@enablingtransformations.com</a>.</p>
+    </div>
+  </div>
+
+  <!-- POLICY MODAL -->
+  <div class="policy-overlay" id="policyModal">
+    <div class="policy-modal">
+      <button class="policy-close" onclick="closePolicy()">&times;</button>
+      <h2>Refund and Cancellation Policy</h2>
+      <h3>Cancellation and Refund Policy</h3>
+      <p>All tickets are fully refundable up to 7 days before the event. However, if you have any concerns or need assistance, please contact us by responding to the ticket purchase confirmation email. Take advantage of the lower ticket prices now before they sell out or go up — completely risk free.</p>
+      <h3>100% Satisfaction Guarantee</h3>
+      <p>Check in on time and attend at least the first 3 hours to experience enough of the event to fairly evaluate its value. And if you feel the event isn't worth your time, you must speak with Sid (the host) in person before leaving, and before the lunch break or 1pm, and you will receive a full refund.</p>
+    </div>
+  </div>
+
+  <!-- TICKET MODAL -->
+  <div class="ticket-overlay" id="ticketModal">
+    <div class="ticket-modal">
+      <button class="ticket-close" onclick="closeTicket()">&times;</button>
+      <h2>🎟️ Get Your Tickets</h2>
+      <iframe src="https://luma.com/embed/event/evt-sA11T8oGhHK5AbU/simple" height="450" frameborder="0" style="border:1px solid #bfcbda88; border-radius:4px;" allow="fullscreen; payment" tabindex="0"></iframe>
+    </div>
+  </div>
 
   <!-- CONTACT MODAL -->
   <div class="modal-overlay" id="contactModal">
@@ -688,6 +625,7 @@
           <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
           <div class="form-group"><label for="cf-name">Your Name</label><input id="cf-name" type="text" name="name" placeholder="Jane Smith" required /></div>
           <div class="form-group"><label for="cf-email">Email Address</label><input id="cf-email" type="email" name="email" placeholder="jane@example.com" required /></div>
+          <div class="form-group"><label for="cf-email2">Verify Email Address</label><input id="cf-email2" type="email" placeholder="Re-enter your email" required /></div>
           <div class="form-group"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" placeholder="What's on your mind?" required></textarea></div>
           <input type="hidden" name="_subject" value="Optimal Health Summit — Contact Form" />
           <button type="submit" class="form-submit">Send Message →</button>
@@ -707,18 +645,13 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.rv').forEach(el => obs.observe(el));
 
-    /* ── NAV ── */
     window.addEventListener('scroll', () => {
       document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
     });
-    function toggleNav() {
-      document.getElementById('navMobile').classList.toggle('open');
-    }
-    function closeNav() {
-      document.getElementById('navMobile').classList.remove('open');
-    }
 
-    /* ── COUNTDOWN ── */
+    function toggleNav() { document.getElementById('navMobile').classList.toggle('open'); }
+    function closeNav() { document.getElementById('navMobile').classList.remove('open'); }
+
     (function() {
       const target = new Date('2026-06-27T09:00:00');
       function pad(n) { return String(n).padStart(2, '0'); }
@@ -741,13 +674,35 @@
       setInterval(tick, 1000);
     })();
 
+    function openPrivacy() { document.getElementById('privacyModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closePrivacy() { document.getElementById('privacyModal').classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('privacyModal').addEventListener('click', function(e) { if (e.target === this) closePrivacy(); });
+
+    function openTerms() { document.getElementById('termsModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeTerms() { document.getElementById('termsModal').classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('termsModal').addEventListener('click', function(e) { if (e.target === this) closeTerms(); });
+
+    function openPolicy() { document.getElementById('policyModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closePolicy() { document.getElementById('policyModal').classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('policyModal').addEventListener('click', function(e) { if (e.target === this) closePolicy(); });
+
+    function openTicket() { document.getElementById('ticketModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeTicket() { document.getElementById('ticketModal').classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('ticketModal').addEventListener('click', function(e) { if (e.target === this) closeTicket(); });
+
     function openModal() { document.getElementById('contactModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
     function closeModal() { document.getElementById('contactModal').classList.remove('open'); document.body.style.overflow = ''; }
     document.getElementById('contactModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeTicket(); closePolicy(); closePrivacy(); closeTerms(); } });
 
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
+      const email = document.getElementById('cf-email').value;
+      const email2 = document.getElementById('cf-email2').value;
+      if (email !== email2) {
+        alert('Email addresses do not match. Please check and try again.');
+        return;
+      }
       const btn = this.querySelector('.form-submit');
       btn.textContent = 'Sending…'; btn.disabled = true;
       try {
