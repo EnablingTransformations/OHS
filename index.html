@@ -631,7 +631,7 @@
     <div class="modal ticket-modal">
       <button class="modal-close" onclick="closeTicket()">&times;</button>
       <h2 style="font-family:var(--font-head); font-size:1.4rem; color:var(--dark); margin-bottom:16px; text-align:center;">🎟️ Get Your Tickets</h2>
-      <iframe src="https://luma.com/embed/event/evt-sA11T8oGhHK5AbU/simple" width="100%" height="450" frameborder="0" style="border:1px solid #bfcbda88; border-radius:4px; display:block;" allow="fullscreen; payment" tabindex="0"></iframe>
+      <div id="lumaContainer"></div>
     </div>
   </div>
 
@@ -695,7 +695,21 @@
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') ['ticketModal','contactModal','policyModal','privacyModal','termsModal'].forEach(closeOverlay); });
 
-    function openTicket()  { openOverlay('ticketModal'); }
+    function openTicket() {
+      openOverlay('ticketModal');
+      // Only inject iframe when modal opens — saves 1.3MB on page load
+      const c = document.getElementById('lumaContainer');
+      if (!c.querySelector('iframe')) {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://luma.com/embed/event/evt-sA11T8oGhHK5AbU/simple';
+        iframe.width = '100%';
+        iframe.height = '450';
+        iframe.frameBorder = '0';
+        iframe.style = 'border:1px solid #bfcbda88; border-radius:4px; display:block;';
+        iframe.allow = 'fullscreen; payment';
+        c.appendChild(iframe);
+      }
+    }
     function closeTicket() { closeOverlay('ticketModal'); }
     function openModal()   { openOverlay('contactModal'); }
     function closeModal()  { closeOverlay('contactModal'); }
