@@ -550,6 +550,7 @@
         <div class="discount-title">Get <span>10% OFF</span><br/>Your Ticket</div>
         <p class="discount-sub">Enter your email to instantly receive your exclusive discount code — and be the first to hear about speakers, schedule updates, and event news.</p>
         <div class="discount-form">
+          <input class="discount-input" id="discount-name" type="text" placeholder="Enter your first name" />
           <input class="discount-input" id="discount-email" type="email" placeholder="Enter your email address" required />
           <button class="discount-btn" onclick="claimDiscount()">Claim My 10% Discount →</button>
         </div>
@@ -558,8 +559,11 @@
       <div class="discount-success" id="discountSuccess">
         <div class="big-check">🎉</div>
         <h3>Your Code Is Ready!</h3>
-        <div class="discount-code">HEALTH10</div>
-        <p>Use code <strong>HEALTH10</strong> at checkout for 10% off your ticket.<br/>Check your email for a confirmation — see you June 20!</p>
+        <div class="discount-code" id="discountCodeBox">HEALTH10</div>
+        <p style="color:#5ef0d0; font-size:0.85rem; font-weight:700; margin:6px 0;">✅ Code automatically copied to your clipboard!</p>
+        <button onclick="copyDiscountCode()" id="copyBtn" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:8px 20px; border-radius:50px; cursor:pointer; font-size:0.85rem; font-weight:700; margin-bottom:12px; font-family:var(--font-body);">📋 Copy Again</button>
+        <p>Paste code <strong>HEALTH10</strong> at checkout for 10% off.<br/>See you June 20!</p>
+        <a href="https://luma.com/bbp4hd1g" target="_blank" rel="noopener" onclick="closeDiscount()" style="display:inline-block; margin-top:14px; background:var(--accent); color:#fff; font-weight:700; padding:12px 28px; border-radius:50px; font-size:0.95rem; text-decoration:none;">🎟️ Get Tickets Now →</a>
       </div>
     </div>
   </div>
@@ -695,7 +699,30 @@
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') ['ticketModal','contactModal','policyModal','privacyModal','termsModal'].forEach(closeOverlay); });
 
-    function openTicket() {
+    function copyDiscountCode() {
+      navigator.clipboard.writeText('HEALTH10').then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = '✅ Copied!';
+        btn.style.background = 'rgba(16,185,129,0.3)';
+        btn.style.borderColor = '#10b981';
+        setTimeout(() => {
+          btn.textContent = '📋 Copy Code';
+          btn.style.background = 'rgba(255,255,255,0.15)';
+          btn.style.borderColor = 'rgba(255,255,255,0.3)';
+        }, 2500);
+      }).catch(() => {
+        // Fallback for older browsers
+        const el = document.createElement('textarea');
+        el.value = 'HEALTH10';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => { btn.textContent = '📋 Copy Code'; }, 2500);
+      });
+    }
       openOverlay('ticketModal');
       // Only inject iframe when modal opens — saves 1.3MB on page load
       const c = document.getElementById('lumaContainer');
@@ -722,31 +749,66 @@
     function closeDiscount(){ closeOverlay('discountModal'); sessionStorage.setItem('discountSeen','1'); }
 
     function claimDiscount() {
+      const nameInput = document.getElementById('discount-name');
       const emailInput = document.getElementById('discount-email');
+      const name = nameInput.value.trim();
       const email = emailInput.value.trim();
       const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+      const hasTLD = email.includes('.') && email.lastIndexOf('.') > email.indexOf('@');
+
+      if (!name) {
+        nameInput.style.borderColor = '#ff4444';
+        nameInput.placeholder = '⚠️ Please enter your first name';
+        nameInput.focus();
+        return;
+      }
       if (!email) {
         emailInput.style.borderColor = '#ff4444';
-        emailInput.placeholder = 'Please enter your email address';
+        emailInput.placeholder = '⚠️ Please enter your email address';
         emailInput.focus();
         return;
       }
-      if (!emailRegex.test(email)) {
+      if (!emailRegex.test(email) || !hasTLD) {
         emailInput.style.borderColor = '#ff4444';
         emailInput.value = '';
-        emailInput.placeholder = '⚠️ Please enter a valid email (e.g. you@example.com)';
+        emailInput.placeholder = '⚠️ Invalid email — use format: you@example.com';
         emailInput.focus();
         return;
       }
-      emailInput.style.borderColor = '';
-      fetch('https://formspree.io/f/mzdkpgpw', {
-        method: 'POST',
-        body: JSON.stringify({ email: email, _subject: 'OHS — 10% Discount Code Request' }),
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+      const tld = email.split('.').pop();
+      if (tld.length < 2) {
+        emailInput.style.borderColor = '#ff4444';
+        emailInput.value = '';
+        emailInput.placeholder = '⚠️ Invalid email — use format: you@example.com';
+        emailInput.focus();
+        return;
+      }
+      nameInput.style.borderColor = '#10b981';
+      emailInput.style.borderColor = '#10b981';
+
+      // Auto-copy discount code to clipboard immediately
+      navigator.clipboard.writeText('HEALTH10').catch(() => {
+        const el = document.createElement('textarea');
+        el.value = 'HEALTH10';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
       });
+
+      // Send to Google Sheets (URL will be added once Apps Script is deployed)
+      const scriptURL = window._googleScriptURL || null;
+      if (scriptURL) {
+        fetch(scriptURL, {
+          method: 'POST',
+          body: JSON.stringify({ name: name, email: email, code: 'HEALTH10' }),
+          headers: { 'Content-Type': 'application/json' }
+        }).catch(() => {}); // fail silently
+      }
+
       document.getElementById('discountForm').style.display = 'none';
       document.getElementById('discountSuccess').style.display = 'block';
-      sessionStorage.setItem('discountSeen','1');
+      sessionStorage.setItem('discountSeen', '1');
       setTimeout(() => closeDiscount(), 6000);
     }
 
