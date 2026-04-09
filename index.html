@@ -723,6 +723,7 @@
         setTimeout(() => { btn.textContent = '📋 Copy Code'; }, 2500);
       });
     }
+    function openTicket() {
       openOverlay('ticketModal');
       // Only inject iframe when modal opens — saves 1.3MB on page load
       const c = document.getElementById('lumaContainer');
