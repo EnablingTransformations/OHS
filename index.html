@@ -72,11 +72,14 @@
     }
 
     /* HERO */
-    .hero { min-height: 100vh; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero { min-height: 100vh; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+    .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.5; z-index: 0; }
+    .hero-top { position: relative; z-index: 2; text-align: left; padding: 0 20px; }
+    .hero-bottom { position: relative; z-index: 2; text-align: left; padding: 0 20px; }
     .hero::before { content: ''; position: absolute; top: -30%; right: -15%; width: 65vw; height: 65vw; border-radius: 50%; background: radial-gradient(circle, rgba(232,145,58,0.12), transparent 70%); animation: drift 12s ease-in-out infinite; }
     .hero::after { content: ''; position: absolute; bottom: -20%; left: -10%; width: 50vw; height: 50vw; border-radius: 50%; background: radial-gradient(circle, rgba(120,80,220,0.15), transparent 70%); animation: drift 16s ease-in-out infinite reverse; }
     @keyframes drift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-30px,20px); } }
-    .hero-content { position: relative; z-index: 2; padding: 100px 0 80px; text-align: center; }
+    .hero-content { position: relative; z-index: 2; padding: 40px 0 60px; text-align: center; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(232,145,58,0.14); border: 1px solid rgba(232,145,58,0.3); color: var(--accent); padding: 6px 18px; border-radius: 100px; font-weight: 600; font-size: 0.82rem; letter-spacing: 1px; margin-bottom: 10px; }
     .hero h1 { font-family: var(--font-head); font-size: clamp(2.6rem, 6vw, 4.4rem); color: var(--white); line-height: 1.08; margin-bottom: 20px; }
     .hero h1 em { color: var(--accent); font-style: italic; }
@@ -89,7 +92,7 @@
     .countdown { display: flex; justify-content: center; gap: 24px; margin: 32px 0 40px; }
     .cd-unit { text-align: center; }
     .cd-num { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3rem); color: var(--white); line-height: 1; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 14px 20px; min-width: 72px; display: block; }
-    .cd-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 8px; }
+    .cd-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-top: 8px; }
 
     /* SECTION TAGS */
     .section-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; display: inline-block; margin-bottom: 10px; }
@@ -306,6 +309,61 @@
     .cred-item { background: rgba(74,63,138,0.06); padding: 6px 16px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; color: var(--primary); letter-spacing: 0.3px; }
     @media (max-width: 768px) { .test-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
 
+    /* FAILURE / STAKES */
+    .stakes { background: linear-gradient(160deg, #1a0508 0%, #2d0a12 50%, #1a0a2a 100%); padding: 80px 0; position: relative; overflow: hidden; }
+    .stakes::before { content: ''; position: absolute; bottom: -20%; left: -10%; width: 40vw; height: 40vw; border-radius: 50%; background: radial-gradient(circle, rgba(255,50,50,0.05), transparent 70%); }
+    .stakes-content { max-width: 660px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+    .stakes h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: #fff; margin-bottom: 28px; line-height: 1.2; }
+    .stakes-list { display: grid; gap: 14px; text-align: left; margin: 28px 0; }
+    .stakes-item { display: flex; gap: 12px; align-items: flex-start; background: rgba(255,255,255,0.04); border-radius: 12px; padding: 16px 20px; border: 1px solid rgba(255,80,80,0.12); }
+    .stakes-item .icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .stakes-item span { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.6; }
+    .stakes-item strong { color: rgba(255,255,255,0.9); }
+    .stakes-close { color: var(--accent); font-weight: 700; font-size: 1.05rem; margin-top: 28px; line-height: 1.7; }
+
+    /* SUCCESS / TRANSFORMATION */
+    .success { background: linear-gradient(160deg, #052e1a 0%, #0a4a2a 50%, #083828 100%); padding: 80px 0; position: relative; overflow: hidden; }
+    .success::before { content: ''; position: absolute; top: -15%; right: -10%; width: 40vw; height: 40vw; border-radius: 50%; background: radial-gradient(circle, rgba(94,240,208,0.06), transparent 70%); }
+    .success-content { max-width: 660px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+    .success h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: #fff; margin-bottom: 10px; line-height: 1.2; }
+    .success h2 em { color: #5ef0d0; font-style: italic; }
+    .success .sub { color: rgba(255,255,255,0.5); font-size: 0.95rem; margin-bottom: 28px; }
+    .success-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; text-align: left; margin: 28px 0; }
+    .success-item { display: flex; gap: 10px; align-items: flex-start; }
+    .success-item .check { color: #5ef0d0; font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .success-item span { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.5; }
+    .success-close { font-family: var(--font-head); font-size: 1.3rem; color: #fff; margin-top: 32px; line-height: 1.3; font-style: italic; }
+    @media (max-width: 768px) { .success-grid { grid-template-columns: 1fr; } }
+
+    /* FOUNDER STORY / GUIDE */
+    .guide { background: var(--cream); padding: 80px 0; }
+    .guide-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .guide-inner h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--dark); margin-bottom: 24px; }
+    .guide-inner p { font-size: 0.97rem; color: var(--text); line-height: 1.85; margin-bottom: 18px; }
+    .guide-inner em { color: var(--primary); }
+    .guide-inner .guide-sig { font-family: var(--font-head); font-size: 1.1rem; color: var(--dark); margin-top: 24px; }
+
+    /* LEAD MAGNET */
+    .leadmag { background: linear-gradient(135deg, #1e1a5e, #2d2a6e); padding: 60px 0; text-align: center; }
+    .leadmag h2 { font-family: var(--font-head); font-size: clamp(1.4rem, 3vw, 1.8rem); color: #fff; margin-bottom: 10px; }
+    .leadmag p { color: rgba(255,255,255,0.55); font-size: 0.92rem; max-width: 480px; margin: 0 auto 20px; line-height: 1.6; }
+    .leadmag-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+    .leadmag-input { flex: 1; padding: 13px 18px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: #fff; font-family: var(--font-body); font-size: 0.92rem; outline: none; }
+    .leadmag-input::placeholder { color: rgba(255,255,255,0.3); }
+    .leadmag-input:focus { border-color: var(--accent); }
+    .leadmag-btn { padding: 13px 24px; border-radius: 12px; border: none; background: var(--accent); color: var(--dark); font-weight: 700; font-size: 0.92rem; cursor: pointer; font-family: var(--font-body); white-space: nowrap; }
+    .leadmag-btn:hover { background: #d6802e; }
+    .leadmag .fine { color: rgba(255,255,255,0.3); font-size: 0.72rem; margin-top: 10px; }
+    @media (max-width: 768px) { .leadmag-form { flex-direction: column; } }
+
+    /* URGENCY BAR */
+    .urgency-bar { background: linear-gradient(90deg, #b45309, #d97706, #b45309); padding: 14px 0; text-align: center; }
+    .urgency-bar p { color: #fff; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.5px; }
+    .urgency-bar strong { text-decoration: underline; }
+
+    /* SPEAKER TAGLINE */
+    .sp-card .tagline { font-size: 0.75rem; color: var(--primary); font-weight: 600; margin-top: 8px; font-style: italic; line-height: 1.4; }
+
     /* FAQ */
     .faq { background: var(--white); padding: 80px 0; }
     .faq-list { max-width: 700px; margin: 0 auto; }
@@ -346,7 +404,7 @@
   <!-- NAV -->
   <nav class="nav" id="mainNav">
     <div class="wrap nav-inner">
-      <a href="#" class="nav-logo">Optimal <span>Health</span> Summit</a>
+      <a href="#" class="nav-logo">Optimal <span>Health</span> Summit 2026</a>
       <ul class="nav-links">
         <li><a href="#speakers">Speakers</a></li>
         <li><a href="#schedule">Schedule</a></li>
@@ -371,32 +429,23 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap hero-content">
-      <div class="hero-badge" style="display:inline-flex; margin-bottom:18px;">🔬 CURATED FROM 20+ MAJOR LONGEVITY CONFERENCES</div>
-      <h1>Stop Guessing About Your Health.<br/>Start <em>Knowing.</em></h1>
-      <p class="hero-sub">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — delivering the same cutting-edge protocols discussed at events led by Bryan Johnson, Andrew Huberman, Peter Attia, Dave Asprey, and David Sinclair. <strong style="color:var(--accent);">Except you don't need $5,000 or a flight across the country.</strong></p>
-      <div style="text-align:center; margin-bottom:32px;">
-        <div class="hero-badge" style="display:inline-flex; margin-bottom:8px;">📅 JUNE 20, 2026 · 9 AM – 6 PM</div><br/>
-        <div class="hero-badge" style="display:inline-flex;">📍 UC San Diego Park &amp; Market, San Diego, CA</div>
+    <img class="hero-bg-img" src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775790652/ohs_hero_bg_tfckxh.webp" alt="" />
+    <div class="hero-top" style="padding-top:30px; max-width:1060px; margin:0 auto;">
+      <div class="hero-badge" style="display:inline-flex; margin-bottom:14px;">🔬 CURATED FROM 20+ MAJOR LONGEVITY CONFERENCES</div>
+      <h1 style="font-family:var(--font-head); font-size:clamp(2.2rem, 5vw, 3.6rem); color:#fff; line-height:1.1; margin:0;">Stop Guessing About Your Health.<br/>Start <em style="color:var(--accent); font-style:italic;">Knowing.</em></h1>
+    </div>
+    <div style="flex:1;"></div>
+    <div class="hero-bottom" style="padding-bottom:40px; max-width:1060px; margin:0 auto;">
+      <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — delivering the same cutting-edge protocols discussed at events led by Bryan Johnson, Andrew Huberman, Peter Attia, Gary Brecka, Dave Asprey, and David Sinclair. <strong style="color:var(--accent);">Except you don't need $5,000 or a flight across the country.</strong></p>
+      <div style="margin-top:400px; margin-bottom:16px;">
+        <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:0.9rem;">📅 JUNE 20, 2026 · 9 AM – 6 PM</div><br/>
+        <div class="hero-badge" style="display:inline-flex; background:none; border:none; color:#fff; font-size:0.9rem;">📍 UC San Diego Park &amp; Market, San Diego, CA</div>
       </div>
-      <div class="countdown" id="countdown">
+      <div class="countdown" id="countdown" style="margin-bottom:16px; justify-content:flex-start;">
         <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><div class="cd-label">Days</div></div>
         <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><div class="cd-label">Hours</div></div>
         <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><div class="cd-label">Minutes</div></div>
         <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><div class="cd-label">Seconds</div></div>
-      </div>
-      <a href="#" onclick="openTicket(); return false;" class="cta">
-        Reserve My Seat
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <div class="guarantee-inline" style="max-width:480px; margin:20px auto 0;">
-        <div class="shield">🛡️</div>
-        <span><strong>100% Money-Back Guarantee</strong> — fully refundable up to 7 days before. Zero risk.</span>
-      </div>
-      <div class="hero-stats">
-        <div><div class="stat-num">8</div><div class="stat-label">Expert Speakers</div></div>
-        <div><div class="stat-num">120+</div><div class="stat-label">Attendees</div></div>
-        <div><div class="stat-num">9 Hours</div><div class="stat-label">Content &amp; Networking</div></div>
       </div>
     </div>
   </section>
@@ -406,11 +455,12 @@
     <div class="wrap problem-content">
       <span class="section-tag" style="color:#ff6b6b; background:rgba(255,107,107,0.12);">The Problem</span>
       <h2 class="rv">You're Drowning in Health Advice.<br/>Most of It Is <em>Wrong.</em></h2>
-      <p class="rv">Every week there's a new podcast episode, a new supplement stack, a new protocol. The biggest names in longevity are putting out thousands of hours of content:</p>
+      <p class="rv">Every day there's a new podcast episode, a new supplement stack, a new protocol. The biggest names in longevity are putting out thousands of hours of content:</p>
       <div class="names-row rv">
         <span class="name-tag">Bryan Johnson · Blueprint</span>
         <span class="name-tag">Andrew Huberman · Huberman Lab</span>
         <span class="name-tag">Peter Attia · Outlive</span>
+        <span class="name-tag">Gary Brecka · Ultimate Human</span>
         <span class="name-tag">Dave Asprey · Bulletproof</span>
         <span class="name-tag">David Sinclair · Lifespan</span>
         <span class="name-tag">Ben Greenfield</span>
@@ -454,7 +504,7 @@
       </div>
       <div class="guarantee-inline rv" style="max-width:580px; margin:24px auto 0;">
         <div class="shield">🛡️</div>
-        <span><strong>Zero Risk.</strong> All tickets fully refundable up to 7 days before. Plus: attend the first 3 hours — if it's not worth your time, speak with Sid before 1 PM and get 100% back. No questions asked.</span>
+        <span><strong>Zero Risk.</strong> All tickets fully refundable up to 7 days before. Plus: attend the first 3 hours — if it's not worth your time, speak with Sid before 1 PM and get 100% back.</span>
       </div>
     </div>
   </section>
@@ -502,22 +552,13 @@
         <div class="test-card rv">
           <p>"The speakers were world-class, the networking was incredible, and I left with an actual plan. I've already changed three habits that are making a real difference."</p>
           <div class="test-author">— Previous Attendee</div>
-          <div class="test-role">Los Angeles, CA</div>
+          <div class="test-role">Oceanside, CA</div>
         </div>
         <div class="test-card rv">
           <p>"I came skeptical. I left transformed. The satisfaction guarantee made it a no-brainer to try, and I'm so glad I did. Already bought my ticket for next year."</p>
           <div class="test-author">— Previous Attendee</div>
-          <div class="test-role">Scottsdale, AZ</div>
+          <div class="test-role">Pacific Beach, CA</div>
         </div>
-      </div>
-      <div class="credibility-bar rv">
-        <span style="font-size:0.75rem; color:var(--muted); margin-right:8px;">Our team has gathered insights from events featuring:</span>
-        <span class="cred-item">Bryan Johnson · Blueprint</span>
-        <span class="cred-item">Andrew Huberman</span>
-        <span class="cred-item">Peter Attia</span>
-        <span class="cred-item">Dave Asprey</span>
-        <span class="cred-item">David Sinclair</span>
-        <span class="cred-item">Ben Greenfield</span>
       </div>
     </div>
   </section>
@@ -601,20 +642,64 @@
     </div>
   </section>
 
+  <!-- FAILURE / STAKES (StoryBrand Element #6) -->
+  <section class="stakes">
+    <div class="wrap stakes-content">
+      <span class="section-tag" style="color:#ff6b6b; background:rgba(255,107,107,0.12);">What's at Stake</span>
+      <h2 class="rv">The Cost of Doing Nothing</h2>
+      <div class="stakes-list rv">
+        <div class="stakes-item"><div class="icon">⏳</div><span><strong>Another year of declining hormones</strong> — accumulating inflammation and missed opportunities to reverse the damage while it's still reversible</span></div>
+        <div class="stakes-item"><div class="icon">🔄</div><span><strong>Still following unqualified influencers</strong> — cycling through random supplement stacks and protocols that don't work because they weren't designed for you</span></div>
+        <div class="stakes-item"><div class="icon">📉</div><span><strong>Falling further behind</strong> — the science of longevity is moving fast in 2026 with breakthroughs in peptides, senolytics, and NAD+ protocols. The question is whether you're moving with it</span></div>
+        <div class="stakes-item"><div class="icon">🏝️</div><span><strong>Staying isolated</strong> — still trying to figure it out alone instead of connecting with 120+ people and 8 experts who could change your trajectory in a single conversation</span></div>
+      </div>
+      <p class="stakes-close rv">The experts in this room won't be available at these prices forever. And the connections you'll make with 120+ high performers? Those don't happen on a podcast.</p>
+    </div>
+  </section>
+
+  <!-- SUCCESS / TRANSFORMATION (StoryBrand Element #7) -->
+  <section class="success">
+    <div class="wrap success-content">
+      <span class="section-tag" style="color:#5ef0d0; background:rgba(94,240,208,0.12);">The Transformation</span>
+      <h2 class="rv">Picture This: June 20th, <em>6 PM</em></h2>
+      <p class="sub rv">You walk out of the venue and something feels different.</p>
+      <div class="success-grid rv">
+        <div class="success-item"><div class="check">✓</div><span>You have a clear, personalized 90-day health action roadmap</span></div>
+        <div class="success-item"><div class="check">✓</div><span>You understand your hormones, your gut, your cellular health — and what to do about each</span></div>
+        <div class="success-item"><div class="check">✓</div><span>You've made meaningful connections with people who share your values and your drive</span></div>
+        <div class="success-item"><div class="check">✓</div><span>You know exactly which protocols to start, which tests to order, and which habits to change first</span></div>
+        <div class="success-item"><div class="check">✓</div><span>You feel energized, focused, and genuinely excited about your health for the first time in years</span></div>
+        <div class="success-item"><div class="check">✓</div><span>You're part of a growing community committed to optimal living — not doing it alone anymore</span></div>
+      </div>
+      <p class="success-close rv">"Your health is your wealth and your freedom. It's time to invest in both."</p>
+      <a href="#" onclick="openTicket(); return false;" class="cta rv" style="margin-top:24px;">
+        Reserve My Seat
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- EVENT PHOTO -->
+  <div style="background: linear-gradient(180deg, #f0eeff 0%, #faf7ff 100%); padding: 60px 0 0; text-align:center;">
+    <div class="wrap rv" style="max-width:816px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 12px 40px rgba(74,63,138,0.12);">
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775790652/ohs_about_section_vctbtq.webp" alt="Optimal Health Summit community" style="width:100%; display:block;" />
+    </div>
+  </div>
+
   <!-- SPEAKERS -->
   <section class="speakers" id="speakers">
     <div class="wrap" style="text-align:center;">
       <span class="section-tag tag-purple">Speakers</span>
       <h2 class="section-heading rv">Who You'll Learn From</h2>
       <div class="speakers-row">
-        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_jill.jpg" alt="Jill Wheaton" loading="lazy" /></div></div><h3>Jill Wheaton</h3><div class="role">Tony Robbins Director of Biz Solutions</div><p class="bio">Bringing world-class business and peak performance strategies from the Tony Robbins organization.</p></div>
-        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_neville.png" alt="Dr. Neville Campbell" loading="lazy" /></div></div><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine, business, and elite athletic performance.</p></div>
-        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_nick.jpg" alt="Dr. Nick Delgado" loading="lazy" /></div></div><h3>Dr. Nick Delgado</h3><div class="role">Bestselling Author &amp; Performance Expert</div><p class="bio">Pioneering expert in hormones, longevity, and peak human performance with decades of research.</p></div>
-        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_chelsea.png" alt="Dr. Chelsea Grow" loading="lazy" /></div></div><h3>Dr. Chelsea Grow</h3><div class="role">Board Certified Neurologist</div><p class="bio">Specializing in brain health, cognitive performance, and neurological wellness strategies.</p></div>
-        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_joel.jpg" alt="Joel Huizenga" loading="lazy" /></div></div><h3>Joel Huizenga</h3><div class="role">CEO at EgaCeutical &amp; Longevity Scientist</div><p class="bio">Cutting-edge longevity science and breakthrough pharmaceutical solutions for age reversal.</p></div>
-        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_elena.jpg" alt="Dr. Elena Eustache" loading="lazy" /></div></div><h3>Dr. Elena Eustache</h3><div class="role">❤️ Love Doctor, Global Matchmaker, TV Host &amp; Bestselling Author</div><p class="bio">World-renowned expert in relationships, love, and the mind-body-soul connection.</p></div>
-        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_karolina.png" alt="Dr. Karolina Pras" loading="lazy" /></div></div><h3>Dr. Karolina Pras</h3><div class="role">Root-Cause Medicine</div><p class="bio">Functional medicine physician uncovering the root causes of chronic illness for lasting health transformation.</p></div>
-        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_surprise.jpg" alt="Surprise Speaker" loading="lazy" /></div></div><h3>Surprise Speaker</h3><div class="role">To Be Announced</div><p class="bio">A very special guest will be revealed at the event — you won't want to miss it!</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face,z_1.5/ohs_jill.jpg" alt="Jill Wheaton" loading="lazy" /></div></div><h3>Jill Wheaton</h3><div class="role">Tony Robbins Director of Biz Solutions</div><p class="bio">Bringing world-class business and peak performance strategies from the Tony Robbins organization.</p><p class="tagline">She'll show you how to perform at your absolute peak — in health and in life.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_neville.png" alt="Dr. Neville Campbell" loading="lazy" /></div></div><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine, business, and elite athletic performance.</p><p class="tagline">He'll prove that world-class health and world-class success aren't mutually exclusive.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_nick.jpg" alt="Dr. Nick Delgado" loading="lazy" /></div></div><h3>Dr. Nick Delgado</h3><div class="role">Bestselling Author &amp; Performance Expert</div><p class="bio">Pioneering expert in hormones, longevity, and peak human performance with decades of research.</p><p class="tagline">He'll help you finally understand your hormones — and what to actually do about them.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_chelsea.png" alt="Dr. Chelsea Grow" loading="lazy" /></div></div><h3>Dr. Chelsea Grow</h3><div class="role">Board Certified Neurologist</div><p class="bio">Specializing in brain health, cognitive performance, and neurological wellness strategies.</p><p class="tagline">She'll give you the brain health playbook — sharper focus, better memory, clearer thinking.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_joel.jpg" alt="Joel Huizenga" loading="lazy" /></div></div><h3>Joel Huizenga</h3><div class="role">CEO at EgaCeutical &amp; Longevity Scientist</div><p class="bio">Cutting-edge longevity science and breakthrough pharmaceutical solutions for age reversal.</p><p class="tagline">He'll reveal what's actually working right now in age reversal science.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face,z_1.5/ohs_elena.jpg" alt="Dr. Elena Eustache" loading="lazy" /></div></div><h3>Dr. Elena Eustache</h3><div class="role">❤️ Love Doctor, Global Matchmaker, TV Host &amp; Bestselling Author</div><p class="bio">World-renowned expert in relationships, love, and the mind-body-soul connection.</p><p class="tagline">She'll unlock the connection between your relationships, your happiness, and your health.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_karolina.png" alt="Dr. Karolina Pras" loading="lazy" /></div></div><h3>Dr. Karolina Pras</h3><div class="role">Root-Cause Medicine</div><p class="bio">Functional medicine physician uncovering the root causes of chronic illness for lasting health transformation.</p><p class="tagline">She'll help you stop treating symptoms and start fixing the root cause.</p></div>
+        <div class="sp-card rv"><div class="sp-photo"><div class="sp-photo-inner"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_180,h_180,c_fill,g_face/ohs_surprise.jpg" alt="Surprise Speaker" loading="lazy" /></div></div><h3>Surprise Speaker</h3><div class="role">To Be Announced</div><p class="bio">A very special guest will be revealed at the event — you won't want to miss it!</p><p class="tagline">Trust us — you'll want to be in the room for this one.</p></div>
       </div>
     </div>
   </section>
@@ -640,6 +725,16 @@
       <p class="rv" style="font-size:0.8rem; color:var(--muted); margin-top:28px;">Schedule subject to change. All registered attendees will receive final agenda by email.</p>
     </div>
   </section>
+
+  <!-- EVENT PHOTO - AFTER AGENDA -->
+  <div style="background: var(--white); padding: 0 0 40px; text-align:center;">
+    <div class="wrap rv" style="max-width:816px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.08); position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; padding:18px 24px; background:linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%); z-index:2;">
+        <p style="font-family:var(--font-head); color:#fff; font-size:1.2rem; margin:0; text-shadow:0 2px 8px rgba(0,0,0,0.4);">Networking with High Performers</p>
+      </div>
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775793097/11_itcqjt.webp" alt="Networking with top performers" style="width:100%; display:block;" />
+    </div>
+  </div>
 
   <!-- VENDOR -->
   <section class="vendor" id="expo">
@@ -675,6 +770,39 @@
       </div>
     </div>
   </section>
+
+  <!-- FOUNDER STORY / GUIDE (StoryBrand Element #3 — Placeholder for Sid's story) -->
+  <section class="guide">
+    <div class="wrap guide-inner">
+      <span class="section-tag tag-purple">Why This Event Exists</span>
+      <h2 class="rv">A Message From the Founder</h2>
+      <p class="rv"><em>[Sid — your story will go here. Answer the 7 questions I asked you and I'll craft this into a compelling Epiphany Bridge narrative. This is the emotional engine of the page — the section that transforms OHS from "an event" into "a mission." For now, here's a placeholder:]</em></p>
+      <p class="rv">Like many of you, I spent years reading, researching, and trying every health trend that came along. I wanted to feel strong, sharp, and fully alive — not just "okay." But the advice was contradictory, the "experts" online were often unqualified, and the real knowledge was locked behind $5,000–$10,000 retreats and private clinics.</p>
+      <p class="rv">So I started going to those events myself. I sat in rooms with Bryan Johnson, Andrew Huberman, Peter Attia, Dave Asprey, David Sinclair, and Ben Greenfield. I collected data, took notes, and learned what actually works — the protocols, the science, the strategies that move the needle.</p>
+      <p class="rv">And then I asked a simple question: <em>Why does this information have to be so expensive and inaccessible?</em></p>
+      <p class="rv">That's why I created the Optimal Health Summit — so that anyone, not just the ultra-wealthy, can sit in a room with board-certified physicians, longevity scientists, and peak performance coaches, ask real questions, and walk away with a real plan. Last year we sold out. This year, we've doubled the venue. The mission is the same: <strong>make world-class health knowledge accessible to everyone.</strong></p>
+      <p class="rv">Because at the end of the day, <em>your health is your wealth and your freedom.</em> Without it, nothing else matters.</p>
+      <div class="guide-sig rv">— Sid, Founder of Optimal Health Summit</div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET / TRANSITIONAL CTA -->
+  <section class="leadmag">
+    <div class="wrap">
+      <h2 class="rv">Not Ready to Commit? Start Here.</h2>
+      <p class="rv">Get the free <strong>2026 Optimal Health Starter Guide</strong> — 5 science-backed protocols you can start today, curated from the same research behind this summit.</p>
+      <div class="leadmag-form rv">
+        <input class="leadmag-input" type="email" placeholder="Enter your email" />
+        <button class="leadmag-btn" onclick="this.textContent='✓ Sent!'; this.style.background='#10b981'; setTimeout(()=>{this.textContent='Get Free Guide'; this.style.background='';}, 3000);">Get Free Guide</button>
+      </div>
+      <p class="fine rv">No spam. Unsubscribe anytime. We'll also send you speaker announcements and event updates.</p>
+    </div>
+  </section>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    <p>⚡ Early pricing won't last — ticket prices increase as June 20th approaches. <strong>Lock in the lowest rate today.</strong></p>
+  </div>
 
   <!-- FINAL CTA -->
   <section class="final">
@@ -716,6 +844,16 @@
       </div>
     </div>
   </section>
+
+  <!-- EVENT PHOTO - BOTTOM -->
+  <div style="background: #12102e; padding: 40px 0; text-align:center;">
+    <div class="wrap rv" style="max-width:816px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.3); position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; padding:18px 24px; background:linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%); z-index:2;">
+        <p style="font-family:var(--font-head); color:#fff; font-size:1.2rem; margin:0; text-shadow:0 2px 8px rgba(0,0,0,0.4);">After-Event Networking Social</p>
+      </div>
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775793098/networking-_gqkvuo.webp" alt="After-event networking social" style="width:100%; display:block;" />
+    </div>
+  </div>
 
   <!-- SOCIAL BAR -->
   <div class="social-bar">
@@ -780,7 +918,7 @@
         <p style="color:#5ef0d0; font-size:0.85rem; font-weight:700; margin:6px 0;">✅ Code automatically copied to your clipboard!</p>
         <button onclick="copyDiscountCode()" id="copyBtn" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:8px 20px; border-radius:50px; cursor:pointer; font-size:0.85rem; font-weight:700; margin-bottom:12px; font-family:var(--font-body);">📋 Copy Again</button>
         <p>Paste code <strong>HEALTH10</strong> at checkout for 10% off.<br/>See you June 20!</p>
-        <a href="https://luma.com/bbp4hd1g" target="_blank" rel="noopener" onclick="closeDiscount()" style="display:inline-block; margin-top:14px; background:var(--accent); color:#fff; font-weight:700; padding:12px 28px; border-radius:50px; font-size:0.95rem; text-decoration:none;">🎟️ Get Tickets Now →</a>
+        <a href="#" onclick="closeDiscount(); setTimeout(function(){ openTicket(); }, 300); return false;" style="display:inline-block; margin-top:14px; background:var(--accent); color:#fff; font-weight:700; padding:12px 28px; border-radius:50px; font-size:0.95rem; text-decoration:none; cursor:pointer;">🎟️ Get Tickets Now →</a>
       </div>
     </div>
   </div>
@@ -1032,7 +1170,7 @@
 
     // Show discount popup after 5 seconds (once per session)
     if (!sessionStorage.getItem('discountSeen')) {
-      setTimeout(() => openOverlay('discountModal'), 5000);
+      setTimeout(() => openOverlay('discountModal'), 20000);
     }
 
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
