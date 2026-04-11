@@ -285,15 +285,15 @@
 
 ```
 /* PROBLEM SECTION */
-.problem { background: linear-gradient(160deg, #1a0a0a 0%, #2a1020 50%, #1a0a2a 100%); padding: 80px 0; position: relative; overflow: hidden; }
-.problem::before { content: ''; position: absolute; top: -20%; right: -10%; width: 40vw; height: 40vw; border-radius: 50%; background: radial-gradient(circle, rgba(220,50,50,0.06), transparent 70%); }
+.problem { background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%); padding: 80px 0; position: relative; overflow: hidden; }
+.problem::before { content: ''; position: absolute; top: -20%; right: -10%; width: 40vw; height: 40vw; border-radius: 50%; background: radial-gradient(circle, rgba(232,145,58,0.06), transparent 70%); }
 .problem-content { max-width: 680px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
 .problem h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3.5vw, 2.3rem); color: #fff; margin-bottom: 28px; line-height: 1.2; }
-.problem h2 em { color: #ff6b6b; font-style: italic; }
-.problem p { color: rgba(255,255,255,0.6); font-size: 0.97rem; line-height: 1.85; margin-bottom: 20px; }
-.problem p strong { color: rgba(255,255,255,0.9); }
+.problem h2 em { color: var(--accent); font-style: italic; }
+.problem p { color: rgba(255,255,255,0.8); font-size: 0.97rem; line-height: 1.85; margin-bottom: 20px; }
+.problem p strong { color: #fff; }
 .problem .names-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 24px 0; }
-.problem .name-tag { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; color: rgba(255,255,255,0.55); font-weight: 600; letter-spacing: 0.5px; }
+.problem .name-tag { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; color: rgba(255,255,255,0.85); font-weight: 600; letter-spacing: 0.5px; }
 .problem .solution-line { color: var(--accent); font-weight: 700; font-size: 1.05rem; margin-top: 28px; line-height: 1.7; }
 
 /* VALUE STACK */
@@ -496,7 +496,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="problem">
     <div class="wrap problem-content">
-      <span class="section-tag" style="color:#ff6b6b; background:rgba(255,107,107,0.12);">The Problem</span>
+      <span class="section-tag tag-orange">The Problem</span>
       <h2 class="rv">You Have Access to More Health Advice Than Ever.<br/>So Why Aren't You Feeling <em>Better?</em></h2>
       <p class="rv">Every day there's a new podcast episode, a new supplement stack, a new protocol. The biggest names in longevity are putting out thousands of hours of content:</p>
       <div class="names-row rv">
