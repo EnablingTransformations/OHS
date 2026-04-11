@@ -159,6 +159,12 @@
     .sp-card .role { font-size: 0.75rem; color: var(--accent); font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
     .sp-card .bio { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
     .sp-card .tagline { font-size: 0.75rem; color: var(--primary); font-weight: 600; margin-top: 8px; font-style: italic; line-height: 1.4; }
+    .speakers-wrap { position: relative; }
+    .speakers-side-nav { position: absolute; top: 50%; transform: translateY(-70%); width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--primary); background: rgba(255,255,255,0.95); color: var(--primary); font-size: 1.3rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; z-index: 5; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .speakers-side-nav:hover { background: var(--primary); color: #fff; }
+    .speakers-side-nav.left { left: -24px; }
+    .speakers-side-nav.right { right: -24px; }
+    @media (max-width: 768px) { .speakers-side-nav.left { left: 4px; } .speakers-side-nav.right { right: 4px; } .speakers-side-nav { width: 36px; height: 36px; font-size: 1rem; } }
     .speakers-nav { display: flex; justify-content: center; gap: 12px; margin-top: 24px; }
     .speakers-nav button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-size: 1.2rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
     .speakers-nav button:hover { background: var(--primary); color: #fff; }
@@ -450,7 +456,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#expo" onclick="closeNav()">Expo</a>
       <a href="#media" onclick="closeNav()">Media</a>
       <a href="#" onclick="closeNav(); openModal(); return false;">Contact</a>
-      <a href="#" onclick="openTicket(); return false;" class="nav-cta" onclick="closeNav()">Get Tickets</a>
+      <a href="#" onclick="openTicket(); return false;" class="nav-cta" onclick="closeNav()">Reserve Seat</a>
     </div>
   </nav>
 
@@ -463,7 +469,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div style="flex:1;"></div>
     <div class="hero-bottom" style="padding-bottom:40px; max-width:1060px; margin:0 auto;">
-      <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — delivering the same cutting-edge protocols discussed at events led by Bryan Johnson, Andrew Huberman, Peter Attia, Gary Brecka, Dave Asprey, and David Sinclair. <strong style="color:var(--accent);">Except you don't need $5,000 or a flight across the country.</strong></p>
+      <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — delivering the same cutting-edge protocols discussed at events led by Tony Robbins, Bryan Johnson, Andrew Huberman, Peter Attia, Gary Brecka, Dave Asprey, and David Sinclair. <strong style="color:var(--accent);">Except you don't need $5,000 or a flight across the country.</strong></p>
       <div style="margin-top:400px; margin-bottom:16px;">
         <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.15rem;">📅 JUNE 20, 2026 · 9 AM – 6 PM</div><br/>
         <div class="hero-badge" style="display:inline-flex; background:none; border:none; color:#fff; font-size:1.15rem;">📍 UC San Diego Park &amp; Market, San Diego, CA</div>
@@ -484,6 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="rv">You're Drowning in Health Advice.<br/>Most of It Is <em>Wrong.</em></h2>
       <p class="rv">Every day there's a new podcast episode, a new supplement stack, a new protocol. The biggest names in longevity are putting out thousands of hours of content:</p>
       <div class="names-row rv">
+        <span class="name-tag">Tony Robbins · Life Force</span>
         <span class="name-tag">Bryan Johnson · Blueprint</span>
         <span class="name-tag">Andrew Huberman · Huberman Lab</span>
         <span class="name-tag">Peter Attia · Outlive</span>
@@ -505,19 +512,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="section-heading-light rv">Everything You Get for One Ticket</h2>
       <p class="rv" style="max-width:600px; margin:-20px auto 36px; color:rgba(255,255,255,0.5); font-size:0.95rem; line-height:1.7;">Insights distilled from $50,000+ worth of conferences, research, and expert access — brought to you in a single day.</p>
       <div class="vstack-card rv">
-        <div class="vstack-row"><div class="vstack-label"><strong>8 expert presentations</strong> from board-certified physicians, longevity scientists, bestselling authors &amp; peak performance coaches</div><div class="vstack-val">$2,000+</div></div>
+        <div class="vstack-row"><div class="vstack-label"><strong>8 expert keynotes</strong> from board-certified physicians, longevity scientists, bestselling authors &amp; peak performance coaches</div><div class="vstack-val">$2,000+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Full-day immersive experience</strong> (9 AM – 6 PM) curated from 20+ major health &amp; longevity conferences</div><div class="vstack-val">$500+</div></div>
-        <div class="vstack-row"><div class="vstack-label"><strong>Nutritious breakfast</strong>, energizing lunch &amp; healthy snacks all day</div><div class="vstack-val">$75+</div></div>
+        <div class="vstack-row"><div class="vstack-label"><strong>Nutritious breakfast</strong>, <strong>energizing lunch</strong> &amp; healthy snacks all day</div><div class="vstack-val">$75+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Expo hall</strong> with hands-on wellness demos, cutting-edge products &amp; practitioner services</div><div class="vstack-val">$200+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Networking</strong> with 120+ high performers, entrepreneurs, health professionals &amp; like-minded singles</div><div class="vstack-val">Priceless</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>After-event social mixer</strong> at a nearby venue</div><div class="vstack-val">$50+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Your 90-Day Health Action Roadmap</strong> — a take-home framework to implement immediately</div><div class="vstack-val">$250+</div></div>
-        <div class="vstack-row"><div class="vstack-label"><strong>Metabolic Testing</strong> (typically $150+ at a clinic) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$150+</div></div>
-        <div class="vstack-row"><div class="vstack-label"><strong>PCM Blood Testing</strong> (typically $200+ at a lab) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$200+</div></div>
+        <div class="vstack-row"><div class="vstack-label"><strong>Metabolic Testing</strong> (typically $250+ at a clinic) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$250+</div></div>
+        <div class="vstack-row"><div class="vstack-label"><strong>PCM Blood Testing</strong> (typically $275+ at a lab) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$275+</div></div>
+        <div class="vstack-row"><div class="vstack-label"><strong>Microbiome Test Assessment Kit</strong> (at a $100 discount) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$100+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Priority seating + speaker meet &amp; greet</strong> <span class="vstack-vip">VIP</span></div><div class="vstack-val">$300+</div></div>
         <div class="vstack-total">
           <div style="color:rgba(255,255,255,0.4); font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px;">Total Value</div>
-          <div class="big-val">$3,725+</div>
+          <div class="big-val">$4,000+</div>
           <div class="sub-val">What you'd pay attending individual events &amp; clinics</div>
         </div>
         <div class="vstack-price">
@@ -541,6 +549,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap" style="max-width:780px;">
       <p class="value-intro rv"><em>This event is for anyone who refuses to settle</em> — from wellness-curious beginners to experienced biohackers, health professionals, entrepreneurs, and executives who want to live and perform at their highest level.</p>
       <p class="value-intro rv">Learn and connect with <strong>120+ high performers, athletes, singles 😍 and experts</strong> and gain new practical insights on how to <strong>OPTIMIZE YOUR PRECIOUS HEALTH!</strong></p>
+    </div>
+  </section>
+
+  <!-- EVENT PHOTO -->
+  <div style="background: linear-gradient(180deg, #f0eeff 0%, #faf7ff 100%); padding: 60px 0 0; text-align:center;">
+    <div class="wrap rv" style="max-width:816px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 12px 40px rgba(74,63,138,0.12);">
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775790652/ohs_about_section_vctbtq.webp" alt="Optimal Health Summit community" style="width:100%; display:block;" />
+    </div>
+  </div>
+
+  <!-- SPEAKERS -->
+  <section class="speakers" id="speakers">
+    <div class="wrap" style="text-align:center;">
+      <span class="section-tag tag-purple">Speakers</span>
+      <h2 class="section-heading rv">Who You'll Learn From</h2>
+      <div class="speakers-wrap">
+        <button class="speakers-side-nav left" onclick="document.getElementById('speakersSlider').scrollBy({left:-280,behavior:'smooth'})" aria-label="Previous">←</button>
+        <button class="speakers-side-nav right" onclick="document.getElementById('speakersSlider').scrollBy({left:280,behavior:'smooth'})" aria-label="Next">→</button>
+        <div class="speakers-slider" id="speakersSlider">
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883290/Jill_p_yb1vsi.png" alt="Jill Wheaton" loading="lazy" /></div><div class="sp-card-body"><h3>Jill Wheaton</h3><div class="role">Tony Robbins Director of Biz Solutions</div><p class="bio">Bringing world-class business and peak performance strategies from the Tony Robbins organization.</p><p class="tagline">She'll show you how to perform at your absolute peak — in health and in life.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_neville.png" alt="Dr. Neville Campbell" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine, business, and elite athletic performance.</p><p class="tagline">He'll prove that world-class health and world-class success aren't mutually exclusive.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883202/nick_p_j09wkf.png" alt="Dr. Nick Delgado" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Nick Delgado</h3><div class="role">Bestselling Author &amp; Performance Expert</div><p class="bio">Pioneering expert in hormones, longevity, and peak human performance with decades of research.</p><p class="tagline">He'll help you finally understand your hormones — and what to actually do about them.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883528/chel_p_fuvxl4.png" alt="Dr. Chelsea Grow" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Chelsea Grow</h3><div class="role">Board Certified Neurologist</div><p class="bio">Specializing in brain health, cognitive performance, and neurological wellness strategies.</p><p class="tagline">She'll give you the brain health playbook — sharper focus, better memory, clearer thinking.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_joel.jpg" alt="Joel Huizenga" loading="lazy" /></div><div class="sp-card-body"><h3>Joel Huizenga</h3><div class="role">CEO at EgaCeutical &amp; Longevity Scientist</div><p class="bio">Cutting-edge longevity science and breakthrough pharmaceutical solutions for age reversal.</p><p class="tagline">He'll reveal what's actually working right now in age reversal science.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883044/Elena_p_qtpql8.png" alt="Dr. Elena Eustache" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Elena Eustache</h3><div class="role">❤️ Love Doctor, Global Matchmaker, TV Host &amp; Bestselling Author</div><p class="bio">World-renowned expert in relationships, love, and the mind-body-soul connection.</p><p class="tagline">She'll unlock the connection between your relationships, your happiness, and your health.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_karolina.png" alt="Dr. Karolina Pras" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Karolina Pras</h3><div class="role">Root-Cause Medicine</div><p class="bio">Functional medicine physician uncovering the root causes of chronic illness for lasting health transformation.</p><p class="tagline">She'll help you stop treating symptoms and start fixing the root cause.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_surprise.jpg" alt="Surprise Speaker" loading="lazy" /></div><div class="sp-card-body"><h3>Surprise Speaker</h3><div class="role">To Be Announced</div><p class="bio">A very special guest will be revealed at the event — you won't want to miss it!</p><p class="tagline">Trust us — you'll want to be in the room for this one.</p></div></div>
+      </div>
+      <div class="speakers-nav">
+        <button onclick="document.getElementById('speakersSlider').scrollBy({left:-280,behavior:'smooth'})" aria-label="Previous">←</button>
+        <button onclick="document.getElementById('speakersSlider').scrollBy({left:280,behavior:'smooth'})" aria-label="Next">→</button>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="value">
+    <div class="wrap" style="max-width:780px;">
       <div class="card rv">
         <h3>Your Ticket Includes:</h3>
         <div class="card-grid">
@@ -652,35 +699,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- EVENT PHOTO -->
-  <div style="background: linear-gradient(180deg, #f0eeff 0%, #faf7ff 100%); padding: 60px 0 0; text-align:center;">
-    <div class="wrap rv" style="max-width:816px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 12px 40px rgba(74,63,138,0.12);">
-      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775790652/ohs_about_section_vctbtq.webp" alt="Optimal Health Summit community" style="width:100%; display:block;" />
-    </div>
-  </div>
-
-  <!-- SPEAKERS -->
-  <section class="speakers" id="speakers">
-    <div class="wrap" style="text-align:center;">
-      <span class="section-tag tag-purple">Speakers</span>
-      <h2 class="section-heading rv">Who You'll Learn From</h2>
-      <div class="speakers-slider" id="speakersSlider">
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face,z_1.9/ohs_jill.jpg" alt="Jill Wheaton" loading="lazy" /></div><div class="sp-card-body"><h3>Jill Wheaton</h3><div class="role">Tony Robbins Director of Biz Solutions</div><p class="bio">Bringing world-class business and peak performance strategies from the Tony Robbins organization.</p><p class="tagline">She'll show you how to perform at your absolute peak — in health and in life.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_neville.png" alt="Dr. Neville Campbell" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine, business, and elite athletic performance.</p><p class="tagline">He'll prove that world-class health and world-class success aren't mutually exclusive.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_nick.jpg" alt="Dr. Nick Delgado" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Nick Delgado</h3><div class="role">Bestselling Author &amp; Performance Expert</div><p class="bio">Pioneering expert in hormones, longevity, and peak human performance with decades of research.</p><p class="tagline">He'll help you finally understand your hormones — and what to actually do about them.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_chelsea.png" alt="Dr. Chelsea Grow" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Chelsea Grow</h3><div class="role">Board Certified Neurologist</div><p class="bio">Specializing in brain health, cognitive performance, and neurological wellness strategies.</p><p class="tagline">She'll give you the brain health playbook — sharper focus, better memory, clearer thinking.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_joel.jpg" alt="Joel Huizenga" loading="lazy" /></div><div class="sp-card-body"><h3>Joel Huizenga</h3><div class="role">CEO at EgaCeutical &amp; Longevity Scientist</div><p class="bio">Cutting-edge longevity science and breakthrough pharmaceutical solutions for age reversal.</p><p class="tagline">He'll reveal what's actually working right now in age reversal science.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face,z_1.9/ohs_elena.jpg" alt="Dr. Elena Eustache" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Elena Eustache</h3><div class="role">❤️ Love Doctor, Global Matchmaker, TV Host &amp; Bestselling Author</div><p class="bio">World-renowned expert in relationships, love, and the mind-body-soul connection.</p><p class="tagline">She'll unlock the connection between your relationships, your happiness, and your health.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_karolina.png" alt="Dr. Karolina Pras" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Karolina Pras</h3><div class="role">Root-Cause Medicine</div><p class="bio">Functional medicine physician uncovering the root causes of chronic illness for lasting health transformation.</p><p class="tagline">She'll help you stop treating symptoms and start fixing the root cause.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_surprise.jpg" alt="Surprise Speaker" loading="lazy" /></div><div class="sp-card-body"><h3>Surprise Speaker</h3><div class="role">To Be Announced</div><p class="bio">A very special guest will be revealed at the event — you won't want to miss it!</p><p class="tagline">Trust us — you'll want to be in the room for this one.</p></div></div>
-      </div>
-      <div class="speakers-nav">
-        <button onclick="document.getElementById('speakersSlider').scrollBy({left:-280,behavior:'smooth'})" aria-label="Previous">←</button>
-        <button onclick="document.getElementById('speakersSlider').scrollBy({left:280,behavior:'smooth'})" aria-label="Next">→</button>
-      </div>
-    </div>
-  </section>
-
   <!-- SCHEDULE -->
   <section class="schedule" id="schedule">
     <div class="wrap" style="text-align:center;">
@@ -709,7 +727,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="position:absolute; top:0; left:0; right:0; padding:18px 24px; background:linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%); z-index:2;">
         <p style="font-family:var(--font-head); color:#fff; font-size:1.2rem; margin:0; text-shadow:0 2px 8px rgba(0,0,0,0.4);">Networking with High Performers</p>
       </div>
-      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775793097/11_itcqjt.webp" alt="Networking with top performers" style="width:100%; display:block;" />
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775793097/11_itcqjt.webp" alt="Networking with High Performers" style="width:100%; display:block;" />
     </div>
   </div>
 
@@ -729,6 +747,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="rv" style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:20px;">*Vendor services are provided directly by practitioners. Some services may require payment for non-VIP ticket holders.</p>
     </div>
   </section>
+
+  <!-- VENDOR LOUNGE PHOTO -->
+  <div style="background: linear-gradient(160deg, #2a1a0a 0%, #3d2510 50%, #1a1530 100%); padding: 0 0 40px; text-align:center;">
+    <div class="wrap rv" style="max-width:816px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.3);">
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775880566/vendor-lounge-Lnf3VgZrMeCcZntU8h3i6k_cmbuag.webp" alt="Vendor Experience Lounge" style="width:100%; display:block;" />
+    </div>
+  </div>
 
   <!-- MEDIA -->
   <section class="media" id="media">
@@ -754,7 +779,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="section-tag tag-purple">Why This Event Exists</span>
       <h2 class="rv">A Message From the Founder</h2>
       <p class="rv">Like many of you, I spent years reading, researching, and trying every health trend that came along. I wanted to feel strong, sharp, and fully alive — not just "okay." But the advice was contradictory, the "experts" online were often unqualified, and the real knowledge was locked behind $5,000–$10,000 retreats and private clinics.</p>
-      <p class="rv">So I started going to those events myself. I sat in rooms with Bryan Johnson, Andrew Huberman, Peter Attia, Dave Asprey, David Sinclair, and Ben Greenfield. I collected data, took notes, and learned what actually works — the protocols, the science, the strategies that move the needle.</p>
+      <p class="rv">So I started going to those events myself. I sat in rooms with Tony Robbins, Bryan Johnson, Andrew Huberman, Peter Attia, Dave Asprey, David Sinclair, and Ben Greenfield. I collected data, took notes, and learned what actually works — the protocols, the science, the strategies that move the needle.</p>
       <p class="rv">And then I asked a simple question: <em>Why does this information have to be so expensive and inaccessible?</em></p>
       <p class="rv">That's why I created the Optimal Health Summit — so that anyone, not just the ultra-wealthy, can sit in a room with board-certified physicians, longevity scientists, and peak performance coaches, ask real questions, and walk away with a real plan. Last year we sold out. This year, we've doubled the venue. The mission is the same: <strong>make world-class health knowledge accessible to everyone.</strong></p>
       <p class="rv">Because at the end of the day, <em>your health is your wealth and your freedom.</em> Without it, nothing else matters.</p>
@@ -820,8 +845,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-list rv">
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Who is this event for?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Anyone who wants to take control of their health — from wellness-curious beginners to experienced biohackers, health professionals, entrepreneurs, and executives. If you follow people like Bryan Johnson, Andrew Huberman, Peter Attia, Dave Asprey, or David Sinclair and want that caliber of knowledge in one accessible, affordable day — this is for you.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Who is this event NOT for?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>This isn't a medical consultation or a substitute for working with your doctor. It's also not a passive lecture series — it's an immersive, high-energy day for people who are ready to take action on their health.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the difference between General Admission and VIP?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Both include all presentations, meals, expo access, and networking. VIP adds metabolic testing, PCM blood testing, priority seating, and a speaker meet-and-greet.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What if I buy a ticket and can't make it?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>All tickets are fully refundable up to 7 days before the event. No questions asked.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the difference between General Admission and VIP?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Both include all keynotes, meals, expo access, and networking. VIP adds metabolic testing, PCM blood testing, a microbiome test assessment kit at a discount, priority seating, and a speaker meet-and-greet.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What if I buy a ticket and can't make it?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>All tickets are fully refundable up to 7 days before the event.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the 100% Satisfaction Guarantee?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Check in on time and attend at least the first 3 hours. If you don't feel the event is worth your time, speak with Sid (the host) in person before 1 PM and receive a full refund. We're that confident this day will change your life.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Is parking available?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Yes — free or discounted parking is available at the venue.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What about food and dietary restrictions?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Breakfast, lunch, and snacks are included with every ticket. We accommodate common dietary needs — please note any restrictions when you register.</p></div></div>
@@ -846,7 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="leadmag">
     <div class="wrap">
       <h2 class="rv">Not Ready to Commit? Start Here.</h2>
-      <p class="rv">Get the free <strong>Top 10 Biohacks from the World's Leading Longevity Experts</strong> — the science-backed protocols endorsed by Bryan Johnson, Huberman, Attia, Brecka, Asprey, Sinclair &amp; Greenfield. Start today.</p>
+      <p class="rv">Get the <strong>Top 10 Biohacks from the World's Leading Longevity Experts</strong> — the science-backed protocols endorsed by Bryan Johnson, Huberman, Attia, Brecka, Asprey, Sinclair &amp; Greenfield. Start today.</p>
       <div class="leadmag-form rv">
         <input class="leadmag-input" id="leadmag-name" type="text" placeholder="Your first name" />
         <input class="leadmag-input" id="leadmag-email" type="email" placeholder="Your email address" />
@@ -1245,7 +1270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Show discount popup after 5 seconds (once per session)
     if (!sessionStorage.getItem('discountSeen')) {
-      setTimeout(() => openOverlay('discountModal'), 20000);
+      setTimeout(() => openOverlay('discountModal'), 28000);
     }
 
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
