@@ -236,7 +236,7 @@
 .social-bar { background: #1e1b4b; border-top: 1px solid rgba(167,139,250,0.2); padding: 36px 0; text-align: center; }
 .social-bar p { color: rgba(255,255,255,0.7); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
 .social-icons { display: flex; justify-content: center; gap: 32px; align-items: center; }
-.footer { background: #12102e; border-top: 1px solid rgba(167,139,250,0.15); padding: 28px 0 60px; }
+.footer { background: #12102e; border-top: 1px solid rgba(167,139,250,0.15); padding: 28px 0 100px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 .footer-text { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
 .footer-links { display: flex; gap: 20px; list-style: none; }
@@ -412,7 +412,8 @@
 .sticky-cta { display: none; }
 @media (max-width: 768px) {
   .sticky-cta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: rgba(15,15,42,0.97); backdrop-filter: blur(10px); padding: 12px 20px; justify-content: center; align-items: center; border-top: 1px solid rgba(232,145,58,0.3); box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
-  .sticky-cta .cta { font-size: 0.92rem; padding: 12px 28px; margin: 0; }
+  .sticky-cta .cta { font-size: 0.92rem; padding: 12px 28px; margin: 0; background: var(--accent); color: var(--dark); font-weight: 700; box-shadow: 0 4px 18px rgba(232,145,58,0.3); }
+  .sticky-cta .cta:hover { background: #d6802e; }
 }
 
 /* FAQ */
@@ -619,7 +620,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div style="color:#fff; font-family:var(--font-head); font-size:1.6rem; margin-bottom:8px;">General Admission $97 · VIP $247</div>
           <div style="color:#ff6b6b; font-size:0.88rem; font-weight:700;">⚠️ Price increases on April 25th — lock in this rate now</div>
           <a href="#" onclick="openTicket(); return false;" class="cta" style="font-size:1.05rem; padding:14px 36px;">
-            Reserve My Seat — See Pricing
+            Reserve My Seat
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
