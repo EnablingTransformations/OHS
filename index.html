@@ -204,6 +204,7 @@
 
     /* MEDIA */
     .media { padding: 80px 0; background: linear-gradient(160deg, #090920 0%, #12103a 60%, #1a1050 100%); }
+    .shorts-carousel::-webkit-scrollbar { display: none; }
     .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .vid-card { border-radius: 16px; overflow: hidden; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; }
     .vid-card:hover { border-color: rgba(232,145,58,0.3); transform: translateY(-3px); }
@@ -833,9 +834,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap" style="text-align:center;">
       <span class="section-tag tag-orange">Previous Event</span>
       <h2 class="section-heading-light rv">Experience the Energy</h2>
-      <div class="media-grid">
-        <div class="vid-card rv"><div class="vid-embed" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/wUlACBm5j4A?autoplay=1\' title=\'Summit Highlights Reel\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'" style="cursor:pointer; background:url('https://img.youtube.com/vi/wUlACBm5j4A/hqdefault.jpg') center/cover no-repeat; position:relative;"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3);"><svg width="60" height="60" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div><div class="vid-body"></div></div>
-        <div class="vid-card rv"><div class="vid-embed" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/HsfhvVdIOrw?autoplay=1\' title=\'Video 2\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'" style="cursor:pointer; background:url('https://img.youtube.com/vi/HsfhvVdIOrw/hqdefault.jpg') center/cover no-repeat; position:relative;"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3);"><svg width="60" height="60" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div><div class="vid-body"></div></div>
+      <div style="position:relative;">
+        <div class="shorts-carousel" id="shortsCarousel" style="display:flex; gap:16px; overflow-x:auto; scroll-behavior:smooth; padding:10px 0; scrollbar-width:none; -ms-overflow-style:none;">
+          <div class="short-card rv" style="flex:0 0 220px;">
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/FOwUNelNqS0?autoplay=1\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'">
+              <img src="https://img.youtube.com/vi/FOwUNelNqS0/0.jpg" alt="Summit Short 1" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
+            </div>
+          </div>
+          <div class="short-card rv" style="flex:0 0 220px;">
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/EBCOuJ3eZg8?autoplay=1\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'">
+              <img src="https://img.youtube.com/vi/EBCOuJ3eZg8/0.jpg" alt="Summit Short 2" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
+            </div>
+          </div>
+          <div class="short-card rv" style="flex:0 0 220px;">
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/KiT6OZwirs8?autoplay=1\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'">
+              <img src="https://img.youtube.com/vi/KiT6OZwirs8/0.jpg" alt="Summit Short 3" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
+            </div>
+          </div>
+          <div class="short-card rv" style="flex:0 0 220px;">
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/lAy-nO-kcxs?autoplay=1\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'">
+              <img src="https://img.youtube.com/vi/lAy-nO-kcxs/0.jpg" alt="Summit Short 4" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
+            </div>
+          </div>
+          <div class="short-card rv" style="flex:0 0 220px;">
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/0cfgGXQGQVc?autoplay=1\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'">
+              <img src="https://img.youtube.com/vi/0cfgGXQGQVc/0.jpg" alt="Summit Short 5" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <button onclick="document.getElementById('shortsCarousel').scrollBy({left:-240,behavior:'smooth'})" style="position:absolute;left:-16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);z-index:3;" aria-label="Previous">←</button>
+        <button onclick="document.getElementById('shortsCarousel').scrollBy({left:240,behavior:'smooth'})" style="position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);z-index:3;" aria-label="Next">→</button>
       </div>
     </div>
   </section>
