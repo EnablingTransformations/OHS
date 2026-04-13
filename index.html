@@ -317,7 +317,7 @@
 .vstack-vip { background: rgba(232,145,58,0.08); border-radius: 10px; padding: 2px 8px; margin-left: 4px; font-size: 0.68rem; color: var(--accent); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; vertical-align: middle; }
 .vstack-total { border-top: 2px solid var(--accent); padding-top: 20px; margin-top: 10px; text-align: center; }
 .vstack-total .big-val { font-family: var(--font-head); font-size: 2.2rem; color: var(--accent); }
-.vstack-total .sub-val { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 4px; text-decoration: line-through; }
+.vstack-total .sub-val { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-top: 4px; text-decoration: line-through; }
 .vstack-price { text-align: center; margin-top: 20px; }
 .vstack-price .actual { font-family: var(--font-head); font-size: 1.8rem; color: #fff; }
 .vstack-price .note { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
@@ -343,15 +343,24 @@
 
 /* TESTIMONIALS */
 .testimonials { background: linear-gradient(135deg, #f8f6ff, #faf7ff); padding: 80px 0; }
-.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
-.test-card { background: var(--white); border-radius: 18px; padding: 28px 24px; box-shadow: 0 4px 20px rgba(74,63,138,0.06); border: 1px solid rgba(74,63,138,0.06); position: relative; }
+.test-slider-wrap { position: relative; }
+.test-slider { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 0 20px 20px; scrollbar-width: thin; scrollbar-color: var(--primary) transparent; }
+.test-slider::-webkit-scrollbar { height: 6px; }
+.test-slider::-webkit-scrollbar-track { background: transparent; }
+.test-slider::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+.test-card { flex: 0 0 320px; scroll-snap-align: start; background: var(--white); border-radius: 18px; padding: 28px 24px; box-shadow: 0 4px 20px rgba(74,63,138,0.06); border: 1px solid rgba(74,63,138,0.06); position: relative; }
+.test-side-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--primary); background: rgba(255,255,255,0.95); color: var(--primary); font-size: 1.2rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; z-index: 5; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.test-side-nav:hover { background: var(--primary); color: #fff; }
+.test-side-nav.left { left: -22px; }
+.test-side-nav.right { right: -22px; }
+@media (max-width: 768px) { .test-side-nav.left { left: 4px; } .test-side-nav.right { right: 4px; } .test-side-nav { width: 36px; height: 36px; font-size: 1rem; } }
 .test-card::before { content: '"'; font-family: var(--font-head); font-size: 3.5rem; color: var(--accent); opacity: 0.3; position: absolute; top: 8px; left: 18px; line-height: 1; }
 .test-card p { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin-bottom: 16px; padding-top: 12px; font-style: italic; }
 .test-author { font-size: 0.8rem; font-weight: 700; color: var(--dark); }
 .test-role { font-size: 0.75rem; color: var(--muted); }
 .credibility-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(74,63,138,0.1); }
 .cred-item { background: rgba(74,63,138,0.06); padding: 6px 16px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; color: var(--primary); letter-spacing: 0.3px; }
-@media (max-width: 768px) { .test-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+@media (max-width: 768px) { }
 
 /* FAILURE / STAKES */
 .stakes { background: linear-gradient(160deg, #1a0508 0%, #2d0a12 50%, #1a0a2a 100%); padding: 80px 0; position: relative; overflow: hidden; }
@@ -418,7 +427,7 @@
 
 /* FAQ */
 .faq { background: var(--white); padding: 80px 0; }
-.faq-list { max-width: 700px; margin: 0 auto; }
+.faq-list { max-width: 700px; margin: 0 auto; text-align: left; }
 .faq-item { border-bottom: 1px solid #eee; }
 .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; cursor: pointer; gap: 16px; }
 .faq-q h4 { font-size: 0.95rem; font-weight: 600; color: var(--dark); line-height: 1.4; }
@@ -554,7 +563,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div style="flex:1;"></div>
     <div class="hero-bottom" style="padding-bottom:40px; max-width:1060px; margin:0 auto;">
-      <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — Bringing to you the cutting-edge protocols and health hacks taught and discussed at events led by Tony Robbins, Bryan Johnson, Andrew Huberman, Peter Attia, Gary Brecka, Dave Asprey, and David Sinclair. <strong style="color:var(--accent);">Except you don't need $5,000 or a flight across the country.</strong></p>
+      <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — Bringing to you the cutting-edge protocols and health hacks taught and discussed at events led by Tony Robbins, Bryan Johnson, Andrew Huberman, Peter Attia, Gary Brecka, Dave Asprey, and David Sinclair. <strong style="color:#fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Except you don't need $5,000 or a flight across the country.</strong></p>
       <div style="margin-top:400px; margin-bottom:16px;">
         <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.15rem;">📅 JUNE 20, 2026 · 9 AM – 6 PM</div><br/>
         <div class="hero-badge" style="display:inline-flex; background:none; border:none; color:#fff; font-size:1.15rem;">📍 UC San Diego Park &amp; Market, San Diego, CA</div>
@@ -597,7 +606,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap" style="text-align:center;">
       <span class="section-tag tag-orange">Your Investment</span>
       <h2 class="section-heading-light rv">Everything You Get for One Ticket</h2>
-      <p class="rv" style="max-width:600px; margin:-20px auto 36px; color:rgba(255,255,255,0.5); font-size:0.95rem; line-height:1.7;">Insights distilled from $50,000+ worth of conferences, research, and expert access — brought to you in a single day.</p>
+      <p class="rv" style="max-width:600px; margin:-20px auto 36px; color:#fff; font-size:0.95rem; line-height:1.7;">Insights distilled from $50,000+ worth of conferences, research, and expert access — brought to you in a single day.</p>
       <div class="vstack-card rv">
         <div class="vstack-row"><div class="vstack-label"><strong>8 expert keynotes</strong> from board-certified physicians, longevity scientists, bestselling authors &amp; peak performance coaches</div><div class="vstack-val">$2,000+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Full-day immersive experience</strong> (9 AM – 6 PM) curated from 20+ major health &amp; longevity conferences</div><div class="vstack-val">$500+</div></div>
@@ -611,12 +620,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="vstack-row"><div class="vstack-label"><strong>Microbiome Test Assessment Kit</strong> (at a $100 discount) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$100+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Priority seating + speaker meet &amp; greet</strong> <span class="vstack-vip">VIP</span></div><div class="vstack-val">$300+</div></div>
         <div class="vstack-total">
-          <div style="color:rgba(255,255,255,0.4); font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px;">Total Value</div>
+          <div style="color:#fff; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px;">Total Value</div>
           <div class="big-val">$4,000+</div>
           <div class="sub-val">What you'd pay attending individual events &amp; clinics</div>
         </div>
         <div class="vstack-price">
-          <div style="color:rgba(255,255,255,0.4); font-size:0.8rem; margin-bottom:6px;">Your price today starts at just</div>
+          <div style="color:#fff; font-size:0.8rem; margin-bottom:6px;">Your price today starts at just</div>
           <div style="color:#fff; font-family:var(--font-head); font-size:1.6rem; margin-bottom:8px;">General Admission $97 · VIP $247</div>
           <div style="color:#ff6b6b; font-size:0.88rem; font-weight:700;">⚠️ Price increases on April 25th — lock in this rate now</div>
           <a href="#" onclick="openTicket(); return false;" class="cta" style="font-size:1.05rem; padding:14px 36px;">
@@ -790,16 +799,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="section-heading rv">Schedule</h2>
       <p class="rv" style="max-width:580px; margin: -20px auto 40px; color:var(--muted); font-size:0.97rem; line-height:1.8;">A full day of expert talks, hands-on demos, and meaningful connections — June 20, 2026.</p>
       <div class="timeline">
-        <div class="tl-item rv"><div class="tl-time">8:30 AM</div><div class="tl-body"><span class="tl-tag tag-break">Arrival</span><h4>Doors Open &amp; Breakfast</h4><p>Registration, nutritious breakfast, and early networking with fellow attendees and vendors.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">9:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Keynote</span><h4>Opening Keynote — The State of Optimal Health</h4><p>Setting the vision for the day: what it truly means to optimize your health in 2026 and beyond.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">10:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Longevity &amp; Age Reversal: What the Science Says</h4><p>Deep dive into the latest research on cellular aging, NAD+, senolytics, and practical anti-aging protocols.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">11:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Hormones, Peptides &amp; Metabolic Optimization</h4><p>Understand how hormonal balance, peptide therapy, and metabolic testing can transform your performance.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">12:30 PM</div><div class="tl-body"><span class="tl-tag tag-break">Break</span><h4>Lunch &amp; Expo Hall Open</h4><p>Energizing lunch, vendor demos, metabolic testing, PCM blood testing, and open networking.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">2:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Gut Health, Detoxification &amp; Cellular Energy</h4><p>From mold and Lyme disease to microbiome optimization — strategies to restore and sustain peak cellular vitality.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">3:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Mind-Body Connection: NLP, Resilience &amp; Relationships</h4><p>Harness neuro-linguistic programming, emotional resilience strategies, and the science of meaningful connection.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">4:00 PM</div><div class="tl-body"><span class="tl-tag tag-panel">Panel</span><h4>Expert Panel + Open Q&amp;A</h4><p>All speakers on stage together. Audience questions, hot takes, and real-world health strategies debated live.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">5:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Keynote</span><h4>Closing Keynote — Your Healthiest Chapter Starts Now</h4><p>Synthesizing the day's insights into an actionable 90-day health roadmap you can take home.</p></div></div>
-        <div class="tl-item rv"><div class="tl-time">6:00 PM</div><div class="tl-body"><span class="tl-tag tag-social">Social</span><h4>After-Event Networking Social</h4><p>Celebrate the day with fellow attendees at a nearby off-site location. Dinner available (not included).</p></div></div>
+        <div class="tl-item rv"><div class="tl-time">8:30 AM</div><div class="tl-body"><span class="tl-tag tag-break">Arrival</span><h4>Doors Open &amp; Breakfast</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">9:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Keynote</span><h4>Opening Keynote — The State of Optimal Health</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">10:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Longevity &amp; Age Reversal: What the Science Says</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">11:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Hormones, Peptides &amp; Metabolic Optimization</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">12:30 PM</div><div class="tl-body"><span class="tl-tag tag-break">Break</span><h4>Lunch &amp; Expo Hall Open</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">2:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Gut Health, Detoxification &amp; Cellular Energy</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">3:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Mind-Body Connection: NLP, Resilience &amp; Relationships</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">4:00 PM</div><div class="tl-body"><span class="tl-tag tag-panel">Panel</span><h4>Expert Panel + Open Q&amp;A</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">5:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Keynote</span><h4>Closing Keynote — Your Healthiest Chapter Starts Now</h4></div></div>
+        <div class="tl-item rv"><div class="tl-time">6:00 PM</div><div class="tl-body"><span class="tl-tag tag-social">Social</span><h4>After-Event Networking Social</h4></div></div>
       </div>
       <p class="rv" style="font-size:0.8rem; color:var(--muted); margin-top:28px;">Schedule subject to change.</p>
     </div>
@@ -892,7 +901,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <div class="guarantee-inline rv" style="max-width:520px; margin:20px auto 0;">
         <div class="shield">🛡️</div>
-        <span><strong>100% Money-Back Guarantee.</strong> Zero risk. If it's not worth your time, you get every penny back.</span>
+        <span><strong>100% Money-Back Guarantee.</strong> Zero risk. If it's not worth your time, you get every penny back. <a href="#" onclick="openPolicy(); return false;" style="color:#5ef0d0; text-decoration:underline;">Refer to full policy.</a></span>
       </div>
     </div>
   </section>
@@ -903,21 +912,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap" style="text-align:center;">
       <span class="section-tag tag-purple">Social Proof</span>
       <h2 class="section-heading rv">What Attendees Are Saying</h2>
-      <div class="test-grid">
-        <div class="test-card rv">
-          <p>"I've listened to every Huberman episode, read Outlive, and followed Bryan Johnson for years. This summit gave me more actionable clarity in one day than all of that combined."</p>
-          <div class="test-author">— Previous Attendee</div>
-          <div class="test-role">San Diego, CA</div>
-        </div>
-        <div class="test-card rv">
-          <p>"The speakers were world-class, the networking was incredible, and I left with an actual plan. I've already changed three habits that are making a real difference."</p>
-          <div class="test-author">— Previous Attendee</div>
-          <div class="test-role">Oceanside, CA</div>
-        </div>
-        <div class="test-card rv">
-          <p>"I came skeptical. I left transformed. The satisfaction guarantee made it a no-brainer to try, and I'm so glad I did. Already bought my ticket for next year."</p>
-          <div class="test-author">— Previous Attendee</div>
-          <div class="test-role">Pacific Beach, CA</div>
+      <div class="test-slider-wrap">
+        <button class="test-side-nav left" onclick="document.getElementById('testSlider').scrollBy({left:-340,behavior:'smooth'})" aria-label="Previous">←</button>
+        <button class="test-side-nav right" onclick="document.getElementById('testSlider').scrollBy({left:340,behavior:'smooth'})" aria-label="Next">→</button>
+        <div class="test-slider" id="testSlider">
+          <div class="test-card rv">
+            <p>"I've listened to every Huberman episode, read Outlive, and followed Bryan Johnson for years. This summit gave me more actionable clarity in one day than all of that combined."</p>
+            <div class="test-author">— Previous Attendee</div>
+            <div class="test-role">San Diego, CA</div>
+          </div>
+          <div class="test-card rv">
+            <p>"The speakers were world-class, the networking was incredible, and I left with an actual plan. I've already changed three habits that are making a real difference."</p>
+            <div class="test-author">— Previous Attendee</div>
+            <div class="test-role">Oceanside, CA</div>
+          </div>
+          <div class="test-card rv">
+            <p>"I came skeptical. I left transformed. The satisfaction guarantee made it a no-brainer to try, and I'm so glad I did. Already bought my ticket for next year."</p>
+            <div class="test-author">— Previous Attendee</div>
+            <div class="test-role">Pacific Beach, CA</div>
+          </div>
         </div>
       </div>
     </div>
@@ -933,13 +946,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Who is this event for?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Anyone who wants to take control of their health — from wellness-curious beginners to experienced biohackers, health professionals, entrepreneurs, and executives. If you follow people like Bryan Johnson, Andrew Huberman, Peter Attia, Dave Asprey, or David Sinclair and want that caliber of knowledge in one accessible, affordable day — this is for you.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Who is this event NOT for?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>This isn't a medical consultation or a substitute for working with your doctor. It's also not a passive lecture series — it's an immersive, high-energy day for people who are ready to take action on their health.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the difference between General Admission and VIP?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Both include all keynotes, meals, expo access, and networking. VIP adds metabolic testing, PCM blood testing, a microbiome test assessment kit at a discount, priority seating, and a speaker meet-and-greet.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What if I buy a ticket and can't make it?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>All tickets are fully refundable up to 7 days before the event.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What if I buy a ticket and can't make it?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>All tickets are fully refundable up to 7 days before the event. After the 7 days before the event, tickets can be transferred to a different person.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the 100% Satisfaction Guarantee?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Check in on time and attend at least the first 3 hours. If you don't feel the event is worth your time, speak with Sid (the host) in person before 1 PM and receive a full refund. We're that confident this day will change your life.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Is parking available?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Yes — free or discounted parking is available at the venue.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What about food and dietary restrictions?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Breakfast, lunch, and snacks are included with every ticket. We accommodate common dietary needs — please note any restrictions when you register.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>How is this different from watching podcasts and reading books?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Podcasts and books give you information. This event gives you a curated, distilled plan — plus face-to-face access to experts you can actually ask YOUR specific questions to, and a room full of 120+ people on the same journey. The networking alone is worth the ticket.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>I've never been to a health event before. Will I feel out of place?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Not at all. Our attendees range from total beginners to seasoned biohackers. The speakers are chosen specifically because they can make complex science accessible. You'll feel welcome from the moment you walk in.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Are scholarship tickets available?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Yes — we offer scholarship tickets for individuals actively working to reverse obesity or metabolic syndrome. Contact us for details.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What should I wear?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Conference dress is casual, as our exhibiting partners will be hosting demonstrations and you want to be comfortable. Due to the stage lighting required for filming (and to keep our presenters from melting), the Main Stage room will be kept VERY COOL, so we highly recommend layered clothing, including a hoodie, wrap, or jacket.</p></div></div>
       </div>
     </div>
   </section>
@@ -1122,6 +1136,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>Refund and Cancellation Policy</h2>
       <h3>Cancellation and Refund Policy</h3>
       <p>All tickets are fully refundable up to 7 days before the event. However, if you have any concerns or need assistance, please contact us by responding to the ticket purchase confirmation email. Take advantage of the lower ticket prices now before they sell out or go up — completely risk free.</p>
+      <h3>Ticket Transfers</h3>
+      <p>After the 7 days before the event, tickets can be transferred to a different person.</p>
       <h3>100% Satisfaction Guarantee</h3>
       <p>Check in on time and attend at least the first 3 hours to experience enough of the event to fairly evaluate its value. And if you feel the event isn't worth your time, you must speak with Sid (the host) in person before leaving, and before the lunch break or 1pm, and you will receive a full refund.</p>
     </div>
