@@ -181,6 +181,14 @@
 
     /* SCHEDULE */
     .schedule { background: var(--white); padding: 80px 0; }
+    .sched-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto; text-align: left; }
+    .sched-col { background: linear-gradient(135deg, #f8f6ff, #fff); border-radius: 16px; padding: 20px 22px; border: 1px solid rgba(74,63,138,0.08); }
+    .sched-col-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid rgba(74,63,138,0.1); }
+    .sched-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
+    .sched-item:last-child { border-bottom: none; }
+    .sched-time { font-size: 0.75rem; font-weight: 700; color: var(--primary); min-width: 62px; padding-top: 3px; white-space: nowrap; }
+    .sched-title { font-size: 0.88rem; font-weight: 600; color: var(--dark); line-height: 1.4; margin-top: 3px; }
+    @media (max-width: 768px) { .sched-grid { grid-template-columns: 1fr; } }
     .timeline { display: grid; gap: 0; max-width: 720px; margin: 0 auto; }
     .tl-item { display: grid; grid-template-columns: 90px 1fr; position: relative; }
     .tl-item:not(:last-child)::before { content: ''; position: absolute; left: 44px; top: 36px; bottom: -12px; width: 2px; background: linear-gradient(to bottom, var(--primary), rgba(74,63,138,0.1)); }
@@ -559,7 +567,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="margin-top:400px; margin-bottom:16px;">
         <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.15rem;">📅 JUNE 20, 2026 · 9 AM – 6 PM</div><br/>
         <div class="hero-badge" style="display:inline-flex; background:none; border:none; color:#fff; font-size:1.15rem;">📍 UC San Diego Park &amp; Market, San Diego, CA</div><br/>
-        <div style="color:rgba(255,255,255,0.5); font-size:0.88rem; margin-top:4px;">1100 Market Street, San Diego, CA 92101</div>
+        <div style="color:#fff; font-size:0.88rem; margin-top:4px; padding-left:1.65em;">1100 Market Street, San Diego, CA 92101</div>
       </div>
       <div class="countdown" id="countdown" style="margin-bottom:16px; justify-content:flex-start;">
         <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><div class="cd-label">Days</div></div>
@@ -656,8 +664,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="speakers-side-nav left" onclick="document.getElementById('speakersSlider').scrollBy({left:-280,behavior:'smooth'})" aria-label="Previous">←</button>
         <button class="speakers-side-nav right" onclick="document.getElementById('speakersSlider').scrollBy({left:280,behavior:'smooth'})" aria-label="Next">→</button>
         <div class="speakers-slider" id="speakersSlider">
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883290/Jill_p_yb1vsi.png" alt="Jill Wheaton" loading="lazy" /></div><div class="sp-card-body"><h3>Jill Wheaton</h3><div class="role">Tony Robbins Director of Biz Solutions</div><p class="bio">Bringing world-class business and peak performance strategies from the Tony Robbins organization.</p><p class="tagline">She'll show you how to perform at your absolute peak — in health and in life.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_neville.png" alt="Dr. Neville Campbell" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine, business, and elite athletic performance.</p><p class="tagline">He'll prove that world-class health and world-class success aren't mutually exclusive.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883290/Jill_p_yb1vsi.png" alt="Jill Wheaton" loading="lazy" /></div><div class="sp-card-body"><h3>Jill Wheaton</h3><div class="role">Tony Robbins Director of Biz Solutions</div><p class="bio">Bringing world-class wellness and peak performance strategies from the Tony Robbins organization.</p><p class="tagline">She'll show you how to perform at your absolute peak — in health and in life.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_neville.png" alt="Dr. Neville Campbell" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine and elite athletic performance.</p><p class="tagline">He'll prove that world-class health and world-class success aren't mutually exclusive.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883202/nick_p_j09wkf.png" alt="Dr. Nick Delgado" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Nick Delgado</h3><div class="role">Bestselling Author &amp; Peak Performance Expert</div><p class="bio">Pioneering expert in hormones, longevity, and peak human performance with decades of research.</p><p class="tagline">He'll help you finally understand your hormones — and what to actually do about them.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883528/chel_p_fuvxl4.png" alt="Dr. Chelsea Grow" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Chelsea Grow</h3><div class="role">Board Certified Neurologist</div><p class="bio">Specializing in brain health, cognitive performance, and neurological wellness strategies.</p><p class="tagline">She'll give you the brain health playbook — sharper focus, better memory, clearer thinking.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_joel.jpg" alt="Joel Huizenga" loading="lazy" /></div><div class="sp-card-body"><h3>Joel Huizenga</h3><div class="role">CEO at EgaCeutical &amp; Longevity Scientist</div><p class="bio">Cutting-edge longevity science and breakthrough pharmaceutical solutions for age reversal.</p><p class="tagline">He'll reveal what's actually working right now in age reversal science.</p></div></div>
@@ -700,7 +708,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="section-heading-light rv">Step Into Your <em style="font-style:italic; color:var(--accent);">Optimal Health</em></h2>
       <p class="rv" style="max-width:640px; margin: -20px auto 36px; color:rgba(255,255,255,0.55); font-size:0.97rem; line-height:1.8;">Experience a powerful, immersive, high-energy day designed to elevate your health physically, mentally, emotionally, and spiritually.</p>
       <div class="highlight-grid rv">
-        <div class="hl-box"><h3>✅ Why You Need To Be Here</h3><ul>
+        <div class="hl-box" style="text-align:left;"><h3>✅ Why You Need To Be Here</h3><ul>
           <li><span>💡</span><span><strong style="color:#fff;">Expert Insights</strong> — Proven strategies from leaders in health and performance</span></li>
           <li><span>🛠️</span><span><strong style="color:#fff;">Actionable Tools</strong> — Practical steps you can apply immediately</span></li>
           <li><span>🌐</span><span><strong style="color:#fff;">Elite Networking</strong> — Connect with growth-minded, health-focused individuals</span></li>
@@ -719,11 +727,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span>✅</span><span>Network with health and wellness professionals</span></li>
           <li><span>✅</span><span>Build meaningful friendships and collaborations</span></li>
         </ul></div>
-        <div class="hl-box"><h3>🎟️ Act Fast — Limited Seats</h3><ul>
-          <li><span>📈</span><span>Ticket prices increase as the event date approaches</span></li>
-          <li><span>🏛️</span><span>This year's venue is at least twice as large as last year</span></li>
-          <li><span>💸</span><span>Full refund available up to 7 days before the event</span></li>
-          <li><span>🎓</span><span>Scholarship tickets available for those reversing obesity or metabolic syndrome</span></li>
+        <div class="hl-box" style="text-align:left;"><h3>🎟️ Act Fast — Limited Seats</h3><ul>
+          <li><span>📈</span><span>Ticket prices increase as the event date approaches and event will also sell out.</span></li>
+          <li><span>🏛️</span><span>This year's venue is 4 times as large as last year and limited to 150 people.</span></li>
+          <li><span>💸</span><span>Full refund available up to 7 days before the event, and tickets are transferrable after then.</span></li>
+          <li><span>🎓</span><span>Scholarship tickets available for those reversing obesity or metabolic syndrome - contact us for details.</span></li>
         </ul></div>
       </div>
     </div>
@@ -781,17 +789,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="section-tag tag-purple">Agenda</span>
       <h2 class="section-heading rv">Schedule</h2>
       <p class="rv" style="max-width:580px; margin: -20px auto 40px; color:var(--muted); font-size:0.97rem; line-height:1.8;">A full day of expert talks, hands-on demos, and meaningful connections — June 20, 2026.</p>
-      <div class="timeline">
-        <div class="tl-item rv"><div class="tl-time">8:30 AM</div><div class="tl-body"><span class="tl-tag tag-break">Arrival</span><h4>Doors Open &amp; Breakfast</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">9:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Keynote</span><h4>Opening Keynote — The State of Optimal Health</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">10:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Longevity &amp; Age Reversal: What the Science Says</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">11:30 AM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Hormones, Peptides &amp; Metabolic Optimization</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">12:30 PM</div><div class="tl-body"><span class="tl-tag tag-break">Break</span><h4>Lunch &amp; Expo Hall Open</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">2:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Gut Health, Detoxification &amp; Cellular Energy</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">3:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Talk</span><h4>Mind-Body Connection: NLP, Resilience &amp; Relationships</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">4:00 PM</div><div class="tl-body"><span class="tl-tag tag-panel">Panel</span><h4>Expert Panel + Open Q&amp;A</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">5:00 PM</div><div class="tl-body"><span class="tl-tag tag-keynote">Keynote</span><h4>Closing Keynote — Your Healthiest Chapter Starts Now</h4></div></div>
-        <div class="tl-item rv"><div class="tl-time">6:00 PM –<br/>9:00 PM</div><div class="tl-body"><span class="tl-tag tag-social">Social</span><h4>After-Event Networking Social/Mixer</h4><p>Celebrate the day with fellow attendees at a nearby off-site location. Ends at 9 PM. Dinner available (not included).</p></div></div>
+      <div class="sched-grid rv">
+        <div class="sched-col">
+          <div class="sched-col-label">Morning</div>
+          <div class="sched-item"><span class="sched-time">8:30 AM</span><div><span class="tl-tag tag-break">Arrival</span><div class="sched-title">Doors Open &amp; Breakfast</div></div></div>
+          <div class="sched-item"><span class="sched-time">9:30 AM</span><div><span class="tl-tag tag-keynote">Keynote</span><div class="sched-title">Opening Keynote — The State of Optimal Health</div></div></div>
+          <div class="sched-item"><span class="sched-time">10:30 AM</span><div><span class="tl-tag tag-keynote">Talk</span><div class="sched-title">Longevity &amp; Age Reversal: What the Science Says</div></div></div>
+          <div class="sched-item"><span class="sched-time">11:30 AM</span><div><span class="tl-tag tag-keynote">Talk</span><div class="sched-title">Hormones, Peptides &amp; Metabolic Optimization</div></div></div>
+          <div class="sched-item"><span class="sched-time">12:30 PM</span><div><span class="tl-tag tag-break">Break</span><div class="sched-title">Lunch &amp; Expo Hall Open</div></div></div>
+        </div>
+        <div class="sched-col">
+          <div class="sched-col-label">Afternoon &amp; Evening</div>
+          <div class="sched-item"><span class="sched-time">2:00 PM</span><div><span class="tl-tag tag-keynote">Talk</span><div class="sched-title">Gut Health, Detoxification &amp; Cellular Energy</div></div></div>
+          <div class="sched-item"><span class="sched-time">3:00 PM</span><div><span class="tl-tag tag-keynote">Talk</span><div class="sched-title">Mind-Body Connection: NLP, Resilience &amp; Relationships</div></div></div>
+          <div class="sched-item"><span class="sched-time">4:00 PM</span><div><span class="tl-tag tag-panel">Panel</span><div class="sched-title">Expert Panel + Open Q&amp;A</div></div></div>
+          <div class="sched-item"><span class="sched-time">5:00 PM</span><div><span class="tl-tag tag-keynote">Keynote</span><div class="sched-title">Closing Keynote — Your Healthiest Chapter Starts Now</div></div></div>
+          <div class="sched-item"><span class="sched-time">6 – 9 PM</span><div><span class="tl-tag tag-social">Social</span><div class="sched-title">After-Event Networking Social/Mixer</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Nearby off-site location. Dinner available (not included).</div></div></div>
+        </div>
       </div>
       <p class="rv" style="font-size:0.8rem; color:var(--muted); margin-top:28px;">Schedule subject to change.</p>
     </div>
@@ -815,10 +829,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="vendor-grid rv">
         <div class="vendor-item"><span>💆</span><span>Massage Therapy and Chiropractic Adjustments</span></div>
         <div class="vendor-item"><span>📊</span><span>Metabolic Testing — included with VIP tickets</span></div>
-        <div class="vendor-item"><span>🩸</span><span>Phase Contrast Microscopy (PCM) Blood Testing — included with VIP tickets</span></div>
+        <div class="vendor-item" style="grid-column:span 2; text-align:left;"><span>🩸</span><span>Phase Contrast Microscopy (PCM) Blood Testing — included with VIP tickets</span></div>
         <div class="vendor-item"><span>⚡</span><span>Electrolyte Drinks &amp; Clean Protein Bars</span></div>
         <div class="vendor-item"><span>✨</span><span>Additional wellness vendors coming soon</span></div>
-        <div class="vendor-item"><span>🍽️</span><span>After-event off-site social dinner at a nearby location (dinner cost not included)</span></div>
+        <div class="vendor-item" style="grid-column:span 2; text-align:left;"><span>🍽️</span><span>After-event off-site social dinner at a nearby location (dinner cost not included)</span></div>
       </div>
       <p class="rv" style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:20px;">*Vendor services are provided directly by practitioners. Some services may require payment for non-VIP ticket holders.</p>
     </div>
@@ -839,8 +853,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="position:relative;">
         <div class="shorts-carousel" id="shortsCarousel" style="display:flex; gap:16px; overflow-x:auto; scroll-behavior:smooth; padding:10px 0; scrollbar-width:none; -ms-overflow-style:none;">
           <div class="short-card rv" style="flex:0 0 220px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/FOwUNelNqS0?autoplay=1\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'">
-              <img src="https://img.youtube.com/vi/FOwUNelNqS0/0.jpg" alt="Summit Short 1" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/gCFe1Z37rH8?autoplay=1\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;\'></iframe>'">
+              <img src="https://img.youtube.com/vi/gCFe1Z37rH8/0.jpg" alt="Summit Short 1" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
@@ -1069,7 +1083,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap footer-inner">
       <div>
         <p class="footer-text">&copy; 2026 Optimal Health Summit</p>
-        <p style="font-size:0.78rem; color:rgba(255,255,255,0.4); margin-top:3px;">Presented by <a href="https://enablingtransformations.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55); text-decoration:underline;">Enabling Transformations</a></p>
         <p style="font-size:0.9rem; color:rgba(255,255,255,0.55); margin-top:4px;"><a href="#" onclick="openPolicy(); return false;" style="color:rgba(255,255,255,0.65); text-decoration:underline; font-weight:600;">Refund and Cancellation Policy</a></p>
         <p style="font-size:0.85rem; color:rgba(255,255,255,0.55); margin-top:10px;">Exhibitors — please <a href="#" onclick="openModal(); return false;" style="color:var(--accent); text-decoration:underline; font-weight:600;">fill out the contact form</a></p>
       </div>
