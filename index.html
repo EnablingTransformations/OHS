@@ -565,7 +565,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div style="flex:1;"></div>
     <div class="hero-bottom" style="padding-bottom:40px; max-width:1060px; margin:0 auto;">
-      <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — delivering the same cutting-edge protocols discussed at events like Blueprint, Huberman Lab Live, Biohacking Conference, and Life Force. <strong style="color:#fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Except you don't need $5,000 or a flight across the country.</strong></p>
+      <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — delivering the same cutting-edge protocols discussed at events like A4M, Don't Die by Blueprint, Huberman Lab, Biohackers World Conference, Beyond Biohacking and the other big names. <strong style="color:#fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Except you don't need $5,000 or a flight across the country.</strong></p>
       <div style="margin-top:400px; margin-bottom:16px;">
         <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.15rem;">📅 JUNE 20, 2026 · 8:30 AM – 6 PM</div><br/>
         <div class="hero-badge" style="display:inline-flex; background:none; border:none; color:#fff; font-size:1.15rem;">📍 UC San Diego Park &amp; Market, San Diego, CA</div><br/>
@@ -1508,11 +1508,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const slider = document.getElementById('speakersSlider');
     if (!slider) return;
 
+    // Disable scroll-snap for smooth auto-scroll
+    slider.style.cssText += 'scroll-snap-type: none !important;';
+
     // Duplicate all cards for seamless infinite loop
     const cards = slider.innerHTML;
     slider.innerHTML = cards + cards;
 
-    let scrollSpeed = 0.8; // pixels per frame
+    // Remove rv class from ALL cards in slider so they're visible immediately
+    slider.querySelectorAll('.rv').forEach(function(el) {
+      el.classList.remove('rv');
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+
+    let scrollSpeed = 0.8;
     let isAutoScrolling = false;
     let rafId = null;
     let userInteracted = false;
@@ -1521,13 +1531,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function autoScroll() {
       if (!isAutoScrolling) return;
       slider.scrollLeft += scrollSpeed;
-
-      // When we've scrolled past the first set of cards, jump back seamlessly
-      const halfWidth = slider.scrollWidth / 2;
+      var halfWidth = slider.scrollWidth / 2;
       if (slider.scrollLeft >= halfWidth) {
         slider.scrollLeft -= halfWidth;
       }
-
       rafId = requestAnimationFrame(autoScroll);
     }
 
@@ -1542,7 +1549,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (rafId) cancelAnimationFrame(rafId);
     }
 
-    // Pause on user interaction, resume after 3 seconds
     function handleUserInteraction() {
       userInteracted = true;
       stopScroll();
@@ -1557,7 +1563,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     slider.addEventListener('touchstart', handleUserInteraction, { passive: true });
     slider.addEventListener('wheel', handleUserInteraction, { passive: true });
 
-    // Pause on hover
     slider.addEventListener('mouseenter', function() {
       stopScroll();
       clearTimeout(resumeTimeout);
@@ -1572,10 +1577,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
 
-    // Start/stop based on section visibility
-    let sectionVisible = false;
-    const section = document.getElementById('speakers');
-    const observer = new IntersectionObserver(function(entries) {
+    var sectionVisible = false;
+    var section = document.getElementById('speakers');
+    var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         sectionVisible = entry.isIntersecting;
         if (entry.isIntersecting && !userInteracted) {
@@ -1584,12 +1588,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           stopScroll();
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
     observer.observe(section);
-
-    // Disable scroll-snap so auto-scroll is smooth
-    slider.style.scrollSnapType = 'none';
   })();
   </script>
 
