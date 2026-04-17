@@ -123,6 +123,7 @@
     /* SECTION TAGS */
     .section-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; display: inline-block; margin-bottom: 10px; }
     .tag-purple { color: var(--primary); background: rgba(74,63,138,0.1); }
+    .schedule .tag-purple, .faq .tag-purple, .testimonials .tag-purple, .value .tag-purple { color: rgba(255,255,255,0.9); background: rgba(232,145,58,0.15); border: 1px solid rgba(232,145,58,0.3); }
     .tag-orange { color: var(--accent); background: rgba(232,145,58,0.12); }
     .section-heading { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--dark); margin-bottom: 40px; }
     .section-heading-light { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--white); margin-bottom: 40px; }
@@ -180,7 +181,7 @@
     .speakers-nav button:hover { background: var(--primary); color: #fff; }
 
     /* SCHEDULE */
-    .schedule { background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%); padding: 80px 0; } .schedule h2, .schedule .section-heading { color: #fff !important; } .schedule .sched-col-label { color: var(--accent); } .schedule .sched-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.15); } .schedule .sched-time { color: var(--accent); } .schedule .sched-title { color: #fff; } .schedule .sched-item div div { color: rgba(255,255,255,0.7) !important; } .schedule p { color: rgba(255,255,255,0.6) !important; }
+    .schedule { background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%); padding: 80px 0; } .schedule h2, .schedule .section-heading { color: #fff !important; } .schedule .sched-col-label { color: #fff !important; font-size: 0.85rem !important; border-bottom: 2px solid rgba(255,255,255,0.3) !important; } .schedule .sched-item { background: rgba(255,255,255,0.92); border: 1px solid rgba(232,145,58,0.25); border-radius: 12px; } .schedule .sched-time { color: var(--primary) !important; } .schedule .sched-title { color: #000 !important; font-weight: 700; } .schedule .sched-item div div { color: #333 !important; } .schedule .tl-tag.tag-keynote { background: var(--primary) !important; color: #fff !important; } .schedule .tl-tag.tag-break { background: var(--accent) !important; color: #fff !important; } .schedule .tl-tag.tag-social { background: #d946a8 !important; color: #fff !important; } .schedule p { color: rgba(255,255,255,0.75) !important; }
     .sched-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto; text-align: left; }
     .sched-col { background: linear-gradient(135deg, #f8f6ff, #fff); border-radius: 16px; padding: 20px 22px; border: 1px solid rgba(74,63,138,0.08); }
     .sched-col-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid rgba(74,63,138,0.1); }
@@ -360,7 +361,7 @@
     @media (max-width: 768px) { .test-side-nav.left { left: 4px; } .test-side-nav.right { right: 4px; } .test-side-nav { width: 36px; height: 36px; font-size: 1rem; } }
     .test-card::before { content: '"'; font-family: var(--font-head); font-size: 3.5rem; color: var(--accent); opacity: 0.3; position: absolute; top: 8px; left: 18px; line-height: 1; }
     .test-card p { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin-bottom: 16px; padding-top: 12px; font-style: italic; }
-    .test-author { font-size: 0.8rem; font-weight: 700; color: var(--dark); }
+    .test-author { font-size: 0.8rem; font-weight: 700; color: #fff; }
     .test-role { font-size: 0.75rem; color: var(--muted); }
     .credibility-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(74,63,138,0.1); }
     .cred-item { background: rgba(74,63,138,0.06); padding: 6px 16px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; color: var(--primary); letter-spacing: 0.3px; }
@@ -432,13 +433,13 @@
     /* FAQ */
     .faq { background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%); padding: 80px 0; } .faq h2, .faq .section-heading { color: #fff !important; } .faq .faq-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.15); } .faq .faq-q h4 { color: #fff; } .faq .faq-a p { color: rgba(255,255,255,0.78); } .faq .faq-icon { color: var(--accent); }
     .faq-list { max-width: 700px; margin: 0 auto; text-align: left; }
-    .faq-item { border-bottom: 1px solid #eee; }
-    .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; cursor: pointer; gap: 16px; }
+    .faq-item { border-bottom: none; margin-bottom: 10px; border-radius: 14px; overflow: hidden; }
+    .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; cursor: pointer; gap: 16px; }
     .faq-q h4 { font-size: 0.95rem; font-weight: 600; color: var(--dark); line-height: 1.4; }
     .faq-q .faq-icon { font-size: 1.2rem; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; padding: 0 20px; }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 20px 18px; }
     .faq-a p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; padding: 0 0 18px; }
 
     .rv { opacity: 0; transform: translateY(28px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
@@ -566,7 +567,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-bottom" style="padding-bottom:40px; max-width:1060px; margin:0 auto;">
       <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">One powerful day in San Diego with board-certified physicians, longevity scientists, and peak performance experts — delivering the same cutting-edge protocols discussed at events like Blueprint, Huberman Lab Live, Biohacking Conference, and Life Force. <strong style="color:#fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Except you don't need $5,000 or a flight across the country.</strong></p>
       <div style="margin-top:400px; margin-bottom:16px;">
-        <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.15rem;">📅 JUNE 20, 2026 · 9 AM – 6 PM</div><br/>
+        <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.15rem;">📅 JUNE 20, 2026 · 8:30 AM – 6 PM</div><br/>
         <div class="hero-badge" style="display:inline-flex; background:none; border:none; color:#fff; font-size:1.15rem;">📍 UC San Diego Park &amp; Market, San Diego, CA</div><br/>
         <div style="color:#fff; font-size:0.88rem; margin-top:4px; padding-left:1.65em;">Address: 1100 Market Street, San Diego, CA 92101</div>
       </div>
@@ -609,7 +610,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="vstack-row" style="border-bottom:2px solid rgba(255,255,255,0.1); padding-bottom:10px; margin-bottom:4px;"><div class="vstack-label" style="font-weight:700; color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;">What You Get</div><div class="vstack-val" style="color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;">Value</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Networking</strong> with 120+ high performers, entrepreneurs, health professionals &amp; like-minded singles</div><div class="vstack-val">Priceless</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>10 expert keynotes</strong> from board-certified physicians, longevity scientists, bestselling authors &amp; peak performance coaches</div><div class="vstack-val">$2,000+</div></div>
-        <div class="vstack-row"><div class="vstack-label"><strong>Full-day immersive experience</strong> (9 AM – 6 PM) curated from 20+ major health &amp; longevity conferences</div><div class="vstack-val">$500+</div></div>
+        <div class="vstack-row"><div class="vstack-label"><strong>Full-day immersive experience</strong> (8:30 AM – 6 PM) curated from 20+ major health &amp; longevity conferences</div><div class="vstack-val">$500+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Priority seating + speaker meet &amp; greet</strong> <span class="vstack-vip">VIP</span></div><div class="vstack-val">$300+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Phase Contrast Microscopy Blood Testing</strong> (typically $275+ at a lab) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$275+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Your 90-Day Health Action Roadmap</strong> — a take-home framework to implement immediately</div><div class="vstack-val">$250+</div></div>
@@ -625,7 +626,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="vstack-price">
           <div style="color:#fff; font-size:0.8rem; margin-bottom:6px;">Your price today starts at just</div>
-          <div style="color:#fff; font-family:var(--font-head); font-size:1.6rem; margin-bottom:8px;">General Admission $147 · VIP $347</div>
+          <div style="color:#fff; font-family:var(--font-head); font-size:1.6rem; margin-bottom:8px;">General Admission $147 · VIP $397</div>
           <div style="color:#ff6b6b; font-size:0.88rem; font-weight:700;">⚠️ Price increases on April 25th — lock in this rate now</div>
           <a href="#" onclick="openTicket(); return false;" class="cta" style="font-size:1.05rem; padding:14px 36px;">
             Reserve My Seat
@@ -795,18 +796,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="rv" style="max-width:580px; margin: -20px auto 40px; color:var(--muted); font-size:0.97rem; line-height:1.8;"></p>
       <div class="sched-grid rv">
         <div class="sched-col">
-          <div class="sched-col-label">Morning</div>
-          <div class="sched-item"><span class="sched-time">8:30 AM</span><div><span class="tl-tag tag-break">Arrival</span><div class="sched-title">Check-In &amp; Breakfast</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Nutritious breakfast provided on-site. Check-in, registration and early networking with fellow attendees and sponsors.</div></div></div>
-          <div class="sched-item"><span class="sched-time">9:30 AM – 12:30 PM</span><div><span class="tl-tag tag-keynote">Keynotes &amp; Panel</span><div class="sched-title">2 to 4 Keynotes &amp; Panel</div></div></div>
-          <div class="sched-item"><span class="sched-time">12:30 PM</span><div><span class="tl-tag tag-break">Lunch Break</span><div class="sched-title">Lunch Break</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Healthy lunch provided. Networking and open expo hall. Expo hall, sponsor demos, metabolic testing, and Phase Contrast Microscopy blood testing are available all day.</div></div></div>
+          <div class="sched-col-label" style="color:#000 !important; font-size:0.9rem; background:#fff; display:inline-block; padding:6px 18px; border-radius:100px; border-bottom:none;">Morning</div>
+          <div class="sched-item"><span class="sched-time">8:30 – 9:00 AM</span><div><span class="tl-tag tag-social">Arrival</span><div class="sched-title">Check-In &amp; Breakfast</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Nutritious breakfast provided. Networking.</div></div></div>
+          <div class="sched-item"><span class="sched-time">9:00 AM – 1:00 PM</span><div><span class="tl-tag tag-keynote">Keynotes &amp; Panel</span></div></div>
+          <div class="sched-item"><span class="sched-time">1:00 – 1:45 PM</span><div><span class="tl-tag tag-social">Lunch Break</span><div class="sched-title">Lunch Break</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Healthy lunch provided. Networking.</div></div></div>
         </div>
         <div class="sched-col">
-          <div class="sched-col-label">Afternoon &amp; Evening</div>
-          <div class="sched-item"><span class="sched-time">1:30 – 6:00 PM</span><div><span class="tl-tag tag-keynote">Keynotes &amp; Panel</span><div class="sched-title">3 to 5 Keynotes &amp; Panel</div></div></div>
-          <div class="sched-item"><span class="sched-time">6 – 9 PM</span><div><span class="tl-tag tag-social">Social</span><div class="sched-title">1 to 3 Speakers at the After-Event Networking Social/Mixer</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">1 to 3 experts will speak at the networking social at a nearby off-site location that will be announced at the end of the event.</div></div></div>
+          <div class="sched-col-label" style="color:#000 !important; font-size:0.9rem; background:#fff; display:inline-block; padding:6px 18px; border-radius:100px; border-bottom:none;">Afternoon &amp; Evening</div>
+          <div class="sched-item"><span class="sched-time">1:45 – 6:00 PM</span><div><span class="tl-tag tag-keynote">Keynotes &amp; Panel</span></div></div>
+          <div class="sched-item"><span class="sched-time">6:30 – 8:30 PM</span><div><span class="tl-tag tag-social">Social</span><div class="sched-title">1 to 3 Speakers at the After-Event Networking Social/Mixer</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">1 to 3 experts will speak at the networking social at a nearby off-site location that will be announced at the end of the event.</div></div></div>
+          <div style="text-align:center; margin-top:18px;"><span style="font-size:0.8rem; color:#000 !important; font-weight:600; background:#fff; display:inline-block; padding:6px 18px; border-radius:100px;">Schedule subject to change.</span></div>
         </div>
       </div>
-      <p class="rv" style="font-size:0.8rem; color:var(--muted); margin-top:28px;">Schedule subject to change.</p>
     </div>
   </section>
 
@@ -909,7 +910,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="rv">So I started attending those events myself — Blueprint summits, Biohacking Conference, Dr. Mark Hyman's health events, longevity retreats, and health optimization conferences featuring the biggest names in the field. I collected data, took notes, and learned what actually works — the protocols, the science, the strategies that move the needle.</p>
       <p class="rv">And then I asked a simple question: <em>Why does this information have to be so expensive and inaccessible?</em></p>
       <p class="rv">That's why I created the Optimal Health Summit — so that anyone, not just the ultra-wealthy, can sit in a room with board-certified physicians, longevity scientists, and peak performance coaches, ask real questions, and walk away with a real plan. Last year we sold out. This year, we've doubled the venue. The mission is the same: <strong>make world-class health knowledge accessible to everyone.</strong></p>
-      <p class="rv">Because at the end of the day, <em>your health is your wealth and your freedom.</em> Without it, nothing else matters.</p>
+      <p class="rv" style="background: #fff; color: #000; font-weight: 800; font-size: 1.05rem; padding: 18px 24px; border-radius: 12px; margin-top: 20px; text-align: center; line-height: 1.6;">Because at the end of the day, your health is your wealth and your freedom. Without it, nothing else matters.</p>
     </div>
   </section>
 
@@ -925,7 +926,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="rv">Imagine walking out on June 20th with a clear plan, new expert connections, and the confidence that you're finally in the driver's seat of your own health.</p>
       <div class="final-details rv">
         <div><div class="fd-label">Date</div><div class="fd-value">June 20, 2026</div></div>
-        <div><div class="fd-label">Time</div><div class="fd-value">9 AM – 6 PM</div></div>
+        <div><div class="fd-label">Time</div><div class="fd-value">8:30 AM – 6 PM</div></div>
         <div><div class="fd-label">Location</div><div class="fd-value">Address: 1100 Market Street, San Diego, CA 92101</div></div>
       </div>
       <a href="#" onclick="openTicket(); return false;" class="cta rv" style="font-size:1.1rem; padding:16px 40px;">
@@ -1038,7 +1039,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="rv">Not Ready to Commit? Start Here.</h2>
       <p class="rv">Get the <strong>Top 10 Biohacks from the World's Leading Longevity Experts</strong> — the science-backed protocols from the world's leading longevity and biohacking experts. Start today.</p>
       <div class="leadmag-form rv">
-        <input class="leadmag-input" id="leadmag-name" type="text" placeholder="Your first name" />
+        <input class="leadmag-input" id="leadmag-name" type="text" placeholder="Your full name" />
         <input class="leadmag-input" id="leadmag-email" type="email" placeholder="Your email address" />
         <button class="leadmag-btn" id="leadmag-btn" onclick="claimGuide()">Get the Guide</button>
       </div>
@@ -1088,6 +1089,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
+  <!-- BOTTOM CTA -->
+  <section style="background: linear-gradient(160deg, #0d0b2e 0%, #1e1a5e 50%, #3b2f7e 100%); padding: 70px 0; text-align: center; position: relative; overflow: hidden;">
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50vw; height:50vw; border-radius:50%; background:radial-gradient(circle, rgba(232,145,58,0.08), transparent 70%);"></div>
+    <div class="wrap" style="position:relative; z-index:2; max-width:650px;">
+      <h2 class="rv" style="font-family:var(--font-head); font-size:clamp(1.5rem, 3.5vw, 2.2rem); color:#fff; margin-bottom:14px; line-height:1.2;">Stop Guessing. Start <em style="color:var(--accent);">Knowing.</em></h2>
+      <p class="rv" style="color:rgba(255,255,255,0.7); font-size:0.95rem; line-height:1.75; margin-bottom:28px;">One day could give you more clarity about your health than the last five years of podcasts, supplements, and guesswork combined.</p>
+      <a href="#" onclick="openTicket(); return false;" class="cta rv" style="font-size:1.1rem; padding:16px 40px;">
+        Reserve My Seat Now
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <div class="rv" style="margin-top:16px;">
+        <div class="guarantee-inline" style="max-width:480px; margin:0 auto;">
+          <div class="shield">🛡️</div>
+          <span style="color:rgba(255,255,255,0.6); font-size:0.82rem;"><strong style="color:#fff;">Zero Risk.</strong> All tickets fully refundable up to 7 days before the event and transferable after then.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap footer-inner">
@@ -1114,7 +1134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="discount-title">Get <span>10% OFF</span><br/>Your Ticket</div>
         <p class="discount-sub">Enter your email to instantly receive your exclusive discount code — and be the first to hear about speakers, schedule updates, and event news.</p>
         <div class="discount-form">
-          <input class="discount-input" id="discount-name" type="text" placeholder="Enter your first name" />
+          <input class="discount-input" id="discount-name" type="text" placeholder="Enter your full name" />
           <input class="discount-input" id="discount-email" type="email" placeholder="Enter your email address" required />
           <button class="discount-btn" onclick="claimDiscount()">Claim My 10% Discount →</button>
         </div>
@@ -1325,7 +1345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!name) {
         nameInput.style.borderColor = '#ff4444';
         nameInput.value = '';
-        nameInput.placeholder = '⚠️ Please enter your first name';
+        nameInput.placeholder = '⚠️ Please enter your full name';
         nameInput.focus();
         return;
       }
@@ -1397,7 +1417,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       if (!name) {
         nameInput.style.borderColor = '#ff4444';
-        nameInput.placeholder = '⚠️ Please enter your first name';
+        nameInput.placeholder = '⚠️ Please enter your full name';
         nameInput.focus();
         return;
       }
@@ -1481,6 +1501,98 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       } catch { btn.textContent = 'Error — try again'; btn.disabled = false; }
     });
   </script>
+
+  <!-- SPEAKERS AUTO-SCROLL -->
+  <script>
+  (function() {
+    const slider = document.getElementById('speakersSlider');
+    if (!slider) return;
+
+    // Duplicate all cards for seamless infinite loop
+    const cards = slider.innerHTML;
+    slider.innerHTML = cards + cards;
+
+    let scrollSpeed = 0.8; // pixels per frame
+    let isAutoScrolling = false;
+    let rafId = null;
+    let userInteracted = false;
+    let resumeTimeout = null;
+
+    function autoScroll() {
+      if (!isAutoScrolling) return;
+      slider.scrollLeft += scrollSpeed;
+
+      // When we've scrolled past the first set of cards, jump back seamlessly
+      const halfWidth = slider.scrollWidth / 2;
+      if (slider.scrollLeft >= halfWidth) {
+        slider.scrollLeft -= halfWidth;
+      }
+
+      rafId = requestAnimationFrame(autoScroll);
+    }
+
+    function startScroll() {
+      if (isAutoScrolling) return;
+      isAutoScrolling = true;
+      rafId = requestAnimationFrame(autoScroll);
+    }
+
+    function stopScroll() {
+      isAutoScrolling = false;
+      if (rafId) cancelAnimationFrame(rafId);
+    }
+
+    // Pause on user interaction, resume after 3 seconds
+    function handleUserInteraction() {
+      userInteracted = true;
+      stopScroll();
+      clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(function() {
+        userInteracted = false;
+        if (sectionVisible) startScroll();
+      }, 3000);
+    }
+
+    slider.addEventListener('mousedown', handleUserInteraction);
+    slider.addEventListener('touchstart', handleUserInteraction, { passive: true });
+    slider.addEventListener('wheel', handleUserInteraction, { passive: true });
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', function() {
+      stopScroll();
+      clearTimeout(resumeTimeout);
+    });
+    slider.addEventListener('mouseleave', function() {
+      if (!userInteracted && sectionVisible) startScroll();
+      else if (userInteracted) {
+        resumeTimeout = setTimeout(function() {
+          userInteracted = false;
+          if (sectionVisible) startScroll();
+        }, 1500);
+      }
+    });
+
+    // Start/stop based on section visibility
+    let sectionVisible = false;
+    const section = document.getElementById('speakers');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        sectionVisible = entry.isIntersecting;
+        if (entry.isIntersecting && !userInteracted) {
+          startScroll();
+        } else {
+          stopScroll();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(section);
+
+    // Disable scroll-snap so auto-scroll is smooth
+    slider.style.scrollSnapType = 'none';
+  })();
+  </script>
+
   <!-- STICKY MOBILE CTA -->
   <div class="sticky-cta">
     <a href="#" onclick="openTicket(); return false;" class="cta">
