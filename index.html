@@ -34,6 +34,7 @@
   <link rel="apple-touch-icon" href="https://i.ibb.co/60sWCjK2/iamge-3.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/didlj0gdc/image/upload/v1775790652/ohs_hero_bg_tfckxh.webp" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <!-- Facebook Pixel deferred until page is idle -->
   <script>
@@ -44,12 +45,12 @@
         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
         t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
         document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1062539898729743');
+        fbq('init', '1430723298270765');
         fbq('track', 'PageView');
       }, 3000);
     });
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1062539898729743&ev=PageView&noscript=1"/></noscript>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1430723298270765&ev=PageView&noscript=1"/></noscript>
   <style>
     :root {
       --primary: #4a3f8a;
@@ -187,7 +188,7 @@
     .sched-col-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid rgba(74,63,138,0.1); }
     .sched-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
     .sched-item:last-child { border-bottom: none; }
-    .sched-time { font-size: 0.75rem; font-weight: 700; color: var(--primary); min-width: 110px; padding-top: 3px; white-space: nowrap; }
+    .sched-time { font-size: 0.75rem; font-weight: 700; color: var(--primary); min-width: 110px; padding-top: 3px; padding-left: 12px; white-space: nowrap; }
     .sched-title { font-size: 0.88rem; font-weight: 600; color: var(--dark); line-height: 1.4; margin-top: 3px; }
     @media (max-width: 768px) { .sched-grid { grid-template-columns: 1fr; } }
     .timeline { display: grid; gap: 0; max-width: 720px; margin: 0 auto; }
@@ -330,7 +331,7 @@
     /* GUARANTEE BADGE */
     .guarantee-inline { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; padding: 12px 24px; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 12px; }
     .guarantee-inline .shield { font-size: 1.4rem; }
-    .guarantee-inline span { color: rgba(255,255,255,0.7); font-size: 0.85rem; line-height: 1.5; }
+    .guarantee-inline span { color: #fff; font-size: 0.85rem; line-height: 1.5; }
     .guarantee-inline strong { color: #5ef0d0; }
     .guarantee-inline-light { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; padding: 12px 24px; background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.15); border-radius: 12px; }
     .guarantee-inline-light .shield { font-size: 1.4rem; }
@@ -462,6 +463,31 @@
       .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
       .countdown { gap: 12px; }
       .cd-num { padding: 10px 14px; min-width: 56px; }
+      /* Value stack mobile */
+      .vstack-row { flex-direction: column; gap: 4px; padding: 12px 14px; }
+      .vstack-val { text-align: left; font-size: 0.85rem; }
+      .vstack-label { font-size: 0.88rem; }
+      /* Schedule mobile */
+      .sched-item { padding: 10px 8px; }
+      .sched-time { min-width: 90px !important; font-size: 0.7rem !important; padding-left: 8px !important; }
+      /* FAQ mobile */
+      .faq-q { padding: 14px 14px; }
+      .faq-q h4 { font-size: 0.88rem; }
+      .faq-a { padding: 0 14px; }
+      .faq-item.open .faq-a { padding: 0 14px 14px; }
+      /* Card items mobile */
+      .card-item { padding: 10px 12px; }
+      /* Hero mobile */
+      .hero-sub { font-size: 0.95rem !important; }
+      .hero-badge { font-size: 1rem !important; }
+      /* Bottom CTA padding for sticky bar */
+      .footer { padding-bottom: 80px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.6rem; }
+      .hero-sub { font-size: 0.88rem !important; }
+      .vstack-price .cta { font-size: 0.95rem; padding: 12px 28px; }
+      .sched-time { min-width: 80px !important; font-size: 0.65rem !important; }
     }
   </style>
   <script type="application/ld+json">
@@ -558,7 +584,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-bg-img" src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775790652/ohs_hero_bg_tfckxh.webp" alt="" />
+    <img class="hero-bg-img" src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775790652/ohs_hero_bg_tfckxh.webp" alt="" fetchpriority="high" />
     <div class="hero-top" style="padding-top:30px; max-width:1060px; margin:0 auto;">
       <div class="hero-badge" style="display:inline-flex; margin-bottom:14px;">🔬 CURATED FROM 20+ MAJOR LONGEVITY, BIOHACKING &amp; HEALTH CONFERENCES</div>
       <h1 style="font-family:var(--font-head); font-size:clamp(2.2rem, 5vw, 3.6rem); color:#fff; line-height:1.1; margin:0;">What If You Could Feel 30 in Your 50s —<br/>and Have the <em style="color:var(--accent); font-style:italic;">Science to Prove It?</em></h1>
@@ -608,7 +634,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="rv" style="max-width:600px; margin:-20px auto 36px; color:#fff; font-size:0.95rem; line-height:1.7;">Insights distilled from $50,000+ worth of conferences, research, and expert access — brought to you in a single day.</p>
       <div class="vstack-card rv">
         <div class="vstack-row" style="border-bottom:2px solid rgba(255,255,255,0.1); padding-bottom:10px; margin-bottom:4px;"><div class="vstack-label" style="font-weight:700; color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;">What You Get</div><div class="vstack-val" style="color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;">Value</div></div>
-        <div class="vstack-row"><div class="vstack-label"><strong>Networking</strong> with 120+ high performers, entrepreneurs, health professionals &amp; like-minded singles</div><div class="vstack-val">Priceless</div></div>
+        <div class="vstack-row"><div class="vstack-label"><strong>Networking</strong> with 120+ high performers, entrepreneurs, health professionals &amp; like-minded individuals</div><div class="vstack-val">Priceless</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>10 expert keynotes</strong> from board-certified physicians, longevity scientists, bestselling authors &amp; peak performance coaches</div><div class="vstack-val">$2,000+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Full-day immersive experience</strong> (8:30 AM – 6 PM) curated from 20+ major health &amp; longevity conferences</div><div class="vstack-val">$500+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Priority seating + speaker meet &amp; greet</strong> <span class="vstack-vip">VIP</span></div><div class="vstack-val">$300+</div></div>
@@ -690,16 +716,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="card rv">
         <h3>Learn From Experts &amp; Connect About:</h3>
         <div class="card-list">
-          <div class="card-item"><span>🔥</span><span>Longevity, Anti-Aging &amp; Age Reversal Science</span></div>
-          <div class="card-item"><span>⚖️</span><span>Hormones, Peptides &amp; Metabolic Optimization</span></div>
-          <div class="card-item"><span>🩺</span><span>Functional &amp; Root-Cause Medicine</span></div>
-          <div class="card-item"><span>🧠</span><span>Brain Health, Neurology &amp; Cognitive Performance</span></div>
-          <div class="card-item"><span>🏃</span><span>Fitness, Recovery &amp; Human Performance</span></div>
-          <div class="card-item"><span>🔬</span><span>Regenerative Medicine, Stem Cells &amp; Advanced Diagnostics</span></div>
-          <div class="card-item"><span>❤️</span><span>Mind-Body Connection, Relationships &amp; Emotional Wellness</span></div>
-          <div class="card-item"><span>💪</span><span>Chronic Stress, Trauma &amp; Somatic Health</span></div>
-          <div class="card-item"><span>🧠</span><span>Neuro-Linguistic Programming (NLP) &amp; Emotional Resilience</span></div>
-          <div class="card-item"><span>⚡</span><span>Mold, Lyme Disease, Gut Health, Detoxification &amp; Cellular Energy</span></div>
+          <div class="card-item"><span>Longevity, Anti-Aging &amp; Age Reversal Science</span></div>
+          <div class="card-item"><span>Hormones, Peptides &amp; Metabolic Optimization</span></div>
+          <div class="card-item"><span>Functional &amp; Root-Cause Medicine</span></div>
+          <div class="card-item"><span>Brain Health, Neurology &amp; Cognitive Performance</span></div>
+          <div class="card-item"><span>Fitness, Recovery &amp; Human Performance</span></div>
+          <div class="card-item"><span>Regenerative Medicine, Stem Cells &amp; Advanced Diagnostics</span></div>
+          <div class="card-item"><span>Mind-Body Connection, Relationships &amp; Emotional Wellness</span></div>
+          <div class="card-item"><span>Chronic Stress, Trauma &amp; Somatic Health</span></div>
+          <div class="card-item"><span>Neuro-Linguistic Programming (NLP) &amp; Emotional Resilience</span></div>
+          <div class="card-item"><span>Mold, Lyme Disease, Gut Health, Detoxification &amp; Cellular Energy</span></div>
         </div>
         <p style="font-size:0.82rem; color:var(--muted); margin-top:16px; text-align:center;">Topics may be adjusted according to needs, including audience questions.</p>
       </div>
@@ -728,7 +754,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul></div>
         <div class="hl-box"><h3>🤝 Plenty of Ways to Connect</h3><ul>
           <li><span>✅</span><span>Meet inspiring new people</span></li>
-          <li><span>✅</span><span>Connect with like-minded singles (sticker on name tag)</span></li>
+          
           <li><span>✅</span><span>Network with health and wellness professionals</span></li>
           <li><span>✅</span><span>Build meaningful friendships and collaborations</span></li>
         </ul></div>
@@ -804,7 +830,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sched-col">
           <div class="sched-col-label" style="color:#000 !important; font-size:0.9rem; background:#fff; display:inline-block; padding:6px 18px; border-radius:100px; border-bottom:none;">Afternoon &amp; Evening</div>
           <div class="sched-item"><span class="sched-time">1:45 – 6:00 PM</span><div><span class="tl-tag tag-keynote">Keynotes &amp; Panel</span></div></div>
-          <div class="sched-item"><span class="sched-time">6:30 – 8:30 PM</span><div><span class="tl-tag tag-social">Social</span><div class="sched-title">1 to 3 Speakers at the After-Event Networking Social/Mixer</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">1 to 3 experts will speak at the networking social at a nearby off-site location that will be announced at the end of the event.</div></div></div>
+          <div class="sched-item"><span class="sched-time">6:30 – 8:30 PM</span><div><span class="tl-tag tag-social">Social</span><div class="sched-title">1 to 3 Speakers at the After-Event Networking Social/Mixer</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Venue will be announced at the end of the event.</div></div></div>
           <div style="text-align:center; margin-top:18px;"><span style="font-size:0.8rem; color:#000 !important; font-weight:600; background:#fff; display:inline-block; padding:6px 18px; border-radius:100px;">Schedule subject to change.</span></div>
         </div>
       </div>
@@ -1395,7 +1421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
 
       // Open guide in new tab
-      window.open('guide.html', '_blank');
+      window.open('top-10-biohacks-guide.html', '_blank');
 
       setTimeout(function() {
         btn.textContent = 'Get the Guide';
@@ -1505,14 +1531,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- SPEAKERS AUTO-SCROLL -->
   <script>
   (function() {
-    const slider = document.getElementById('speakersSlider');
+    var slider = document.getElementById('speakersSlider');
     if (!slider) return;
 
     // Disable scroll-snap for smooth auto-scroll
     slider.style.cssText += 'scroll-snap-type: none !important;';
 
     // Duplicate all cards for seamless infinite loop
-    const cards = slider.innerHTML;
+    var cards = slider.innerHTML;
     slider.innerHTML = cards + cards;
 
     // Remove rv class from ALL cards in slider so they're visible immediately
@@ -1522,11 +1548,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       el.style.transform = 'none';
     });
 
-    let scrollSpeed = 0.8;
-    let isAutoScrolling = false;
-    let rafId = null;
-    let userInteracted = false;
-    let resumeTimeout = null;
+    var scrollSpeed = 0.8;
+    var isAutoScrolling = false;
+    var rafId = null;
+    var userInteracted = false;
+    var resumeTimeout = null;
+    var touchStartX = 0;
+    var isTouchDrag = false;
 
     function autoScroll() {
       if (!isAutoScrolling) return;
@@ -1549,27 +1577,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (rafId) cancelAnimationFrame(rafId);
     }
 
-    function handleUserInteraction() {
+    function pauseAndResume(delay) {
       userInteracted = true;
       stopScroll();
       clearTimeout(resumeTimeout);
       resumeTimeout = setTimeout(function() {
         userInteracted = false;
         if (sectionVisible) startScroll();
-      }, 3000);
+      }, delay || 3000);
     }
 
-    slider.addEventListener('mousedown', handleUserInteraction);
-    slider.addEventListener('touchstart', handleUserInteraction, { passive: true });
-    slider.addEventListener('wheel', handleUserInteraction, { passive: true });
+    // Desktop: pause on mousedown (clicking/dragging the slider)
+    slider.addEventListener('mousedown', function() { pauseAndResume(3000); });
 
+    // Mobile: only pause if user is actually swiping horizontally on the slider
+    slider.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+      isTouchDrag = false;
+    }, { passive: true });
+
+    slider.addEventListener('touchmove', function(e) {
+      var dx = Math.abs(e.touches[0].clientX - touchStartX);
+      if (dx > 10) {
+        // User is swiping horizontally on the slider
+        isTouchDrag = true;
+        stopScroll();
+      }
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function() {
+      if (isTouchDrag) {
+        pauseAndResume(3000);
+      }
+      isTouchDrag = false;
+    }, { passive: true });
+
+    // Desktop: pause on hover
     slider.addEventListener('mouseenter', function() {
       stopScroll();
       clearTimeout(resumeTimeout);
     });
     slider.addEventListener('mouseleave', function() {
       if (!userInteracted && sectionVisible) startScroll();
-      else if (userInteracted) {
+      else {
         resumeTimeout = setTimeout(function() {
           userInteracted = false;
           if (sectionVisible) startScroll();
@@ -1577,6 +1627,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
 
+    // Start/stop based on section visibility - very low threshold for mobile
     var sectionVisible = false;
     var section = document.getElementById('speakers');
     var observer = new IntersectionObserver(function(entries) {
@@ -1588,7 +1639,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           stopScroll();
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.05 });
 
     observer.observe(section);
   })();
