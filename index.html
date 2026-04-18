@@ -463,10 +463,21 @@
       .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
       .countdown { gap: 12px; }
       .cd-num { padding: 10px 14px; min-width: 56px; }
-      /* Value stack mobile */
-      .vstack-row { flex-direction: column; gap: 4px; padding: 12px 14px; }
-      .vstack-val { text-align: left; font-size: 0.85rem; }
-      .vstack-label { font-size: 0.88rem; }
+      /* Value stack mobile - fix alignment */
+      .vstack-card { padding: 20px 16px; }
+      .vstack-row { flex-direction: row; align-items: center; padding: 10px 4px; gap: 8px; }
+      .vstack-header { flex-direction: row !important; }
+      .vstack-header .vstack-label, .vstack-header .vstack-val { font-size: 0.65rem !important; letter-spacing: 1px !important; }
+      .vstack-val { text-align: right; font-size: 0.78rem; min-width: 60px; }
+      .vstack-label { font-size: 0.8rem; line-height: 1.4; }
+      .vstack-label strong { font-size: 0.8rem; }
+      .vstack-price { padding: 10px 0; }
+      /* Learn From card - fix overflow */
+      .card { padding: 20px 16px; overflow: hidden; }
+      .card h3 { font-size: 1rem; }
+      .card-list { gap: 10px; }
+      .card-item { padding: 8px 0; }
+      .card-item span { font-size: 0.85rem !important; word-wrap: break-word; overflow-wrap: break-word; }
       /* Schedule mobile */
       .sched-item { padding: 10px 8px; }
       .sched-time { min-width: 90px !important; font-size: 0.7rem !important; padding-left: 8px !important; }
@@ -475,19 +486,27 @@
       .faq-q h4 { font-size: 0.88rem; }
       .faq-a { padding: 0 14px; }
       .faq-item.open .faq-a { padding: 0 14px 14px; }
-      /* Card items mobile */
-      .card-item { padding: 10px 12px; }
       /* Hero mobile */
+      .hero { min-height: auto !important; padding-top: 40px; padding-bottom: 40px; justify-content: center !important; }
       .hero-sub { font-size: 0.95rem !important; }
       .hero-badge { font-size: 1rem !important; }
+      /* Wrap */
+      .wrap { padding: 0 16px; }
       /* Bottom CTA padding for sticky bar */
       .footer { padding-bottom: 80px; }
+      /* Guarantee inline mobile */
+      .guarantee-inline { flex-direction: column; text-align: center; gap: 6px; padding: 12px 16px; }
     }
     @media (max-width: 480px) {
       .hero h1 { font-size: 1.6rem; }
       .hero-sub { font-size: 0.88rem !important; }
       .vstack-price .cta { font-size: 0.95rem; padding: 12px 28px; }
       .sched-time { min-width: 80px !important; font-size: 0.65rem !important; }
+      .vstack-row { flex-direction: column; gap: 2px; align-items: flex-start; }
+      .vstack-header { flex-direction: row !important; align-items: center !important; }
+      .vstack-val { text-align: left; }
+      .card { padding: 16px 12px; }
+      .card-item span { font-size: 0.82rem !important; }
     }
   </style>
   <script type="application/ld+json">
@@ -609,7 +628,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- TITLE SPONSOR -->
   <div style="background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%); padding: 0; text-align: center;">
     <div class="wrap rv" style="max-width: 300px; margin: 0 auto; position: relative; border-radius: 16px; overflow: hidden;">
-      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1776311870/Title_SPonsor_1_owzubh.png" alt="Title Sponsor" style="width: 100%; height: auto; display: block; border-radius: 16px;" loading="lazy" />
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1776311870/Title_SPonsor_1_owzubh.png" alt="" style="width: 100%; height: auto; display: block; border-radius: 16px;" loading="lazy" />
       <p style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-family: var(--font-body); color: #000; font-size: 0.78rem; font-weight: 800; margin: 0; letter-spacing: 1.5px; text-transform: uppercase;">Title Sponsor</p>
     </div>
   </div>
@@ -633,7 +652,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="section-heading-light rv">Everything You Get for One Ticket</h2>
       <p class="rv" style="max-width:600px; margin:-20px auto 36px; color:#fff; font-size:0.95rem; line-height:1.7;">Insights distilled from $50,000+ worth of conferences, research, and expert access — brought to you in a single day.</p>
       <div class="vstack-card rv">
-        <div class="vstack-row" style="border-bottom:2px solid rgba(255,255,255,0.1); padding-bottom:10px; margin-bottom:4px;"><div class="vstack-label" style="font-weight:700; color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;">What You Get</div><div class="vstack-val" style="color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;">Value</div></div>
+        <div class="vstack-row vstack-header" style="border-bottom:2px solid rgba(255,255,255,0.1); padding-bottom:10px; margin-bottom:4px;"><div class="vstack-label" style="font-weight:700; color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;">What You Get</div><div class="vstack-val" style="color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;">Value</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Networking</strong> with 120+ high performers, entrepreneurs, health professionals &amp; like-minded individuals</div><div class="vstack-val">Priceless</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>10 expert keynotes</strong> from board-certified physicians, longevity scientists, bestselling authors &amp; peak performance coaches</div><div class="vstack-val">$2,000+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Full-day immersive experience</strong> (8:30 AM – 6 PM) curated from 20+ major health &amp; longevity conferences</div><div class="vstack-val">$500+</div></div>
@@ -843,7 +862,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="position:absolute; top:0; left:0; right:0; padding:18px 24px; background:linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%); z-index:2;">
         <p style="font-family:var(--font-head); color:#fff; font-size:1.2rem; margin:0; text-shadow:0 2px 8px rgba(0,0,0,0.4);">Networking with High Performers</p>
       </div>
-      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775793097/11_itcqjt.webp" alt="Networking with High Performers" style="width:100%; display:block;" loading="lazy" />
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775793097/11_itcqjt.webp" alt="" style="width:100%; display:block;" loading="lazy" />
     </div>
   </div>
 
@@ -851,7 +870,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="vendor" id="expo">
     <div class="wrap" style="text-align:center;">
       <span class="section-tag tag-orange">Expo</span>
-      <h2 class="section-heading-light rv">Vendor Experience Lounge</h2>
+      <h2 class="section-heading-light rv">Sponsor Experience Lounge</h2>
       <div class="vendor-grid rv">
         <div class="vendor-item"><span>💆</span><span>Massage Therapy and Chiropractic Adjustments</span></div>
         <div class="vendor-item"><span>📊</span><span>Metabolic Testing — included with VIP tickets</span></div>
@@ -867,7 +886,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- VENDOR LOUNGE PHOTO -->
   <div style="background: linear-gradient(160deg, #2a1a0a 0%, #3d2510 50%, #1a1530 100%); padding: 0 0 40px; text-align:center;">
     <div class="wrap rv" style="max-width:816px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.3);">
-      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775880566/vendor-lounge-Lnf3VgZrMeCcZntU8h3i6k_cmbuag.webp" alt="Vendor Experience Lounge" style="width:100%; display:block;" loading="lazy" />
+      <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775880566/vendor-lounge-Lnf3VgZrMeCcZntU8h3i6k_cmbuag.webp" alt="Sponsor Experience Lounge" style="width:100%; display:block;" loading="lazy" />
     </div>
   </div>
 
