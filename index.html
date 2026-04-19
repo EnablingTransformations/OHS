@@ -137,9 +137,8 @@
     .card { background: var(--white); border-radius: 20px; padding: 32px 36px; margin-bottom: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
     .card h3 { font-family: var(--font-head); font-size: 1.3rem; color: var(--dark); margin-bottom: 18px; text-align: center; }
     .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .card-item { display: flex; gap: 10px; align-items: flex-start; }
-    .card-item span:first-child { font-size: 1.3rem; flex-shrink: 0; }
-    .card-item span:last-child { font-size: 0.93rem; color: var(--text); }
+    .card-item { display: block; border-left: 3px solid var(--accent); padding: 10px 14px; margin-bottom: 2px; }
+    .card-item span { font-size: 0.93rem; color: var(--text); display: block; }
     .card-list { display: grid; gap: 13px; }
 
     /* WHY ATTEND */
@@ -317,7 +316,7 @@
     .vstack-card { max-width: 680px; margin: 0 auto; background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.2); border-radius: 20px; padding: 36px 32px; }
     .vstack-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 16px; }
     .vstack-row:last-child { border-bottom: none; }
-    .vstack-label { color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.5; flex: 1; }
+    .vstack-label { color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.5; flex: 1; text-align: left; }
     .vstack-label strong { color: #fff; }
     .vstack-val { color: var(--accent); font-weight: 700; font-size: 0.9rem; white-space: nowrap; min-width: 70px; text-align: right; }
     .vstack-vip { background: rgba(232,145,58,0.08); border-radius: 10px; padding: 2px 8px; margin-left: 4px; font-size: 0.68rem; color: var(--accent); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; vertical-align: middle; }
@@ -473,11 +472,12 @@
       .vstack-label strong { font-size: 0.8rem; }
       .vstack-price { padding: 10px 0; }
       /* Learn From card - fix overflow */
-      .card { padding: 20px 16px; overflow: hidden; }
-      .card h3 { font-size: 1rem; }
-      .card-list { gap: 10px; }
-      .card-item { padding: 8px 0; }
-      .card-item span { font-size: 0.85rem !important; word-wrap: break-word; overflow-wrap: break-word; }
+      .card { padding: 24px 14px; }
+      .card h3 { font-size: 1.1rem; }
+      .card-list { gap: 0; }
+      .card-item { padding: 14px 10px; border-bottom: 1px solid rgba(232,145,58,0.12); }
+      .card-item:last-child { border-bottom: none; }
+      .card-item span { font-size: 1rem !important; font-weight: 600 !important; word-wrap: break-word; overflow-wrap: break-word; }
       /* Schedule mobile */
       .sched-item { padding: 10px 8px; }
       .sched-time { min-width: 90px !important; font-size: 0.7rem !important; padding-left: 8px !important; }
@@ -488,8 +488,7 @@
       .faq-item.open .faq-a { padding: 0 14px 14px; }
       /* Hero mobile */
       .hero { min-height: auto !important; padding-top: 40px; padding-bottom: 40px; justify-content: center !important; }
-      .hero-sub { font-size: 0.95rem !important; }
-      .hero-badge { font-size: 1rem !important; }
+      .hero-sub { font-size: 1.1rem !important; }
       /* Wrap */
       .wrap { padding: 0 16px; }
       /* Bottom CTA padding for sticky bar */
@@ -499,14 +498,14 @@
     }
     @media (max-width: 480px) {
       .hero h1 { font-size: 1.6rem; }
-      .hero-sub { font-size: 0.88rem !important; }
+      .hero-sub { font-size: 1.05rem !important; }
       .vstack-price .cta { font-size: 0.95rem; padding: 12px 28px; }
       .sched-time { min-width: 80px !important; font-size: 0.65rem !important; }
-      .vstack-row { flex-direction: column; gap: 2px; align-items: flex-start; }
+      .vstack-row { flex-direction: row !important; gap: 8px; align-items: flex-start; padding: 10px 4px; }
       .vstack-header { flex-direction: row !important; align-items: center !important; }
-      .vstack-val { text-align: right; align-self: flex-end; }
-      .card { padding: 16px 12px; }
-      .card-item span { font-size: 0.82rem !important; }
+      .vstack-val { text-align: right; min-width: 55px; flex-shrink: 0; font-size: 0.75rem; }
+      .card { padding: 20px 10px; }
+      .card-item span { font-size: 0.95rem !important; }
     }
   </style>
   <script type="application/ld+json">
@@ -604,7 +603,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- HERO -->
   <section class="hero">
     <img class="hero-bg-img" src="https://res.cloudinary.com/didlj0gdc/image/upload/v1775790652/ohs_hero_bg_tfckxh.webp" alt="" fetchpriority="high" />
-    <div class="hero-top" style="padding-top:30px; max-width:1060px; margin:0 auto;">
+    <div class="hero-top" style="padding-top:5px; max-width:1060px; margin:0 auto;">
       <div class="hero-badge" style="display:inline-flex; margin-bottom:14px;">🔬 CURATED FROM 20+ MAJOR LONGEVITY, BIOHACKING &amp; HEALTH CONFERENCES</div>
       <h1 style="font-family:var(--font-head); font-size:clamp(2.2rem, 5vw, 3.6rem); color:#fff; line-height:1.1; margin:0;">What If You Could Feel 30 in Your 50s —<br/>and Have the <em style="color:var(--accent); font-style:italic;">Science to Prove It?</em></h1>
     </div>
@@ -707,8 +706,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="section-tag tag-purple">Speakers</span>
       <h2 class="section-heading rv">Who You'll Learn From</h2>
       <div class="speakers-wrap">
-        <button class="speakers-side-nav left" onclick="document.getElementById('speakersSlider').scrollBy({left:-280,behavior:'smooth'})" aria-label="Previous">←</button>
-        <button class="speakers-side-nav right" onclick="document.getElementById('speakersSlider').scrollBy({left:280,behavior:'smooth'})" aria-label="Next">→</button>
+        <button class="speakers-side-nav left" onclick="if(window._pauseSpeakerScroll)window._pauseSpeakerScroll(); document.getElementById('speakersSlider').scrollBy({left:-280,behavior:'smooth'})" aria-label="Previous">←</button>
+        <button class="speakers-side-nav right" onclick="if(window._pauseSpeakerScroll)window._pauseSpeakerScroll(); document.getElementById('speakersSlider').scrollBy({left:280,behavior:'smooth'})" aria-label="Next">→</button>
         <div class="speakers-slider" id="speakersSlider">
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883290/Jill_p_yb1vsi.png" alt="Jill Wheaton" loading="lazy" /></div><div class="sp-card-body"><h3>Jill Wheaton</h3><div class="role">Tony Robbins Director of Biz Solutions</div><p class="bio">Bringing world-class wellness and peak performance strategies from the Tony Robbins organization.</p><p class="tagline">She'll show you how to perform at your absolute peak — in health and in life.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_neville.png" alt="Dr. Neville Campbell" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine and elite athletic performance.</p><p class="tagline">He'll prove that world-class health and world-class success aren't mutually exclusive.</p></div></div>
@@ -722,8 +721,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_surprise.jpg" alt="Surprise Speaker" loading="lazy" /></div><div class="sp-card-body"><h3>Surprise Speaker</h3><div class="role">To Be Announced</div><p class="bio">A very special guest will be revealed at the event — you won't want to miss it!</p><p class="tagline">Trust us — you'll want to be in the room for this one.</p></div></div>
       </div>
       <div class="speakers-nav">
-        <button onclick="document.getElementById('speakersSlider').scrollBy({left:-280,behavior:'smooth'})" aria-label="Previous">←</button>
-        <button onclick="document.getElementById('speakersSlider').scrollBy({left:280,behavior:'smooth'})" aria-label="Next">→</button>
+        <button onclick="if(window._pauseSpeakerScroll)window._pauseSpeakerScroll(); document.getElementById('speakersSlider').scrollBy({left:-280,behavior:'smooth'})" aria-label="Previous">←</button>
+        <button onclick="if(window._pauseSpeakerScroll)window._pauseSpeakerScroll(); document.getElementById('speakersSlider').scrollBy({left:280,behavior:'smooth'})" aria-label="Next">→</button>
       </div>
       </div>
     </div>
@@ -735,16 +734,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="card rv">
         <h3>Learn From Experts &amp; Connect About:</h3>
         <div class="card-list">
-          <div class="card-item"><span>Longevity, Anti-Aging &amp; Age Reversal Science</span></div>
-          <div class="card-item"><span>Hormones, Peptides &amp; Metabolic Optimization</span></div>
-          <div class="card-item"><span>Functional &amp; Root-Cause Medicine</span></div>
-          <div class="card-item"><span>Brain Health, Neurology &amp; Cognitive Performance</span></div>
-          <div class="card-item"><span>Fitness, Recovery &amp; Human Performance</span></div>
-          <div class="card-item"><span>Regenerative Medicine, Stem Cells &amp; Advanced Diagnostics</span></div>
-          <div class="card-item"><span>Mind-Body Connection, Relationships &amp; Emotional Wellness</span></div>
-          <div class="card-item"><span>Chronic Stress, Trauma &amp; Somatic Health</span></div>
-          <div class="card-item"><span>Neuro-Linguistic Programming (NLP) &amp; Emotional Resilience</span></div>
-          <div class="card-item"><span>Mold, Lyme Disease, Gut Health, Detoxification &amp; Cellular Energy</span></div>
+          <div class="card-item"><span>1. Longevity, Anti-Aging &amp; Age Reversal Science</span></div>
+          <div class="card-item"><span>2. Hormones, Peptides &amp; Metabolic Optimization</span></div>
+          <div class="card-item"><span>3. Functional &amp; Root-Cause Medicine</span></div>
+          <div class="card-item"><span>4. Brain Health, Neurology &amp; Cognitive Performance</span></div>
+          <div class="card-item"><span>5. Fitness, Recovery &amp; Human Performance</span></div>
+          <div class="card-item"><span>6. Regenerative Medicine, Stem Cells &amp; Advanced Diagnostics</span></div>
+          <div class="card-item"><span>7. Mind-Body Connection, Relationships &amp; Emotional Wellness</span></div>
+          <div class="card-item"><span>8. Chronic Stress, Trauma &amp; Somatic Health</span></div>
+          <div class="card-item"><span>9. Neuro-Linguistic Programming (NLP) &amp; Emotional Resilience</span></div>
+          <div class="card-item"><span>10. Mold, Lyme Disease, Gut Health, Detoxification &amp; Cellular Energy</span></div>
         </div>
         <p style="font-size:0.82rem; color:var(--muted); margin-top:16px; text-align:center;">Topics may be adjusted according to needs, including audience questions.</p>
       </div>
@@ -1354,6 +1353,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     function openTicket() {
       openOverlay('ticketModal');
+      // Track InitiateCheckout event for Meta Pixel
+      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
       // Only inject iframe when modal opens — saves 1.3MB on page load
       const c = document.getElementById('lumaContainer');
       if (!c.querySelector('iframe')) {
@@ -1428,6 +1429,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         body: JSON.stringify({ name: name, email: email, source: 'lead_magnet_guide' }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       }).catch(() => {});
+
+      // Track Lead event for Meta Pixel
+      if (typeof fbq === 'function') fbq('track', 'Lead');
 
       // Send to Google Sheets if configured
       var scriptURL = window._googleScriptURL || null;
@@ -1506,6 +1510,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         body: JSON.stringify({ name: name, email: email, code: 'HEALTH10', source: 'discount_popup' }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       }).catch(() => {});
+
+      // Track Lead event for Meta Pixel
+      if (typeof fbq === 'function') fbq('track', 'Lead');
 
       // Send to Google Sheets (URL will be added once Apps Script is deployed)
       const scriptURL = window._googleScriptURL || null;
@@ -1605,6 +1612,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (sectionVisible) startScroll();
       }, delay || 3000);
     }
+
+    // Expose for arrow buttons
+    window._pauseSpeakerScroll = function() { pauseAndResume(3000); };
 
     // Desktop: pause on mousedown (clicking/dragging the slider)
     slider.addEventListener('mousedown', function() { pauseAndResume(3000); });
