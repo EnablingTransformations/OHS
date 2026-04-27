@@ -515,6 +515,18 @@
       .speakers-grid { grid-template-columns: 1fr !important; }
     }
     .speakers-grid .sp-card { width: 100% !important; min-width: 0 !important; max-width: 100% !important; flex-shrink: 1 !important; }
+
+    @media (max-width: 768px) {
+      /* Sponsors mobile fixes */
+      .sp-title-img { max-height: 80px !important; }
+      .sp-truage-img { max-height: 70px !important; }
+      .sp-ultralife-box { padding: 0 12px !important; }
+      .sp-mental-box { min-height: 65px !important; }
+      .sp-mental-text { font-size: 1.1rem !important; }
+      .sp-momentum-box { padding: 4px 8px !important; }
+      .sp-momentum-img { max-height: 80px !important; }
+    }
+
   </style>
   <script type="application/ld+json">
   {
@@ -674,7 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_neville.png" alt="Dr. Neville Campbell" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Neville Campbell</h3><div class="role">MD, MBA, CEO, Philanthropist, Author, Professor &amp; IFBB Pro Athlete</div><p class="bio">A powerhouse at the intersection of medicine and elite athletic performance.</p><p class="tagline">He'll prove that world-class health and world-class success aren't mutually exclusive.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883528/chel_p_fuvxl4.png" alt="Dr. Chelsea Grow" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Chelsea Grow</h3><div class="role">Board Certified Neurologist</div><p class="bio">Specializing in brain health, cognitive performance, and neurological wellness strategies.</p><p class="tagline">She'll give you the brain health playbook — sharper focus, better memory, clearer thinking.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1777066426/steven_uefb1w.jpg" alt="Dr. Steven Schwartz" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Steven Schwartz</h3><div class="role">Founder of Bioharmonic Technologies &amp; Pioneer in Vibrational Medicine</div><p class="bio">Creator of The VIBE System and Sonic-ceuticals™ — technologies using sound and vibration to optimize human physiology. Author of Primal Resonance.</p><p class="tagline">Discover how sound and frequency can unlock healing at the cellular level.</p></div></div>
-        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_karolina.png" alt="Dr. Karolina Pras" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Karolina Pras</h3><div class="role">Root-Cause Medicine</div><p class="bio">Functional medicine physician uncovering the root causes of chronic illness for lasting health transformation.</p><p class="tagline">She'll help you stop treating symptoms and start fixing the root cause.</p></div></div>
+        <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1777244177/karolina_-_best_rkcrij.png" alt="Dr. Karolina Pras" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Karolina Pras</h3><div class="role">Root-Cause Medicine</div><p class="bio">Functional medicine physician uncovering the root causes of chronic illness for lasting health transformation.</p><p class="tagline">She'll help you stop treating symptoms and start fixing the root cause.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/ohs_joel.jpg" alt="Joel Huizenga" loading="lazy" /></div><div class="sp-card-body"><h3>Joel Huizenga</h3><div class="role">CEO at EgaCeutical &amp; Longevity Scientist</div><p class="bio">Cutting-edge longevity science and breakthrough pharmaceutical solutions for age reversal.</p><p class="tagline">He'll reveal what's actually working right now in age reversal science.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1775883044/Elena_p_qtpql8.png" alt="Dr. Elena Eustache" loading="lazy" /></div><div class="sp-card-body"><h3>Dr. Elena Eustache</h3><div class="role">❤️ Love Doctor, Global Matchmaker, TV Host &amp; Bestselling Author</div><p class="bio">World-renowned expert in relationships, love, and the mind-body-soul connection.</p><p class="tagline">She'll unlock the connection between your relationships, your happiness, and your health.</p></div></div>
         <div class="sp-card rv"><div class="sp-photo"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_520,h_600,c_fill,g_face/v1777174713/michael-smith-_hf9t9a.jpg" alt="Michael Smith" loading="lazy" /></div><div class="sp-card-body"><h3>Michael Smith</h3><div class="role">Co-Founder of Peak Stem Cells</div><p class="bio">Healthcare innovator advancing regenerative medicine through research-backed protocols and exceptional patient care, rooted in integrity, clinical excellence, and long-term outcomes over hype.</p><p class="tagline">He'll show you how regenerative medicine can transform your healing — minus the hype.</p></div></div>
@@ -915,10 +927,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777068167/Peak_Stem_Cells_Logo_ksb6yu.png" alt="Peak Stem Cells" style="max-width: 100%; max-height: 100px; object-fit: contain; display: block;" loading="lazy" />
         </div>
         <div style="background: #fff; border-radius: 14px; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); border: 2px solid rgba(232,145,58,0.4); position: relative; overflow: hidden;">
-          <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1776311870/Title_SPonsor_1_owzubh.png" alt="Title Sponsor" style="max-width: 100%; max-height: 100px; object-fit: contain; display: block;" loading="lazy" />
+          <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1776311870/Title_SPonsor_1_owzubh.png" class="sp-title-img" alt="Title Sponsor" style="max-width: 100%; max-height: 100px; object-fit: contain; display: block;" loading="lazy" />
         </div>
         <div style="background: #fff; border-radius: 14px; padding: 0; display: flex; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;">
-          <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777223507/treuage_-_new_cvxex0.png" alt="TruAge" style="max-width: 100%; max-height: 100px; object-fit: contain; display: block;" loading="lazy" />
+          <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777223507/treuage_-_new_cvxex0.png" class="sp-truage-img" alt="TruAge" style="max-width: 100%; max-height: 100px; object-fit: contain; display: block;" loading="lazy" />
         </div>
         <div style="background: #fff; border-radius: 14px; padding: 4px; display: flex; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;">
           <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777224854/LivOn_-_official_logo_nbpghg.jpg" alt="LivOn" style="max-width: 100%; max-height: 70px; object-fit: contain;" loading="lazy" />
@@ -926,11 +938,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div style="background: #fff; border-radius: 14px; padding: 0; display: flex; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;">
           <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777066587/vibe_c0pyin.jpg" alt="VIBE" style="max-width: 100%; max-height: 80px; object-fit: contain;" loading="lazy" />
         </div>
-        <div style="background: #fff; border-radius: 14px; padding: 0; display: flex; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;">
+        <div class="sp-ultralife-box" style="background: #fff; border-radius: 14px; padding: 0; display: flex; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;">
           <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777068192/UltraLife_Peptides_logo_nnl8iy.png" alt="UltraLife Peptides" style="max-width: 100%; max-height: 40px; object-fit: contain;" loading="lazy" />
         </div>
-        <div style="background: #fff; border-radius: 14px; padding: 10px; display: flex; align-items: center; justify-content: center; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
-          <span style="font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; color: var(--primary); text-align: center; line-height: 1.3;">Mental Health<br/>Sponsor</span>
+        <div class="sp-mental-box" style="background: #fff; border-radius: 14px; padding: 10px; display: flex; align-items: center; justify-content: center; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+          <span class="sp-mental-text" style="font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; color: var(--primary); text-align: center; line-height: 1.3;">Mental Health<br/>Sponsor</span>
         </div>
         <div style="background: #fff; border-radius: 14px; padding: 10px; display: flex; align-items: center; justify-content: center; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
           <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777068475/Ethos_rltnd3.jpg" alt="Ethos" style="max-width: 100%; max-height: 60px; object-fit: contain;" loading="lazy" />
@@ -941,8 +953,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div style="background: #fff; border-radius: 14px; padding: 0; display: flex; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;">
           <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777070551/gutid_dcvzun.png" alt="GutID" style="max-width: 100%; max-height: 100px; object-fit: contain;" loading="lazy" />
         </div>
-        <div style="background: #fff; border-radius: 14px; padding: 12px 20px; display: flex; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;">
-          <img src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777137236/Momentum_Logo_Black_fgqdab.png" alt="Momentum" style="max-width: 100%; max-height: 110px; object-fit: contain;" loading="lazy" />
+        <div class="sp-momentum-box" style="background: #fff; border-radius: 14px; padding: 12px 20px; display: flex; align-items: center; justify-content: center; height: 80px; min-height: 80px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;">
+          <img class="sp-momentum-img" src="https://res.cloudinary.com/didlj0gdc/image/upload/v1777137236/Momentum_Logo_Black_fgqdab.png" alt="Momentum" style="max-width: 100%; max-height: 110px; object-fit: contain;" loading="lazy" />
         </div>
         <div></div>
       </div>
