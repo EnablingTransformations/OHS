@@ -1286,27 +1286,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- DISCOUNT POPUP -->
   <!-- DISCOUNT POPUP — HIDDEN. Reactivate on June 1st by removing style="display:none !important" -->
-  <div class="discount-overlay" id="discountModal" style="display:none !important;">
+  <div class="discount-overlay" id="discountModal">
     <div class="discount-modal">
       <button class="discount-close" onclick="closeDiscount()">&times;</button>
       <div id="discountForm">
         <div class="discount-badge">🎉 Limited Time Offer</div>
-        <div class="discount-title">Get <span>10% OFF</span><br/>Your Ticket</div>
+        <div class="discount-title">Get a <span>Discount</span><br/>on Your Ticket</div>
         <p class="discount-sub">Enter your email to instantly receive your exclusive discount code — and be the first to hear about speakers, schedule updates, and event news.</p>
         <div class="discount-form">
           <input class="discount-input" id="discount-name" type="text" placeholder="Enter your full name" />
           <input class="discount-input" id="discount-email" type="email" placeholder="Enter your email address" required />
-          <button class="discount-btn" onclick="claimDiscount()">Claim My 10% Discount →</button>
+          <button class="discount-btn" onclick="claimDiscount()">Claim My Discount →</button>
         </div>
         <p class="discount-skip" onclick="closeDiscount()">No thanks, I'll pay full price</p>
       </div>
       <div class="discount-success" id="discountSuccess">
         <div class="big-check">🎉</div>
         <h3>Your Code Is Ready!</h3>
-        <div class="discount-code" id="discountCodeBox">HEALTH10</div>
+        <div class="discount-code" id="discountCodeBox">OPTIMAL</div>
         <p style="color:#5ef0d0; font-size:0.85rem; font-weight:700; margin:6px 0;">✅ Code automatically copied to your clipboard!</p>
         <button onclick="copyDiscountCode()" id="copyBtn" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:8px 20px; border-radius:50px; cursor:pointer; font-size:0.85rem; font-weight:700; margin-bottom:12px; font-family:var(--font-body);">📋 Copy Again</button>
-        <p>Paste code <strong>HEALTH10</strong> at checkout for 10% off.<br/>See you June 20!</p>
+        <p>Paste code <strong>OPTIMAL</strong> at checkout for a discount.<br/>See you June 20!</p>
         <a href="#" onclick="closeDiscount(); setTimeout(function(){ openTicket(); }, 300); return false;" style="display:inline-block; margin-top:14px; background:var(--accent); color:#fff; font-weight:700; padding:12px 28px; border-radius:50px; font-size:0.95rem; text-decoration:none; cursor:pointer;">🎟️ Get Tickets Now →</a>
       </div>
     </div>
@@ -1444,7 +1444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.addEventListener('keydown', e => { if (e.key === 'Escape') ['ticketModal','contactModal','policyModal','privacyModal','termsModal'].forEach(closeOverlay); });
 
     function copyDiscountCode() {
-      navigator.clipboard.writeText('HEALTH10').then(() => {
+      navigator.clipboard.writeText('OPTIMAL').then(() => {
         const btn = document.getElementById('copyBtn');
         btn.textContent = '✅ Copied!';
         btn.style.background = 'rgba(16,185,129,0.3)';
@@ -1457,7 +1457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }).catch(() => {
         // Fallback for older browsers
         const el = document.createElement('textarea');
-        el.value = 'HEALTH10';
+        el.value = 'OPTIMAL';
         document.body.appendChild(el);
         el.select();
         document.execCommand('copy');
@@ -1611,9 +1611,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       emailInput.style.borderColor = '#10b981';
 
       // Auto-copy discount code to clipboard immediately
-      navigator.clipboard.writeText('HEALTH10').catch(() => {
+      navigator.clipboard.writeText('OPTIMAL').catch(() => {
         const el = document.createElement('textarea');
-        el.value = 'HEALTH10';
+        el.value = 'OPTIMAL';
         document.body.appendChild(el);
         el.select();
         document.execCommand('copy');
@@ -1623,7 +1623,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Send to Formspree for email collection
       fetch('https://formspree.io/f/mzdkpgpw', {
         method: 'POST',
-        body: JSON.stringify({ name: name, email: email, code: 'HEALTH10', source: 'discount_popup' }),
+        body: JSON.stringify({ name: name, email: email, code: 'OPTIMAL', source: 'discount_popup' }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       }).catch(() => {});
 
@@ -1635,7 +1635,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (scriptURL) {
         fetch(scriptURL, {
           method: 'POST',
-          body: JSON.stringify({ name: name, email: email, code: 'HEALTH10' }),
+          body: JSON.stringify({ name: name, email: email, code: 'OPTIMAL' }),
           headers: { 'Content-Type': 'application/json' }
         }).catch(() => {}); // fail silently
       }
@@ -1646,11 +1646,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       setTimeout(() => closeDiscount(), 6000);
     }
 
-    // Show discount popup after 5 seconds (once per session)
-    // DISCOUNT POPUP — DISABLED. Reactivate on June 1st by uncommenting the line below:
-    // if (!sessionStorage.getItem('discountSeen')) {
-    //   setTimeout(() => openOverlay('discountModal'), 28000);
-    // }
+    // Show discount popup on EXIT INTENT (mouse leaves to top of viewport — desktop only)
+    // Mobile fallback: triggered if user scrolls to bottom and idles, or attempts back navigation
+    if (!sessionStorage.getItem('discountSeen')) {
+      let discountTriggered = false;
+      const triggerExitIntent = () => {
+        if (discountTriggered) return;
+        discountTriggered = true;
+        openOverlay('discountModal');
+      };
+
+      // Desktop: mouse leaving to top of page
+      document.addEventListener('mouseleave', (e) => {
+        if (e.clientY <= 0) triggerExitIntent();
+      });
+
+      // Mobile fallback: trigger when user starts scrolling back up rapidly toward top
+      // (after they've scrolled past 50% of the page)
+      let lastScroll = 0;
+      let hasScrolledDeep = false;
+      window.addEventListener('scroll', () => {
+        const scroll = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scroll / docHeight > 0.4) hasScrolledDeep = true;
+        // If user scrolled deep then is rapidly going back up
+        if (hasScrolledDeep && lastScroll - scroll > 80 && scroll < 200) {
+          triggerExitIntent();
+        }
+        lastScroll = scroll;
+      }, { passive: true });
+    }
 
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
