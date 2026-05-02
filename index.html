@@ -1667,8 +1667,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       setTimeout(() => closeDiscount(), 6000);
     }
 
-    // Show discount popup on EXIT INTENT (mouse leaves to top of viewport — desktop only)
-    // Mobile fallback: triggered if user scrolls to bottom and idles, or attempts back navigation
+    // Show discount popup on EXIT INTENT (once per session)
     if (!sessionStorage.getItem('discountSeen')) {
       let discountTriggered = false;
       const triggerExitIntent = () => {
@@ -1677,25 +1676,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         openOverlay('discountModal');
       };
 
-      // Desktop: mouse leaving to top of page
+      // ----- DESKTOP: mouse leaving toward top of page -----
       document.addEventListener('mouseleave', (e) => {
         if (e.clientY <= 0) triggerExitIntent();
       });
 
-      // Mobile fallback: trigger when user starts scrolling back up rapidly toward top
-      // (after they've scrolled past 50% of the page)
-      let lastScroll = 0;
-      let hasScrolledDeep = false;
-      window.addEventListener('scroll', () => {
-        const scroll = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (scroll / docHeight > 0.4) hasScrolledDeep = true;
-        // If user scrolled deep then is rapidly going back up
-        if (hasScrolledDeep && lastScroll - scroll > 80 && scroll < 200) {
-          triggerExitIntent();
-        }
-        lastScroll = scroll;
-      }, { passive: true });
+      // ----- MOBILE: multiple exit-intent signals (very sensitive) -----
+      const isMobile = window.innerWidth < 768;
+
+      if (isMobile) {
+        // Signal 1: user has been on page > 4s AND scrolled > 10%, then minimizes/switches tab
+        let scrolledDeep = false;
+        let timeOnPage = 0;
+        setInterval(() => { timeOnPage++; }, 1000);
+
+        window.addEventListener('scroll', () => {
+          const ratio = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+          if (ratio > 0.10) scrolledDeep = true;
+        }, { passive: true });
+
+        // Tab switch / app switch / screen lock (visibility change)
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'hidden' && scrolledDeep && timeOnPage > 4) {
+            triggerExitIntent();
+          }
+        });
+
+        // Signal 2: user pressing back button
+        history.pushState(null, null, location.href);
+        window.addEventListener('popstate', () => {
+          if (scrolledDeep) {
+            triggerExitIntent();
+            history.pushState(null, null, location.href);
+          }
+        });
+
+        // Signal 3: user idle for 7s after scrolling deep
+        let idleTimer = null;
+        const resetIdle = () => {
+          if (idleTimer) clearTimeout(idleTimer);
+          idleTimer = setTimeout(() => {
+            if (scrolledDeep) triggerExitIntent();
+          }, 7000);
+        };
+        window.addEventListener('scroll', resetIdle, { passive: true });
+        window.addEventListener('touchstart', resetIdle, { passive: true });
+        resetIdle();
+
+        // Signal 4: rapid upward scroll near top
+        let lastScrollY = 0;
+        window.addEventListener('scroll', () => {
+          const scroll = window.scrollY;
+          if (scrolledDeep && lastScrollY - scroll > 50 && scroll < 400) {
+            triggerExitIntent();
+          }
+          lastScrollY = scroll;
+        }, { passive: true });
+      }
     }
 
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
