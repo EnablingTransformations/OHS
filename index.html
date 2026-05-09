@@ -191,6 +191,8 @@
     .sched-title { font-size: 0.88rem; font-weight: 600; color: var(--dark); line-height: 1.4; margin-top: 3px; }
     @media (max-width: 768px) { .sched-grid { grid-template-columns: 1fr; } }
     @media (max-width: 600px) { .topic-grid { grid-template-columns: 1fr !important; gap: 10px !important; } }
+    @media (max-width: 768px) { .who-grid { grid-template-columns: 1fr 1fr !important; gap: 14px !important; } }
+    @media (max-width: 480px) { .who-grid { grid-template-columns: 1fr !important; } }
     .timeline { display: grid; gap: 0; max-width: 720px; margin: 0 auto; }
     .tl-item { display: grid; grid-template-columns: 90px 1fr; position: relative; }
     .tl-item:not(:last-child)::before { content: ''; position: absolute; left: 44px; top: 36px; bottom: -12px; width: 2px; background: linear-gradient(to bottom, var(--primary), rgba(74,63,138,0.1)); }
@@ -627,11 +629,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hero">
     <img class="hero-bg-img" src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1775790652/ohs_hero_bg_tfckxh.webp" alt="" fetchpriority="high" />
     <div class="hero-top" style="padding-top:5px; max-width:1060px; margin:0 auto;">
-            <h1 style="font-family:var(--font-head); font-size:clamp(2.2rem, 5vw, 3.6rem); color:#fff; line-height:1.1; margin:0;">You Have Access to More Health Advice Than Ever —<br/>So Why Aren't You Feeling <em style="color:var(--accent); font-style:italic;">Better?</em></h1>
+            <h1 style="font-family:var(--font-head); font-size:clamp(2.2rem, 5vw, 3.6rem); color:#fff; line-height:1.1; margin:0;">You Have Access to More Health Advice Than Ever — So Why Aren't You Feeling <em style="color:var(--accent); font-style:italic;">Better?</em></h1>
     </div>
     <div style="flex:1;"></div>
     <div class="hero-bottom" style="padding-bottom:40px; max-width:1060px; margin:0 auto;">
-      <p class="hero-sub" style="max-width:580px; margin:0 0 16px; color:#fff;">This transformational one-day experience will show you why! You'll learn techniques and protocols from 12+ board-certified doctors, longevity scientists, and peak performance experts. These tools are often available at conferences that cost $5,000 or more.<br/><br/><strong>Get clear, actionable steps to apply right away.</strong></p>
+      <p class="hero-sub" style="max-width:580px; margin:14px 0 16px; color:#fff;">This transformational one-day experience will show you why! You'll learn techniques and protocols from 12+ board-certified doctors, longevity scientists, and peak performance experts.<br/><strong>Get clear, actionable steps to apply right away.</strong></p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 8px 16px; margin: 0 0 16px; color: rgba(255,255,255,0.95); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.5px;">
+        <span><span style="color: var(--accent);">12</span> Experts</span>
+        <span style="color: rgba(255,255,255,0.4);">·</span>
+        <span><span style="color: var(--accent);">120+</span> Attendees</span>
+        <span style="color: rgba(255,255,255,0.4);">·</span>
+        <span><span style="color: var(--accent);">1</span> Day</span>
+        <span style="color: rgba(255,255,255,0.4);">·</span>
+        <span>🍽️ Nutritious Breakfast &amp; Lunch Included</span>
+      </div>
       <div style="margin-top:400px; margin-bottom:16px;">
         <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.15rem;">📅 JUNE 20, 2026 · 8:30 AM – 6 PM</div><br/>
         <div class="hero-badge" style="display:inline-flex; background:none; border:none; color:#fff; font-size:1.15rem;">📍 UC San Diego Park &amp; Market, San Diego, CA</div><br/>
@@ -681,7 +692,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap rv" style="max-width: 760px; margin: 0 auto; text-align: center;">
       <h2 style="font-family: var(--font-head); color: #fff; font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin: 0 0 20px; line-height: 1.2;">Why this event is <em style="color: var(--accent); font-style: italic;">different?</em></h2>
       <p style="color: rgba(255,255,255,0.95); font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.6; font-weight: 500;">
-        The experts in the room will help reprogram your habits and default mental state — <em style="color: var(--accent); font-style: italic;">not a temporary hype or buzz that fades the next day.</em> This will empower you to reach your health and life goals. And you can ask them questions and connect with them in person at breakfast and lunch.
+        Not just techniques and protocols. The experts in the room will help reprogram your habits and default mental state — <em style="color: var(--accent); font-style: italic;">not a temporary hype or buzz that fades the next day.</em> This will empower you to reach your health and life goals. And you can ask them questions and connect with them in person at breakfast and lunch.<br/><br/><strong style="color: var(--accent); font-size: 1.1em;">The ultimate and intimate alternative to the 2,000-person biohacking zoo</strong>
       </p>
     </div>
   </section>
@@ -868,7 +879,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- WHY ATTEND -->
+  <!-- WHO YOU'LL MEET -->
+  <section style="background: linear-gradient(160deg, #0d0628 0%, #1a1040 50%, #0d0628 100%); padding: 80px 20px;">
+    <div class="wrap" style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <span class="section-tag tag-orange rv">Our Community</span>
+      <h2 class="rv" style="font-family: var(--font-head); color: #fff; font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 12px 0 14px; line-height: 1.15;">Who <em style="color: var(--accent); font-style: italic;">You'll Meet</em></h2>
+      <p class="rv" style="max-width: 640px; margin: 0 auto 40px; color: rgba(255,255,255,0.7); font-size: 1.02rem; line-height: 1.6;">Join a curated community of high-performers committed to extending healthspan, sharpening performance, and connecting around what matters most.</p>
+      <div class="who-grid rv" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.2); border-radius: 14px; padding: 28px 22px; text-align: left;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">🚀</div>
+          <h3 style="font-family: var(--font-head); color: var(--accent); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; line-height: 1.2;">Entrepreneurs &amp; Executives</h3>
+          <p style="color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.5; margin: 0;">High-performers who know longevity and energy are the ultimate competitive edge.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.2); border-radius: 14px; padding: 28px 22px; text-align: left;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">🩺</div>
+          <h3 style="font-family: var(--font-head); color: var(--accent); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; line-height: 1.2;">Practitioners &amp; Coaches</h3>
+          <p style="color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.5; margin: 0;">Doctors, naturopaths, functional medicine pros, health coaches looking to expand their toolkit.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.2); border-radius: 14px; padding: 28px 22px; text-align: left;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">🧬</div>
+          <h3 style="font-family: var(--font-head); color: var(--accent); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; line-height: 1.2;">Biohackers &amp; Longevity Enthusiasts</h3>
+          <p style="color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.5; margin: 0;">Self-experimenters obsessed with the latest science, protocols, and what's actually working.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.2); border-radius: 14px; padding: 28px 22px; text-align: left;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">🏋️</div>
+          <h3 style="font-family: var(--font-head); color: var(--accent); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; line-height: 1.2;">Athletes &amp; High Performers</h3>
+          <p style="color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.5; margin: 0;">Anyone training, recovering, and pushing physical limits — looking for the next edge.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.2); border-radius: 14px; padding: 28px 22px; text-align: left;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">💼</div>
+          <h3 style="font-family: var(--font-head); color: var(--accent); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; line-height: 1.2;">Wellness Founders</h3>
+          <p style="color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.5; margin: 0;">Building brands, products, or services in the health and longevity space — find collaborators here.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(232,145,58,0.2); border-radius: 14px; padding: 28px 22px; text-align: left;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">✨</div>
+          <h3 style="font-family: var(--font-head); color: var(--accent); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; line-height: 1.2;">Anyone Ready for More</h3>
+          <p style="color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.5; margin: 0;">Done settling for "okay." Ready to feel — and live — at your full potential.</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="highlights">
     <div class="wrap" style="text-align:center;">
       <span class="section-tag tag-orange">Why Attend</span>
@@ -890,7 +940,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
         <p style="color: rgba(255,255,255,0.95); font-size: 0.92rem; line-height: 1.5; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-weight: 600;">This event is designed to help you find and achieve all the above.</p>
         </div>
-        <div class="hl-box" style="text-align:left;"><h3>🎟️ Act Fast — Limited Seats</h3><ul>
+        <div class="hl-box" style="text-align:left;"><h3>🎟️ Limited Seats</h3><ul>
           <li><span>📈</span><span>Ticket prices increase as the event date approaches and event will also sell out.</span></li>
           <li><span>🏛️</span><span>This year's venue is 4 times as large as last year and limited to 120 people.</span></li>
           <li><span>💸</span><span>Full refund available up to 7 days before the event, and tickets are transferrable after then.</span></li>
@@ -1544,15 +1594,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Track InitiateCheckout event for Meta Pixel
       if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
 
-      // MOBILE: redirect directly to Luma so Apple Pay / Google Pay work natively
-      // (Luma's iframe embed blocks wallets due to Apple Pay domain verification rules)
-      const isMobile = window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      if (isMobile) {
-        window.location.href = 'https://luma.com/OHS';
-        return;
-      }
-
-      // DESKTOP: keep the modal/iframe experience
+      // Open iframe modal for all devices (Apple Pay / Google Pay work via verified Stripe domain)
       openOverlay('ticketModal');
       const c = document.getElementById('lumaContainer');
       if (!c.querySelector('iframe')) {
