@@ -1552,9 +1552,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         iframe.height = '450';
         iframe.frameBorder = '0';
         iframe.style = 'border:1px solid #bfcbda88; border-radius:4px; display:block;';
-        // Apple Pay / Google Pay require explicit payment permission AND publickey-credentials-get
-        iframe.setAttribute('allow', 'payment *; publickey-credentials-get *; fullscreen *; clipboard-write *');
+        // Comprehensive permissions for Apple Pay / Google Pay / wallet payments
+        iframe.setAttribute('allow', 'payment *; publickey-credentials-get *; fullscreen *; clipboard-write *; clipboard-read *; web-share *; cross-origin-isolated; encrypted-media *');
         iframe.setAttribute('allowpaymentrequest', 'true');
+        iframe.setAttribute('allowfullscreen', 'true');
         c.appendChild(iframe);
       }
     }
