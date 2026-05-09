@@ -1540,10 +1540,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     }
     function openTicket() {
-      openOverlay('ticketModal');
       // Track InitiateCheckout event for Meta Pixel
       if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
-      // Only inject iframe when modal opens — saves 1.3MB on page load
+
+      // MOBILE: redirect directly to Luma so Apple Pay / Google Pay work natively
+      // (Luma's iframe embed blocks wallets due to Apple Pay domain verification rules)
+      const isMobile = window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = 'https://luma.com/OHS';
+        return;
+      }
+
+      // DESKTOP: keep the modal/iframe experience
+      openOverlay('ticketModal');
       const c = document.getElementById('lumaContainer');
       if (!c.querySelector('iframe')) {
         const iframe = document.createElement('iframe');
@@ -1552,7 +1561,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         iframe.height = '450';
         iframe.frameBorder = '0';
         iframe.style = 'border:1px solid #bfcbda88; border-radius:4px; display:block;';
-        // Comprehensive permissions for Apple Pay / Google Pay / wallet payments
         iframe.setAttribute('allow', 'payment *; publickey-credentials-get *; fullscreen *; clipboard-write *; clipboard-read *; web-share *; cross-origin-isolated; encrypted-media *');
         iframe.setAttribute('allowpaymentrequest', 'true');
         iframe.setAttribute('allowfullscreen', 'true');
