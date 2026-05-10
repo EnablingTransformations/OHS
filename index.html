@@ -1792,7 +1792,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.getElementById('discountForm').style.display = 'none';
       document.getElementById('discountSuccess').style.display = 'block';
       sessionStorage.setItem('discountSeen', '1');
-      setTimeout(() => closeDiscount(), 6000);
+      // Popup stays open until user closes it manually
     }
 
     // Show discount popup on EXIT INTENT (once per session)
