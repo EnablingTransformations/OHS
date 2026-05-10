@@ -679,8 +679,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- B-ROLL VIDEO -->
   <section style="background: linear-gradient(160deg, #0d0b2e 0%, #1e1a5e 50%, #1a1045 100%); padding: 60px 0;">
     <div class="wrap" style="max-width: 900px;">
-      <video autoplay muted playsinline controls preload="metadata" poster="https://res.cloudinary.com/didlj0gdc/video/upload/so_2,w_900,q_auto,f_auto/v1777677889/Sid_final_comp_s30tza.jpg" style="width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 12px 40px rgba(0,0,0,0.4);">
-        <source src="https://res.cloudinary.com/didlj0gdc/video/upload/q_auto,f_auto,w_900/v1777677889/Sid_final_comp_s30tza.mp4" type="video/mp4">
+      <video autoplay muted playsinline controls preload="metadata" poster="https://res.cloudinary.com/didlj0gdc/video/upload/so_2,w_1280,q_auto:best,f_auto/v1777677889/Sid_final_comp_s30tza.jpg" style="width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 12px 40px rgba(0,0,0,0.4);">
+        <source src="https://res.cloudinary.com/didlj0gdc/video/upload/q_auto:best,f_auto,w_1280/v1777677889/Sid_final_comp_s30tza.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -1644,6 +1644,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function closeTerms()  { closeOverlay('termsModal'); }
     function closeDiscount(){ closeOverlay('discountModal'); sessionStorage.setItem('discountSeen','1'); }
 
+    // ===== Reusable email typo / fake check =====
+    // Returns null if email passes, or an error message string if it should be rejected
+    function checkEmailQuality(email) {
+      const domain = email.split('@')[1].toLowerCase();
+      const localPart = email.split('@')[0].toLowerCase();
+      const typoDomains = [
+        'gmail.co','gmail.cm','gmail.con','gmial.com','gmai.com','gnail.com','gmaill.com','gamil.com','gmali.com','gmail.om','gmail.cmo','gmail.coom','gmaol.com','gmail.c',
+        'yhoo.com','yaho.com','yahooo.com','yahoo.cm','yahoo.co','yahoo.con','yhaoo.com','yahoo.om',
+        'hotmail.cm','hotmail.co','hotmail.con','hotmial.com','hotmal.com','hotmaill.com','hotmail.om',
+        'outlook.cm','outlook.co','outlook.con','outloook.com','outloo.com','outlook.om',
+        'icloud.cm','icloud.co','icloud.con','iclould.com','iclod.com',
+        'aol.cm','aol.co','aol.con',
+        'test.com','fake.com','asdf.com','qwerty.com','example.com','mail.com'
+      ];
+      if (typoDomains.includes(domain)) return 'Did you mean a real address? Check the domain';
+      const fakeUsernames = ['test','fake','asdf','qwerty','noemail','none','na','x','xx','xxx','aaa','aaaa','1','12','123','1234'];
+      if (fakeUsernames.includes(localPart)) return 'Please use your real email address';
+      return null;
+    }
+
     function claimGuide() {
       const nameInput = document.getElementById('leadmag-name');
       const emailInput = document.getElementById('leadmag-email');
@@ -1679,6 +1699,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         emailInput.style.borderColor = '#ff4444';
         emailInput.value = '';
         emailInput.placeholder = '⚠️ Invalid email — use format: you@example.com';
+        emailInput.focus();
+        return;
+      }
+
+      // ===== SMART TYPO CHECK =====
+      const qualityError = checkEmailQuality(email);
+      if (qualityError) {
+        emailInput.style.borderColor = '#ff4444';
+        emailInput.placeholder = '⚠️ ' + qualityError;
+        emailInput.value = '';
         emailInput.focus();
         return;
       }
@@ -1756,6 +1786,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         emailInput.focus();
         return;
       }
+
+      // ===== SMART TYPO CHECK =====
+      const qualityError = checkEmailQuality(email);
+      if (qualityError) {
+        emailInput.style.borderColor = '#ff4444';
+        emailInput.placeholder = '⚠️ ' + qualityError;
+        emailInput.value = '';
+        emailInput.focus();
+        return;
+      }
+
       nameInput.style.borderColor = '#10b981';
       emailInput.style.borderColor = '#10b981';
 
