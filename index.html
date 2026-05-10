@@ -1414,10 +1414,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="discount-success" id="discountSuccess">
         <div class="big-check">🎉</div>
         <h3>Your Code Is Ready!</h3>
+        <p style="color:#5ef0d0; font-size:0.95rem; font-weight:700; margin:8px 0 14px;">✅ Already copied to your clipboard — just paste it at checkout.</p>
         <div class="discount-code" id="discountCodeBox">OPTIMAL</div>
-        <p style="color:#5ef0d0; font-size:0.85rem; font-weight:700; margin:6px 0;">✅ Code automatically copied to your clipboard!</p>
         <button onclick="copyDiscountCode()" id="copyBtn" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:8px 20px; border-radius:50px; cursor:pointer; font-size:0.85rem; font-weight:700; margin-bottom:12px; font-family:var(--font-body);">📋 Copy Again</button>
-        <p>Paste code <strong>OPTIMAL</strong> at checkout for a discount.<br/>See you June 20!</p>
+        <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem;">See you June 20!</p>
         <a href="#" onclick="closeDiscount(); setTimeout(function(){ openTicket(); }, 300); return false;" style="display:inline-block; margin-top:14px; background:var(--accent); color:#fff; font-weight:700; padding:12px 28px; border-radius:50px; font-size:0.95rem; text-decoration:none; cursor:pointer;">🎟️ Get Tickets Now →</a>
       </div>
     </div>
@@ -1565,8 +1565,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (title) title.innerHTML = "Mother's Day <span>Limited Time</span><br/>Offer";
         const codeBox = document.getElementById('discountCodeBox');
         if (codeBox) codeBox.textContent = 'MOTHERSDAY';
-        const successText = document.querySelector('.discount-success p');
-        if (successText) successText.innerHTML = 'Paste code <strong>MOTHERSDAY</strong> at checkout for a discount.<br/>See you June 20!';
       });
     })();
 
