@@ -203,6 +203,7 @@
     .sched-title { font-size: 0.88rem; font-weight: 600; color: var(--dark); line-height: 1.4; margin-top: 3px; }
     @media (max-width: 768px) { .sched-grid { grid-template-columns: 1fr; } }
     @media (max-width: 600px) { .topic-grid { grid-template-columns: 1fr !important; gap: 10px !important; } }
+    @media (max-width: 768px) { .compare-grid { grid-template-columns: 1fr !important; gap: 16px !important; } }
     @media (max-width: 768px) { .who-grid { grid-template-columns: 1fr 1fr !important; gap: 14px !important; } }
     @media (max-width: 480px) { .who-grid { grid-template-columns: 1fr !important; } }
     .timeline { display: grid; gap: 0; max-width: 720px; margin: 0 auto; }
@@ -615,7 +616,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- NAV -->
   <nav class="nav" id="mainNav">
     <div class="wrap nav-inner">
-      <a href="#" class="nav-logo" style="display:flex; align-items:center; gap:10px;"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1775712040/ohs_surprise.jpg" alt="OHS Logo" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;" />Optimal <span>Health</span> Summit <span>Live</span> 2026</a>
+      <a href="#" class="nav-logo" style="display:flex; align-items:center; gap:10px;"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1775712040/ohs_surprise.jpg" alt="Optimal Health Summit Logo" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;" />Optimal <span>Health</span> Summit <span>Live</span> 2026</a>
       <ul class="nav-links">
         <li><a href="#speakers">Experts</a></li>
         <li><a href="#schedule">Schedule</a></li>
@@ -802,6 +803,129 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="proof">
+    <div class="wrap" style="text-align:center;">
+      <span class="section-tag tag-orange rv">Previous Event</span>
+      <h2 class="section-heading rv">What Past Attendees Are Saying</h2>
+      <p class="rv" style="max-width: 600px; margin: 16px auto 32px; color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.6;">Real ratings from real Optimal Health Summit 07-26-2025 attendees. Average: <strong style="color: var(--accent);">9.7 / 10</strong></p>
+      <div class="test-slider-wrap">
+        <button class="test-side-nav left" onclick="document.getElementById('testSlider').scrollBy({left:-340,behavior:'smooth'})" aria-label="Previous">←</button>
+        <button class="test-side-nav right" onclick="document.getElementById('testSlider').scrollBy({left:340,behavior:'smooth'})" aria-label="Next">→</button>
+        <div class="test-slider" id="testSlider">
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Amazing speakers."</p>
+            <div class="test-author">— Bassel Haddad</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Event was so well organized and informative."</p>
+            <div class="test-author">— Corin Lopez</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Very informative, interesting and entertaining. I'm glad we were able to make it."</p>
+            <div class="test-author">— Bill Rabello</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Great speakers! Loved everyone I met. Great topics and learned a lot."</p>
+            <div class="test-author">— Anna Mai</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"All speakers were amazing!"</p>
+            <div class="test-author">— Jen Sutton</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Amazing group, inspiring content."</p>
+            <div class="test-author">— Stephanie Zito</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"I liked that the MC had us get up and do an activity together. MC was very personable and engaged."</p>
+            <div class="test-author">— Krista Pansini</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Outstanding speakers, great crowd."</p>
+            <div class="test-author">— Matt Johnson</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"I loved the content from the speakers. I loved the energy that was brought throughout the entire event."</p>
+            <div class="test-author">— Brennan Metzger</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Loved the speakers, food and content."</p>
+            <div class="test-author">— Laurice Hughes</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Excellent. I especially enjoyed the wellness doctor's talk — so much valuable information."</p>
+            <div class="test-author">— Alicia S.</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Educational, informative, wide range of topics discussed. The breadth of topics was great."</p>
+            <div class="test-author">— Heather Medina</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Quality of the speakers... I was able to learn something from all of them. The event had a great energy."</p>
+            <div class="test-author">— Tom Macgurn</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★★ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">10/10</span></div>
+            <p>"Excellent group of speakers. Well run."</p>
+            <div class="test-author">— Patrick Keenan</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★☆ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">9/10</span></div>
+            <p>"Good speakers, not too big a crowd, engaging content."</p>
+            <div class="test-author">— Mark Kehoe</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★☆ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">9/10</span></div>
+            <p>"The speakers and topics were very interesting and captivating."</p>
+            <div class="test-author">— Natalie Mason</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★☆ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">9/10</span></div>
+            <p>"New perspectives, great sense of community, very motivational."</p>
+            <div class="test-author">— Paola Reyes</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+          <div class="test-card rv">
+            <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700;">★★★★★★★★★☆ <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; margin-left: 4px;">9/10</span></div>
+            <p>"Great speakers! Good information — good variety of health and wellness topics covered! Good healthy food."</p>
+            <div class="test-author">— Malachi Anderson</div>
+            <div class="test-role">Optimal Health Summit 2025 Attendee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- VALUE STACK (Brunson Irresistible Offer) -->
   <section class="vstack" id="pricing">
     <div class="wrap" style="text-align:center;">
@@ -816,7 +940,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="vstack-row"><div class="vstack-label"><strong>Priority seating + lunch with the speakers</strong> <span class="vstack-vip">VIP</span></div><div class="vstack-val">$300+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Phase Contrast Microscopy Blood Testing</strong> (typically $275+ at a lab) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$275+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Your Health Action Roadmap</strong> — a take-home framework to implement immediately</div><div class="vstack-val">$250+</div></div>
-        <div class="vstack-row"><div class="vstack-label"><strong>Metabolic Testing</strong> (typically $250+ at a clinic) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$250+</div></div>
+        <div class="vstack-row"><div class="vstack-label"><strong>Metabolic Testing</strong> (typically $150+ at a clinic) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$150+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Expo hall</strong> with hands-on wellness demos, cutting-edge products &amp; practitioner services</div><div class="vstack-val">$200+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Microbiome Test Assessment Kit</strong> (at a $100 discount) <span class="vstack-vip">VIP</span></div><div class="vstack-val">$100+</div></div>
         <div class="vstack-row"><div class="vstack-label"><strong>Nutritious breakfast</strong>, <strong>energizing lunch</strong> &amp; healthy snacks all day</div><div class="vstack-val">$75+</div></div>
@@ -826,16 +950,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="big-val">$4,000+</div>
           <div class="sub-val">What you'd pay attending individual events &amp; clinics</div>
         </div>
-        <div class="vstack-price">
-          <div style="color:#fff; font-size:0.8rem; margin-bottom:6px;">Your price today starts at just</div>
-          <div style="color:#fff; font-family:var(--font-head); font-size:1.6rem; margin-bottom:8px;">General Admission $197 · VIP $497</div>
-          <div style="color:#ff6b6b; font-size:0.88rem; font-weight:700;">⚠️ Price increases on June 1st — lock in this rate now</div>
-          <a href="#" onclick="openTicket(); return false;" class="cta" style="font-size:1.05rem; padding:14px 36px;">
-            Reserve My Seat
-            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+      </div>
+
+      <!-- GA vs VIP COMPARISON -->
+      <div class="rv" style="max-width: 900px; margin: 50px auto 30px;">
+        <h3 style="font-family: var(--font-head); color: #fff; font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 8px; text-align: center;">Choose Your Ticket</h3>
+        <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; text-align: center; margin-bottom: 30px;">Pick the experience that's right for you.</p>
+
+        <div class="compare-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+          <!-- GA Column -->
+          <div style="background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 28px 24px;">
+            <div style="text-align: center; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <div style="color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">General Admission</div>
+              <div style="font-family: var(--font-head); color: #fff; font-size: 2.4rem; font-weight: 800; line-height: 1;">$197</div>
+            </div>
+            <ul style="list-style: none; padding: 0; margin: 0; color: rgba(255,255,255,0.92); font-size: 0.92rem; line-height: 1.55;">
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>All 12 expert keynotes &amp; panels</span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Full-day immersive experience</span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Networking with 120+ high performers</span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Expo hall with hands-on demos</span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Nutritious breakfast, lunch &amp; snacks</span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Your Health Action Roadmap</span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>After-event social mixer</span></li>
+            </ul>
+            <a href="#" onclick="openTicket(); return false;" style="display: block; text-align: center; margin-top: 24px; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.3); color: #fff; padding: 14px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s;">Choose GA →</a>
+          </div>
+
+          <!-- VIP Column -->
+          <div style="background: linear-gradient(160deg, rgba(232,145,58,0.18), rgba(232,145,58,0.05)); border: 2px solid var(--accent); border-radius: 16px; padding: 28px 24px; position: relative; box-shadow: 0 12px 40px rgba(232,145,58,0.15);">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; white-space: nowrap;">⭐ Best Value</div>
+            <div style="text-align: center; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.15);">
+              <div style="color: var(--accent); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-weight: 800;">VIP Experience</div>
+              <div style="font-family: var(--font-head); color: #fff; font-size: 2.4rem; font-weight: 800; line-height: 1;">$497</div>
+              <div style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-top: 4px;">$825+ in extras for just $300 more</div>
+            </div>
+            <div style="color: var(--accent); font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">Everything in GA, plus:</div>
+            <ul style="list-style: none; padding: 0; margin: 0; color: #fff; font-size: 0.92rem; line-height: 1.55;">
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--accent); flex-shrink: 0;">✓</span><span><strong>Priority seating + lunch with the speakers</strong> <span style="color: rgba(255,255,255,0.55); font-size: 0.8rem;">($300 value)</span></span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--accent); flex-shrink: 0;">✓</span><span><strong>Phase Contrast Microscopy Blood Testing</strong> <span style="color: rgba(255,255,255,0.55); font-size: 0.8rem;">($275 value)</span></span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--accent); flex-shrink: 0;">✓</span><span><strong>Metabolic Testing</strong> <span style="color: rgba(255,255,255,0.55); font-size: 0.8rem;">($150 value)</span></span></li>
+              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--accent); flex-shrink: 0;">✓</span><span><strong>Microbiome Test Kit at $100 off</strong> <span style="color: rgba(255,255,255,0.55); font-size: 0.8rem;">($100 value)</span></span></li>
+            </ul>
+            <a href="#" onclick="openVIPTicket(); return false;" style="display: block; text-align: center; margin-top: 24px; background: var(--accent); color: #fff; padding: 14px 24px; border-radius: 50px; font-weight: 800; text-decoration: none; box-shadow: 0 6px 20px rgba(232,145,58,0.35); transition: all 0.3s;">Choose VIP →</a>
+          </div>
+
         </div>
       </div>
+
+      <div class="rv" style="text-align: center; margin-top: 30px;">
+        <div style="color:#ff6b6b; font-size:0.95rem; font-weight:700;">⚠️ Price increases on June 1st</div>
+      </div>
+
       <div class="guarantee-inline rv" style="max-width:580px; margin:24px auto 0;">
         <div class="shield">🛡️</div>
         <span><strong>Zero Risk.</strong> All tickets fully refundable up to 7 days before the event and transferable after then.</span>
@@ -965,25 +1131,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="schedule" id="schedule">
     <div class="wrap" style="text-align:center;">
       <span class="section-tag tag-purple">Agenda</span>
-      <p class="rv" style="max-width:580px; margin: 20px auto 40px; color:var(--muted); font-size:0.97rem; line-height:1.8;"></p>
+      <h2 class="rv" style="font-family:var(--font-head); color:#fff; font-size:clamp(1.6rem, 3.5vw, 2.2rem); margin: 12px 0 8px;">A Day Built for <em style="color: var(--accent); font-style: italic;">Transformation</em></h2>
+      <p class="rv" style="max-width:620px; margin: 0 auto 36px; color:rgba(255,255,255,0.65); font-size:0.97rem; line-height:1.7;">Every session is carefully sequenced so you walk away with a clear, actionable roadmap — not just inspiration.</p>
       <div class="sched-grid rv">
+
+        <!-- MORNING -->
         <div class="sched-col">
           <div class="sched-col-label" style="color:#000 !important; font-size:0.9rem; background:#fff; display:inline-block; padding:6px 18px; border-radius:100px; border-bottom:none;">Morning</div>
-          <div class="sched-item"><span class="sched-time">8:30 – 9:00 AM</span><div><span class="tl-tag tag-social">Arrival</span><div class="sched-title">Check-In &amp; Breakfast</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Nutritious breakfast provided. Networking.</div></div></div>
-          <div class="sched-item"><span class="sched-time">9:00 AM – 1:00 PM</span><div><span class="tl-tag tag-keynote">Keynotes &amp; Panel</span></div></div>
-          <div class="sched-item"><span class="sched-time">1:00 – 1:45 PM</span><div><span class="tl-tag tag-social">Lunch Break</span><div class="sched-title">Lunch Break</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Healthy lunch provided. Networking.</div></div></div>
+          <div class="sched-item"><span class="sched-time">8:30 AM</span><div><span class="tl-tag tag-social">Arrival</span><div class="sched-title">Check-In &amp; Breakfast</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Nutritious breakfast. Networking.</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">9:15 AM</span><div><span class="tl-tag tag-keynote">Dr. Paul Bernitt</span><div class="sched-title">Driftless Activation: Shift Your State, Pursue a Life Worth Living</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">10:00 AM</span><div><span class="tl-tag tag-keynote">Jill Wheaton</span><div class="sched-title">Peak Performance Strategies from the Tony Robbins Organization</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">10:45 AM</span><div><span class="tl-tag tag-keynote">Michael Smith</span><div class="sched-title">Regenerative Medicine: What's Actually Working — Minus the Hype</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">11:15 AM</span><div><span class="tl-tag tag-break">Break</span><div class="sched-title">Refresh &amp; Connect</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">11:30 AM</span><div><span class="tl-tag tag-keynote">Joel Huizenga</span><div class="sched-title">What's Actually Working Right Now in Age Reversal Science</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">12:00 PM</span><div><span class="tl-tag tag-keynote">Dr. Chelsea Grow</span><div class="sched-title">The Brain Health Playbook: Sharper Focus, Better Memory, Clearer Thinking</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">12:30 PM</span><div><span class="tl-tag tag-keynote">Morning Panel + Q&amp;A</span><div class="sched-title">Live Q&amp;A With Morning Speakers</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">1:00 PM</span><div><span class="tl-tag tag-social">Lunch Break</span><div class="sched-title">Lunch &amp; Networking</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Healthy lunch provided. Connect with speakers.</div></div></div>
         </div>
+
+        <!-- AFTERNOON & EVENING -->
         <div class="sched-col">
           <div class="sched-col-label" style="color:#000 !important; font-size:0.9rem; background:#fff; display:inline-block; padding:6px 18px; border-radius:100px; border-bottom:none;">Afternoon &amp; Evening</div>
-          <div class="sched-item"><span class="sched-time">1:45 – 6:00 PM</span><div><span class="tl-tag tag-keynote">Keynotes &amp; Panel</span></div></div>
-          <div class="sched-item"><span class="sched-time">6:30 – 8:30 PM</span><div><span class="tl-tag tag-social">Social</span><div class="sched-title">1 to 3 Speakers at the After-Event Networking Social/Mixer</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Venue will be announced at the end of the event.</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">2:00 PM</span><div><span class="tl-tag tag-keynote">Dr. Darcy White</span><div class="sched-title">Release Years of Stress and Step Into Your Most Vibrant and Grounded Self</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">2:10 PM</span><div><span class="tl-tag tag-keynote">Dr. Neville Campbell</span><div class="sched-title">Performance Medicine: Where World-Class Health Meets World-Class Success</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">2:40 PM</span><div><span class="tl-tag tag-keynote">Dana S. Diaz</span><div class="sched-title">Identity Transformation: How Suppressed Emotions Manifest in Your Body</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">3:10 PM</span><div><span class="tl-tag tag-break">Break</span><div class="sched-title">Refresh &amp; Connect</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">3:30 PM</span><div><span class="tl-tag tag-keynote">Dr. Steven Schwartz</span><div class="sched-title">Sound &amp; Frequency: Unlocking Healing at the Cellular Level</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">4:00 PM</span><div><span class="tl-tag tag-keynote">Dr. Karolina Pras</span><div class="sched-title">Functional Medicine: Stop Treating Symptoms, Fix the Root Cause</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">4:30 PM</span><div><span class="tl-tag tag-keynote">🎁 Surprise Speaker</span><div class="sched-title">A Special Guest Reveal</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">5:00 PM</span><div><span class="tl-tag tag-keynote">Closing Panel + Q&amp;A</span><div class="sched-title">All Speakers · Live Q&amp;A · Action Steps</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">5:30 PM</span><div><span class="tl-tag tag-keynote">Conclusion</span><div class="sched-title">Closing Remarks &amp; Your Next Steps</div></div></div>
+
+          <div class="sched-item" style="border-top: 2px dashed rgba(232,145,58,0.3); padding-top: 14px; margin-top: 8px;"><span class="sched-time">6:30 PM</span><div><span class="tl-tag tag-social">Offsite Mixer</span><div class="sched-title">Check-In at After-Event Social</div><div style="font-size:0.78rem; color:var(--muted); margin-top:2px;">Venue announced at end of event.</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">7:00 PM</span><div><span class="tl-tag tag-keynote">Dr. Elena Eustache</span><div class="sched-title">The Love-Health Connection: Relationships, Happiness &amp; Healing</div></div></div>
+
+          <div class="sched-item"><span class="sched-time">8:00 PM</span><div><span class="tl-tag tag-keynote">Dr. Kayte Susse</span><div class="sched-title">How Cutting-Edge Regenerative Medicine Is Becoming Accessible</div></div></div>
+
           <div style="text-align:center; margin-top:18px;"><span style="font-size:0.8rem; color:#000 !important; font-weight:600; background:#fff; display:inline-block; padding:6px 18px; border-radius:100px;">Schedule subject to change.</span></div>
         </div>
       </div>
     </div>
-        <div class="rv" style="text-align: center; margin-top: 36px;">
-        <a href="#" onclick="openTicket(); return false;" class="cta" style="font-size:1.05rem; padding:14px 36px;">Reserve My Seat →</a>
-      </div>
+    <div class="rv" style="text-align: center; margin-top: 36px;">
+      <a href="#" onclick="openTicket(); return false;" class="cta" style="font-size:1.05rem; padding:14px 36px;">Reserve My Seat →</a>
+    </div>
   </section>
 
   <section class="vendor" id="expo">
@@ -1227,68 +1435,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>⚠️ Current pricing ends June 1st — ticket prices go up after that. <strong>Lock in the lowest rate today.</strong></p>
   </div>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="proof" style="display:none;">
-    <div class="wrap" style="text-align:center;">
-      <h2 class="section-heading rv">What Attendees Are Saying</h2>
-      <div class="test-slider-wrap">
-        <button class="test-side-nav left" onclick="document.getElementById('testSlider').scrollBy({left:-340,behavior:'smooth'})" aria-label="Previous">←</button>
-        <button class="test-side-nav right" onclick="document.getElementById('testSlider').scrollBy({left:340,behavior:'smooth'})" aria-label="Next">→</button>
-        <div class="test-slider" id="testSlider">
-          <div class="test-card rv">
-            <p>"I've listened to every Huberman episode, read Outlive, and followed Bryan Johnson for years. This summit gave me more actionable clarity in one day than all of that combined."</p>
-            <div class="test-author">— Michael T.</div>
-            <div class="test-role">San Diego, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"The networking alone was worth the ticket price. I met a functional medicine doctor who's now part of my health advisory board."</p>
-            <div class="test-author">— Sarah K.</div>
-            <div class="test-role">Encinitas, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"This summit connected dots I didn't know existed — between my hormones, gut health, and mental clarity. Life-changing."</p>
-            <div class="test-author">— James M.</div>
-            <div class="test-role">San Diego, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"I came skeptical about peptides and longevity protocols. After hearing Dr. Nick's breakdown, I completely changed my supplementation routine. Three months later, my energy levels are through the roof."</p>
-            <div class="test-author">— David R.</div>
-            <div class="test-role">Oceanside, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"The speakers were world-class, the networking was incredible, and I left with an actual plan. I've already changed three habits that are making a real difference."</p>
-            <div class="test-author">— Jessica L.</div>
-            <div class="test-role">Pacific Beach, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"I came skeptical. I left transformed. The satisfaction guarantee made it a no-brainer to try, and I'm so glad I did. Already bought my ticket for next year."</p>
-            <div class="test-author">— Mark C.</div>
-            <div class="test-role">Carlsbad, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"As a health professional, I expected surface-level content. I was blown away by the depth. Every speaker brought something I could immediately apply with my own clients."</p>
-            <div class="test-author">— Dr. Lisa N.</div>
-            <div class="test-role">La Jolla, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"I dragged my husband along and now he's more excited about health optimization than I am. The expo hall alone was worth the trip — we discovered products we use daily now."</p>
-            <div class="test-author">— Amanda G.</div>
-            <div class="test-role">Del Mar, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"I've been to biohacking conferences that cost 5x more and delivered half the value. This is the best-kept secret in the San Diego health scene."</p>
-            <div class="test-author">— Chris W.</div>
-            <div class="test-role">Mission Valley, CA</div>
-          </div>
-          <div class="test-card rv">
-            <p>"The Q&amp;A panel at the end was the highlight for me. Getting to ask real experts my specific health questions — you can't get that from a podcast."</p>
-            <div class="test-author">— Rachel S.</div>
-            <div class="test-role">Solana Beach, CA</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- FINAL CTA -->
   <section class="final">
@@ -1448,7 +1594,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <footer class="footer">
     <div class="wrap footer-inner">
       <div style="display:flex; align-items:center; gap:14px;">
-        <img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1775712040/ohs_surprise.jpg" alt="OHS Logo" style="width:60px; height:60px; border-radius:50%; object-fit:cover; flex-shrink:0;" />
+        <img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1775712040/ohs_surprise.jpg" alt="Optimal Health Summit Logo" style="width:60px; height:60px; border-radius:50%; object-fit:cover; flex-shrink:0;" />
         <div>
           <p class="footer-text">&copy; 2026 Optimal Health Summit</p>
           <p style="font-size:0.9rem; color:rgba(255,255,255,0.55); margin-top:4px;"><a href="#" onclick="openPolicy(); return false;" style="color:rgba(255,255,255,0.65); text-decoration:underline; font-weight:600;">Refund and Cancellation Policy</a></p>
@@ -1566,6 +1712,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="modal ticket-modal">
       <button class="modal-close" onclick="closeTicket()">&times;</button>
       <h2 style="font-family:var(--font-head); font-size:1.4rem; color:var(--dark); margin-bottom:16px; text-align:center;">🎟️ Get Your Tickets</h2>
+      <div id="vipReminderBanner" style="display:none; background: linear-gradient(135deg, #fff7ed, #ffe7c4); border: 2px solid var(--accent); border-radius: 12px; padding: 12px 18px; margin-bottom: 16px; text-align: center; font-weight: 800; color: #1a1040; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(232,145,58,0.18);">
+        ⬇️ Select <span style="color: var(--accent);">VIP — $497</span> below
+      </div>
       <div id="lumaContainer"></div>
     </div>
   </div>
@@ -1705,6 +1854,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Track InitiateCheckout event for Meta Pixel
       if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
 
+      // Reset any VIP reminder banner from previous opens
+      const reminder = document.getElementById('vipReminderBanner');
+      if (reminder) reminder.style.display = 'none';
+
       // Open iframe modal for all devices (Apple Pay / Google Pay work via verified Stripe domain)
       openOverlay('ticketModal');
       const c = document.getElementById('lumaContainer');
@@ -1720,6 +1873,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         iframe.setAttribute('allowfullscreen', 'true');
         c.appendChild(iframe);
       }
+    }
+
+    function openVIPTicket() {
+      // Same as openTicket but shows the VIP reminder banner above the iframe
+      openTicket();
+      const reminder = document.getElementById('vipReminderBanner');
+      if (reminder) reminder.style.display = 'block';
     }
     function closeTicket() { closeOverlay('ticketModal'); }
     function openModal()   { openOverlay('contactModal'); }
