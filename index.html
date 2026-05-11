@@ -531,7 +531,7 @@
     }
     .speakers-grid .sp-card { width: 100% !important; min-width: 0 !important; max-width: 100% !important; flex-shrink: 1 !important; }
     .sp-card-hidden { display: none !important; }
-    .speakers-expanded .sp-card-hidden { display: flex !important; }
+    .speakers-expanded .sp-card-hidden { display: block !important; }
 
     @media (max-width: 768px) {
       /* Sponsors mobile fixes */
@@ -778,6 +778,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="shield">🛡️</div>
         <span><strong>Zero Risk.</strong> All tickets fully refundable up to 7 days before the event and transferable after then.</span>
       </div>
+      <div class="rv" style="margin-top: 18px; text-align: center;">
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; font-style: italic;">💻 Can't attend in person? <a href="#" onclick="openTicket(); return false;" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Join virtually from anywhere</a></p>
+      </div>
     </div>
   </section>
 
@@ -894,21 +897,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-  <!-- PROBLEM (NEW - StoryBrand Element #2) -->
-  <section class="problem" style="background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%) !important; padding: 80px 0;">
-    <div class="wrap problem-content">
-      <span class="section-tag tag-orange">The Problem</span>
-      <h2 class="rv" style="color:#fff;">You Have Access to More Health Advice, Supplements, and Therapies Than Ever<br/>So Why Aren't You Feeling <em style="color:#E8913A;">Better?</em></h2>
-      <p class="rv" style="color:rgba(255,255,255,0.8);">Every day there's a new podcast episode, a new supplement stack, a new protocol. Bryan Johnson is spending $2M a year on Blueprint. Andrew Huberman has 400+ hours of content. David Sinclair is rewriting genetics at Harvard. Dr. Mark Hyman has revolutionized functional medicine. Dave Asprey has over a thousand episodes. Gary Brecka is going viral with metabolic testing. Ben Greenfield has tried everything from stem cells to sound therapy.</p>
-      <p class="rv" style="color:#fff;"><strong>You don't have the time, the budget, or the PhD to sort through all of it.</strong></p>
-      <div class="rv" style="max-width: 700px; margin: 30px auto;">
-        <img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1778113024/Gemini_Generated_Image_tb16kqtb16_zts0zs.png" alt="Overwhelmed by health information" style="width: 100%; height: auto; display: block; border-radius: 16px;" loading="lazy" />
-      </div>
-      <p class="rv" style="color:rgba(255,255,255,0.8);">So you end up stuck. You buy random supplements. You try a protocol for two weeks and quit. You feel unhappy about your health but don't know what actually moves the needle. Meanwhile, your energy is fading, your sleep is getting worse, and that voice in your head keeps saying: <em style="color:rgba(255,255,255,0.9);">"I should be doing more."</em></p>
-      <p class="solution-line rv" style="color:#E8913A; font-weight:700; font-size:1.05rem;">You don't need more information. You need the RIGHT information — curated by people who have been in the room with every major longevity and health pioneer — delivered in one day, with a clear plan you can actually follow, and with a supportive community founded on real and lasting connections that foster transformation.</p>
-    </div>
-  </section>
-
   <section class="schedule" id="schedule">
     <div class="wrap" style="text-align:center;">
       <span class="section-tag tag-purple">Agenda</span>
@@ -929,6 +917,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </section>
+
+  <section class="vendor" id="expo">
+    <div class="wrap" style="text-align:center;">
+      <span class="section-tag tag-orange">Expo</span>
+      <h2 class="section-heading-light rv">Sponsor Experience Lounge</h2>
+      <div class="vendor-grid rv">
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM (NEW - StoryBrand Element #2) -->
+  <section class="problem" style="background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%) !important; padding: 80px 0;">
+    <div class="wrap problem-content">
+      <span class="section-tag tag-orange">The Problem</span>
+      <h2 class="rv" style="color:#fff;">You Have Access to More Health Advice, Supplements, and Therapies Than Ever<br/>So Why Aren't You Feeling <em style="color:#E8913A;">Better?</em></h2>
+      <p class="rv" style="color:rgba(255,255,255,0.8);">Every day there's a new podcast episode, a new supplement stack, a new protocol. Bryan Johnson is spending $2M a year on Blueprint. Andrew Huberman has 400+ hours of content. David Sinclair is rewriting genetics at Harvard. Dr. Mark Hyman has revolutionized functional medicine. Dave Asprey has over a thousand episodes. Gary Brecka is going viral with metabolic testing. Ben Greenfield has tried everything from stem cells to sound therapy.</p>
+      <p class="rv" style="color:#fff;"><strong>You don't have the time, the budget, or the PhD to sort through all of it.</strong></p>
+      <div class="rv" style="max-width: 700px; margin: 30px auto;">
+        <img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1778113024/Gemini_Generated_Image_tb16kqtb16_zts0zs.png" alt="Overwhelmed by health information" style="width: 100%; height: auto; display: block; border-radius: 16px;" loading="lazy" />
+      </div>
+      <p class="rv" style="color:rgba(255,255,255,0.8);">So you end up stuck. You buy random supplements. You try a protocol for two weeks and quit. You feel unhappy about your health but don't know what actually moves the needle. Meanwhile, your energy is fading, your sleep is getting worse, and that voice in your head keeps saying: <em style="color:rgba(255,255,255,0.9);">"I should be doing more."</em></p>
+      <p class="solution-line rv" style="color:#E8913A; font-weight:700; font-size:1.05rem;">You don't need more information. You need the RIGHT information — curated by people who have been in the room with every major longevity and health pioneer — delivered in one day, with a clear plan you can actually follow, and with a supportive community founded on real and lasting connections that foster transformation.</p>
+    </div>
+  </section>
+
 
 
   <!-- VALUE / WHAT'S INCLUDED -->
@@ -1040,14 +1053,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
   <!-- VENDOR -->
-  <section class="vendor" id="expo">
-    <div class="wrap" style="text-align:center;">
-      <span class="section-tag tag-orange">Expo</span>
-      <h2 class="section-heading-light rv">Sponsor Experience Lounge</h2>
-      <div class="vendor-grid rv">
-      </div>
-    </div>
-  </section>
 
   <!-- VENDOR LOUNGE PHOTO -->
   <div style="background: linear-gradient(160deg, #2a1a0a 0%, #3d2510 50%, #1a1530 100%); padding: 0 0 40px; text-align:center;">
