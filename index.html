@@ -679,15 +679,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="max-width: 420px; margin-bottom: 10px;">
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
           <span style="font-size: 1.1rem; animation: pulse 2s infinite;">🔥</span>
-          <span style="color: #ff6b6b; font-size: 1.05rem; font-weight: 800;">Only 32 seats left</span>
+          <span style="color: #ff6b6b; font-size: 1.05rem; font-weight: 800;">Only 31 seats left</span>
         </div>
         <div style="background: rgba(220,38,38,0.45); border-radius: 100px; height: 10px; overflow: hidden; position: relative;">
-          <div style="width: 73%; height: 100%; border-radius: 100px; background: linear-gradient(90deg, #22c55e 0%, #84cc16 25%, #facc15 50%, #f59e0b 75%, #ef4444 100%); transition: width 1s ease; position: relative;">
+          <div style="width: 74%; height: 100%; border-radius: 100px; background: linear-gradient(90deg, #22c55e 0%, #84cc16 25%, #facc15 50%, #f59e0b 75%, #ef4444 100%); transition: width 1s ease; position: relative;">
             <div style="position: absolute; right: 0; top: -1px; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(232,145,58,0.6);"></div>
           </div>
         </div>
         <div style="display: flex; justify-content: space-between; margin-top: 4px;">
-          <span style="font-size: 0.85rem; color: rgba(255,255,255,1); font-weight: 700;">88 Action-Takers Registered</span>
+          <span style="font-size: 0.85rem; color: rgba(255,255,255,1); font-weight: 700;">89 Action-Takers Registered</span>
           <span style="font-size: 0.85rem; color: #fff; font-weight: 600;">120 Seats Total</span>
         </div>
       </div>
@@ -1508,15 +1508,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="rv" style="max-width: 480px; margin: 32px auto 0;">
         <div style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
           <span style="font-size: 1.1rem; animation: pulse 2s infinite;">🔥</span>
-          <span style="color: #ff6b6b; font-size: 1.05rem; font-weight: 800;">Only 32 seats left</span>
+          <span style="color: #ff6b6b; font-size: 1.05rem; font-weight: 800;">Only 31 seats left</span>
         </div>
         <div style="background: rgba(220,38,38,0.45); border-radius: 100px; height: 10px; overflow: hidden; position: relative;">
-          <div style="width: 73%; height: 100%; border-radius: 100px; background: linear-gradient(90deg, #22c55e 0%, #84cc16 25%, #facc15 50%, #f59e0b 75%, #ef4444 100%); transition: width 1s ease; position: relative;">
+          <div style="width: 74%; height: 100%; border-radius: 100px; background: linear-gradient(90deg, #22c55e 0%, #84cc16 25%, #facc15 50%, #f59e0b 75%, #ef4444 100%); transition: width 1s ease; position: relative;">
             <div style="position: absolute; right: 0; top: -1px; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(232,145,58,0.6);"></div>
           </div>
         </div>
         <div style="display: flex; justify-content: space-between; margin-top: 4px;">
-          <span style="font-size: 0.85rem; color: rgba(255,255,255,1); font-weight: 700;">88 Action-Takers Registered</span>
+          <span style="font-size: 0.85rem; color: rgba(255,255,255,1); font-weight: 700;">89 Action-Takers Registered</span>
           <span style="font-size: 0.85rem; color: #fff; font-weight: 600;">120 Seats Total</span>
         </div>
       </div>
@@ -1806,25 +1806,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     }
 
-    // ===== MOTHERS DAY PROMO (auto-reverts after 72 hours) =====
-    // Active from May 9 2026 to May 12 2026 (3 days)
-    // After May 12 09:00, popup automatically reverts to the standard "OPTIMAL" code
-    (function applyMothersDayPromo() {
-      const promoEnd = new Date('2026-05-12T16:30:00Z'); // ~9:30am Pacific on May 12, 2026
-      const now = new Date();
-      if (now > promoEnd) return; // Promo expired — keep the default OPTIMAL discount
-
-      // Override displayed code in the success state
-      window.DISCOUNT_CODE = 'MOTHERSDAY';
-
-      // Update the popup title + subtitle for promo period
-      window.addEventListener('DOMContentLoaded', () => {
-        const title = document.querySelector('.discount-title');
-        if (title) title.innerHTML = "Mother's Day <span>Limited Time</span><br/>Offer";
-        const codeBox = document.getElementById('discountCodeBox');
-        if (codeBox) codeBox.textContent = 'MOTHERSDAY';
-      });
-    })();
+    // ===== MOTHERS DAY PROMO REMOVED — reverted to default OPTIMAL discount =====
 
     function openVideoModal(youtubeId) {
       const modal = document.getElementById('videoModal');
