@@ -45,7 +45,7 @@
   <link rel="icon" type="image/jpeg" href="https://i.ibb.co/60sWCjK2/iamge-3.jpg" />
   <link rel="apple-touch-icon" href="https://i.ibb.co/60sWCjK2/iamge-3.jpg" />
   <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp" imagesrcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_768/v1775790652/ohs_hero_bg_tfckxh.webp 768w, https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1200/v1775790652/ohs_hero_bg_tfckxh.webp 1200w, https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp 1920w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp" imagesrcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_768/v1775790652/ohs_hero_bg_tfckxh.webp 768w, https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_1200/v1775790652/ohs_hero_bg_tfckxh.webp 1200w, https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp 1920w" imagesizes="100vw" fetchpriority="high" />
   <!-- Facebook Pixel deferred until page is idle -->
   <script>
     window.addEventListener('load', function() {
@@ -122,7 +122,8 @@
     .hero { min-height: 100vh; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
     .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.5; z-index: 0; }
     .hero-top { position: relative; z-index: 2; text-align: left; padding: 0 20px; }
-    .hero-bottom { position: relative; z-index: 2; text-align: left; padding: 0 20px; }
+    .hero-bottom { position: relative; z-index: 2; text-align: left; padding: 0 20px; min-height: 380px; }
+    @media (max-width: 768px) { .hero-bottom { min-height: 460px; } }
     .hero::before { content: ''; position: absolute; top: -30%; right: -15%; width: 65vw; height: 65vw; border-radius: 50%; background: radial-gradient(circle, rgba(232,145,58,0.12), transparent 70%); animation: drift 12s ease-in-out infinite; }
     .hero::after { content: ''; position: absolute; bottom: -20%; left: -10%; width: 50vw; height: 50vw; border-radius: 50%; background: radial-gradient(circle, rgba(120,80,220,0.15), transparent 70%); animation: drift 16s ease-in-out infinite reverse; }
     @keyframes drift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-30px,20px); } }
@@ -711,10 +712,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- HERO -->
   <section class="hero">
     <img class="hero-bg-img"
-         src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp"
-         srcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_768/v1775790652/ohs_hero_bg_tfckxh.webp 768w,
-                 https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1200/v1775790652/ohs_hero_bg_tfckxh.webp 1200w,
-                 https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp 1920w"
+         src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp"
+         srcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_768/v1775790652/ohs_hero_bg_tfckxh.webp 768w,
+                 https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_1200/v1775790652/ohs_hero_bg_tfckxh.webp 1200w,
+                 https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp 1920w"
          sizes="100vw"
          alt=""
          fetchpriority="high"
@@ -924,7 +925,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- B-ROLL VIDEO -->
   <section style="background: linear-gradient(160deg, #0d0b2e 0%, #1e1a5e 50%, #1a1045 100%); padding: 60px 0;">
     <div class="wrap" style="max-width: 900px;">
-      <video autoplay muted playsinline controls preload="metadata" poster="https://res.cloudinary.com/didlj0gdc/video/upload/so_2,w_1920,q_auto:best,f_auto/v1777677889/Sid_final_comp_s30tza.jpg" style="width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 12px 40px rgba(0,0,0,0.4);">
+      <video autoplay muted playsinline controls preload="metadata" poster="https://res.cloudinary.com/didlj0gdc/video/upload/so_2,w_800,q_auto:eco,f_auto/v1777677889/Sid_final_comp_s30tza.jpg" style="width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 12px 40px rgba(0,0,0,0.4);">
         <source src="https://res.cloudinary.com/didlj0gdc/video/upload/q_auto:best,f_auto,w_1920/v1777677889/Sid_final_comp_s30tza.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -2352,9 +2353,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         let timeOnPage = 0;
         setInterval(() => { timeOnPage++; }, 1000);
 
+        // Cache scroll metrics — recompute only on resize, not on every scroll (kills forced reflow)
+        let cachedScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        window.addEventListener('resize', () => {
+          cachedScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        }, { passive: true });
+
+        // Throttle scroll handler via rAF — fires at most 1x per frame instead of every scroll tick
+        let scrollPending = false;
         window.addEventListener('scroll', () => {
-          const ratio = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-          if (ratio > 0.10) scrolledDeep = true;
+          if (scrollPending) return;
+          scrollPending = true;
+          requestAnimationFrame(() => {
+            const ratio = window.scrollY / cachedScrollHeight;
+            if (ratio > 0.10) scrolledDeep = true;
+            scrollPending = false;
+          });
         }, { passive: true });
 
         // Tab switch / app switch / screen lock (visibility change)
