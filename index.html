@@ -612,7 +612,128 @@
       .sp-momentum-img { max-height: 80px !important; }
     }
 
-  </style>
+  
+    /* === Ticket Cards (3-column) === */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      .compare-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    }
+    .ticket-card {
+      background: rgba(255,255,255,0.06);
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 28px 22px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .ticket-card.ticket-vip {
+      background: linear-gradient(160deg, rgba(232,145,58,0.18), rgba(232,145,58,0.05));
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px rgba(232,145,58,0.15);
+    }
+    .ticket-card.ticket-ultra {
+      background: linear-gradient(160deg, rgba(94,240,208,0.18), rgba(94,240,208,0.04));
+      border-color: #5ef0d0;
+      box-shadow: 0 12px 40px rgba(94,240,208,0.15);
+    }
+    .ticket-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .ticket-badge-orange { background: var(--accent); }
+    .ticket-badge-teal { background: #5ef0d0; color: #0d0b2e; }
+    .ticket-head {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .ticket-label {
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .ticket-price {
+      font-family: var(--font-head);
+      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .ticket-sub {
+      font-size: 0.82rem;
+      margin-top: 4px;
+    }
+    .ticket-includes {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .ticket-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      flex: 1;
+    }
+    .ticket-list li {
+      padding: 8px 0;
+      display: flex;
+      gap: 10px;
+    }
+    .ticket-list .check { flex-shrink: 0; }
+    .ticket-value {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+    }
+    .ticket-cta {
+      display: block;
+      text-align: center;
+      margin-top: 24px;
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .ticket-cta-ghost {
+      background: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: #fff;
+    }
+    .ticket-cta-orange {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 6px 20px rgba(232,145,58,0.35);
+    }
+    .ticket-cta-teal {
+      background: #5ef0d0;
+      color: #0d0b2e;
+      font-weight: 800;
+      box-shadow: 0 6px 20px rgba(94,240,208,0.35);
+    }
+    .ticket-cta:hover { transform: translateY(-2px); }
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -735,7 +856,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span style="color: rgba(255,255,255,0.4);">·</span>
         <span>🍽️ Nutritious Breakfast &amp; Lunch Included</span>
         <span style="color: rgba(255,255,255,0.4);">·</span>
-        <span>💎 <span style="color: var(--accent);">$197</span> GA / <span style="color: var(--accent);">$497</span> VIP</span>
+        <span>💎 <span style="color: var(--accent);">$197</span> GA / <span style="color: var(--accent);">$497</span> VIP / <span style="color: var(--accent);">$997</span> Ultra VIP / <span style="color: var(--accent);">$49</span> Virtual</span>
       </div>
       <div style="margin-top:400px; margin-bottom:16px;">
         <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.15rem;">📅 JUNE 20, 2026 · 8:30 AM – 6 PM</div><br/>
@@ -1199,57 +1320,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3 style="font-family: var(--font-head); color: #fff; font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 8px; text-align: center;">Choose Your Experience</h3>
         <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; text-align: center; margin-bottom: 30px;">Pick the experience that's right for you.</p>
 
-        <div class="compare-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="compare-grid">
 
           <!-- GA Column -->
-          <div style="background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 28px 24px;">
-            <div style="text-align: center; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <div style="color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">General Admission</div>
-              <div style="font-family: var(--font-head); color: #fff; font-size: 2.4rem; font-weight: 800; line-height: 1;">$197</div>
+          <div class="ticket-card ticket-ga">
+            <div class="ticket-head">
+              <div class="ticket-label" style="color: rgba(255,255,255,0.7);">General Admission</div>
+              <div class="ticket-price">$197</div>
             </div>
-            <ul style="list-style: none; padding: 0; margin: 0; color: rgba(255,255,255,0.92); font-size: 0.92rem; line-height: 1.55;">
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>All 12 expert keynotes &amp; panels</span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Full-day immersive experience</span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Networking with 120+ high performers</span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Expo hall with hands-on demos</span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Nutritious breakfast, lunch &amp; snacks</span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>Your Health Action Roadmap</span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: #5ef0d0; flex-shrink: 0;">✓</span><span>After-event social mixer</span></li>
+            <ul class="ticket-list" style="color: rgba(255,255,255,0.92);">
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span>All 12 expert keynotes &amp; panels</span></li>
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span>Full-day immersive experience</span></li>
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span>Networking with 120+ high performers</span></li>
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span>Expo hall with hands-on demos</span></li>
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span>Nutritious breakfast, lunch &amp; snacks</span></li>
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span>Your Health Action Roadmap</span></li>
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span>After-event social mixer</span></li>
             </ul>
-            <a href="#" onclick="openTicket(); return false;" style="display: block; text-align: center; margin-top: 24px; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.3); color: #fff; padding: 14px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s;">Choose GA →</a>
+            <a href="#" onclick="openTicket(); return false;" class="ticket-cta ticket-cta-ghost">Choose GA →</a>
           </div>
 
           <!-- VIP Column -->
-          <div style="background: linear-gradient(160deg, rgba(232,145,58,0.18), rgba(232,145,58,0.05)); border: 2px solid var(--accent); border-radius: 16px; padding: 28px 24px; position: relative; box-shadow: 0 12px 40px rgba(232,145,58,0.15);">
-            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; white-space: nowrap;">⭐ Best Value</div>
-            <div style="text-align: center; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.15);">
-              <div style="color: var(--accent); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-weight: 800;">VIP Experience</div>
-              <div style="font-family: var(--font-head); color: #fff; font-size: 2.4rem; font-weight: 800; line-height: 1;">$497</div>
-              <div style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-top: 4px;">$825+ in extras for just $300 more</div>
+          <div class="ticket-card ticket-vip">
+            <div class="ticket-badge ticket-badge-orange">⭐ Best Value</div>
+            <div class="ticket-head" style="border-color: rgba(255,255,255,0.15);">
+              <div class="ticket-label" style="color: var(--accent); font-weight: 800;">VIP Experience</div>
+              <div class="ticket-price">$497</div>
+              <div class="ticket-sub" style="color: rgba(255,255,255,0.7);">$825+ in extras for just $300 more</div>
             </div>
-            <div style="color: var(--accent); font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">Everything in GA, plus:</div>
-            <ul style="list-style: none; padding: 0; margin: 0; color: #fff; font-size: 0.92rem; line-height: 1.55;">
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--accent); flex-shrink: 0;">✓</span><span><strong>Priority seating + lunch with the speakers</strong> <span style="color: rgba(255,255,255,0.55); font-size: 0.8rem;">($300 value)</span></span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--accent); flex-shrink: 0;">✓</span><span><strong>Phase Contrast Microscopy Blood Testing</strong> <span style="color: rgba(255,255,255,0.55); font-size: 0.8rem;">($275 value)</span></span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--accent); flex-shrink: 0;">✓</span><span><strong>Metabolic Testing</strong> <span style="color: rgba(255,255,255,0.55); font-size: 0.8rem;">($150 value)</span></span></li>
-              <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--accent); flex-shrink: 0;">✓</span><span><strong>Microbiome Test Kit at $100 off</strong> <span style="color: rgba(255,255,255,0.55); font-size: 0.8rem;">($100 value)</span></span></li>
+            <div class="ticket-includes" style="color: var(--accent);">Everything in GA, plus:</div>
+            <ul class="ticket-list" style="color: #fff;">
+              <li><span class="check" style="color: var(--accent);">✓</span><span><strong>Priority seating + lunch with the speakers</strong> <span class="ticket-value">($300 value)</span></span></li>
+              <li><span class="check" style="color: var(--accent);">✓</span><span><strong>Phase Contrast Microscopy Blood Testing</strong> <span class="ticket-value">($275 value)</span></span></li>
+              <li><span class="check" style="color: var(--accent);">✓</span><span><strong>Metabolic Testing</strong> <span class="ticket-value">($150 value)</span></span></li>
+              <li><span class="check" style="color: var(--accent);">✓</span><span><strong>Microbiome Test Kit at $100 off</strong> <span class="ticket-value">($100 value)</span></span></li>
             </ul>
-            <a href="#" onclick="openVIPTicket(); return false;" style="display: block; text-align: center; margin-top: 24px; background: var(--accent); color: #fff; padding: 14px 24px; border-radius: 50px; font-weight: 800; text-decoration: none; box-shadow: 0 6px 20px rgba(232,145,58,0.35); transition: all 0.3s;">Choose VIP →</a>
+            <a href="#" onclick="openVIPTicket(); return false;" class="ticket-cta ticket-cta-orange">Choose VIP →</a>
+          </div>
+
+          <!-- Ultra VIP Column -->
+          <div class="ticket-card ticket-ultra">
+            <div class="ticket-badge ticket-badge-teal">🔥 Only 2 Left</div>
+            <div class="ticket-head" style="border-color: rgba(94,240,208,0.18);">
+              <div class="ticket-label" style="color: #5ef0d0; font-weight: 800;">Ultra VIP</div>
+              <div class="ticket-price">$997</div>
+              <div class="ticket-sub" style="color: rgba(255,255,255,0.7);">Available until June 1</div>
+            </div>
+            <div class="ticket-includes" style="color: #5ef0d0;">Everything in VIP, plus:</div>
+            <ul class="ticket-list" style="color: #fff;">
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span><strong>30-minutes 1:1 with any speaker/expert</strong> at the event or later over phone/video call</span></li>
+              <li><span class="check" style="color: #5ef0d0;">✓</span><span><strong>Up to 7 speakers</strong> available for 1:1 selection</span></li>
+            </ul>
+            <a href="#" onclick="openUltraVIPTicket(); return false;" class="ticket-cta ticket-cta-teal">Choose Ultra VIP →</a>
           </div>
 
         </div>
       </div>
 
-      <div class="rv" style="text-align: center; margin-top: 30px;">
+      <div class="rv" style="margin-top: 30px; text-align: center;">
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; font-style: italic;">💻 Can't attend in person? <a href="#" onclick="openTicket(); return false;" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Join virtually from anywhere</a> for $49</p>
+      </div>
+
+      <div class="rv" style="text-align: center; margin-top: 18px;">
         <div style="color:#ff6b6b; font-size:0.95rem; font-weight:700;">⚠️ Price increases on June 1st</div>
       </div>
 
       <div class="guarantee-inline rv" style="max-width:580px; margin:24px auto 0;">
         <div class="shield">🛡️</div>
         <span><strong>Zero Risk.</strong> All tickets fully refundable up to 7 days before the event and transferable after then.</span>
-      </div>
-      <div class="rv" style="margin-top: 18px; text-align: center;">
-        <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; font-style: italic;">💻 Can't attend in person? <a href="#" onclick="openTicket(); return false;" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Join virtually from anywhere</a></p>
       </div>
     </div>
   </section>
@@ -1794,7 +1932,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-list rv">
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Who is this event for?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Anyone who wants to take control of their health — from wellness-curious beginners to experienced biohackers, health professionals, entrepreneurs, and executives. If you follow the longevity and biohacking movement — Blueprint, Huberman Lab, Dr. Mark Hyman, Bulletproof, the anti-aging science community — and want that caliber of knowledge in one accessible, affordable day — this is for you.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Who is this event NOT for?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>This isn't a medical consultation or a substitute for working with your doctor. It's also not a passive lecture series — it's an immersive, high-energy day for people who are ready to take action on their health.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the difference between General Admission and VIP?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Both include all keynotes, meals, expo access, and networking. VIP adds metabolic testing, Phase Contrast Microscopy blood testing, a microbiome test assessment kit at a discount, priority seating, and a speaker meet-and-greet.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the difference between General Admission, VIP, and Ultra VIP?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p><strong>General Admission ($197)</strong> includes all keynotes, meals, expo access, and networking.</p><p><strong>VIP ($497)</strong> adds metabolic testing, Phase Contrast Microscopy blood testing, a microbiome test kit at a discount, priority seating, and lunch with the speakers.</p><p><strong>Ultra VIP ($997)</strong> includes everything in VIP plus a 30-minute 1:1 with any speaker — at the event or later over video call — with up to 7 speakers available. Limited to a small number of seats; available until June 1.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What if I buy a ticket and can't make it?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>All tickets are fully refundable up to 7 days before the event. After that, tickets are transferable to another person.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Is parking available?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Parking will be free on-site or discounted (max $10) at 1–3 nearby public lots within a 2–3 block walk. Parking details and validation instructions will be sent by email a few weeks before the event. ♿ ADA-accessible parking options are available at or near the venue. Contact us for additional info.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What about food and dietary restrictions?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Breakfast, lunch, and snacks are included with every ticket. We accommodate common dietary needs — please note any restrictions when you register.</p></div></div>
@@ -1979,6 +2117,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div id="vipReminderBanner" style="display:none; background: linear-gradient(135deg, #fff7ed, #ffe7c4); border: 2px solid var(--accent); border-radius: 12px; padding: 12px 18px; margin-bottom: 16px; text-align: center; font-weight: 800; color: #1a1040; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(232,145,58,0.18);">
         ⬇️ Select <span style="color: var(--accent);">VIP — $497</span> below
       </div>
+      <div id="ultraVipReminderBanner" style="display:none; background: linear-gradient(135deg, #ecfffa, #c7f9ed); border: 2px solid #5ef0d0; border-radius: 12px; padding: 12px 18px; margin-bottom: 16px; text-align: center; font-weight: 800; color: #0d0b2e; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(94,240,208,0.22);">
+        ⬇️ Select <span style="color: #0a8a72;">Ultra VIP — $997</span> below
+      </div>
       <div id="lumaContainer"></div>
     </div>
   </div>
@@ -2100,9 +2241,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Track InitiateCheckout event for Meta Pixel
       if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
 
-      // Reset any VIP reminder banner from previous opens
+      // Reset any VIP/Ultra VIP reminder banners from previous opens
       const reminder = document.getElementById('vipReminderBanner');
       if (reminder) reminder.style.display = 'none';
+      const ultraReminder = document.getElementById('ultraVipReminderBanner');
+      if (ultraReminder) ultraReminder.style.display = 'none';
 
       // Open iframe modal for all devices (Apple Pay / Google Pay work via verified Stripe domain)
       openOverlay('ticketModal');
@@ -2125,6 +2268,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Same as openTicket but shows the VIP reminder banner above the iframe
       openTicket();
       const reminder = document.getElementById('vipReminderBanner');
+      if (reminder) reminder.style.display = 'block';
+    }
+
+    function openUltraVIPTicket() {
+      // Same as openTicket but shows the Ultra VIP reminder banner above the iframe
+      openTicket();
+      const reminder = document.getElementById('ultraVipReminderBanner');
       if (reminder) reminder.style.display = 'block';
     }
     function closeTicket() { closeOverlay('ticketModal'); }
