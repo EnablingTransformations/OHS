@@ -46,7 +46,8 @@
   <link rel="apple-touch-icon" href="https://i.ibb.co/60sWCjK2/iamge-3.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1775790652/ohs_hero_bg_tfckxh.webp" fetchpriority="high" />
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp" imagesrcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_768/v1775790652/ohs_hero_bg_tfckxh.webp 768w, https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1200/v1775790652/ohs_hero_bg_tfckxh.webp 1200w, https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp 1920w" imagesizes="100vw" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <!-- Facebook Pixel deferred until page is idle -->
   <script>
@@ -674,7 +675,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- NAV -->
   <nav class="nav" id="mainNav">
     <div class="wrap nav-inner">
-      <a href="#" class="nav-logo" style="display:flex; align-items:center; gap:10px;"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1775712040/ohs_surprise.jpg" alt="Optimal Health Summit Logo" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;" />Optimal <span>Health</span> Summit <span>Live</span> 2026</a>
+      <a href="#" class="nav-logo" style="display:flex; align-items:center; gap:10px;"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_fill,w_76,h_76/v1775712040/ohs_surprise.jpg" alt="Optimal Health Summit Logo" width="38" height="38" decoding="async" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;" />Optimal <span>Health</span> Summit <span>Live</span> 2026</a>
       <ul class="nav-links">
         <li><a href="#speakers">Experts</a></li>
         <li><a href="#schedule">Schedule</a></li>
@@ -702,7 +703,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-bg-img" src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto/v1775790652/ohs_hero_bg_tfckxh.webp" alt="" fetchpriority="high" />
+    <img class="hero-bg-img"
+         src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp"
+         srcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_768/v1775790652/ohs_hero_bg_tfckxh.webp 768w,
+                 https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1200/v1775790652/ohs_hero_bg_tfckxh.webp 1200w,
+                 https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_limit,w_1920/v1775790652/ohs_hero_bg_tfckxh.webp 1920w"
+         sizes="100vw"
+         alt=""
+         fetchpriority="high"
+         decoding="async" />
     <div class="hero-top" style="padding-top:5px; max-width:1060px; margin:0 auto;">
             <h1 style="font-family:var(--font-head); font-size:clamp(2.2rem, 5vw, 3.6rem); color:#fff; line-height:1.1; margin:0;">Some People Will Feel And Look 50 at age 70. <em style="color:var(--accent); font-style:italic;">Others Will Feel And Look 70 at age 50.</em></h1>
     </div>
@@ -737,7 +746,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         @keyframes pulseRed { 0%,100% { box-shadow: inset 0 0 8px rgba(220,38,38,0.4); } 50% { box-shadow: inset 0 0 16px rgba(239,68,68,0.7); } }
 
         /* ===== ENHANCED SEAT BAR (v2) ===== */
-        .seatbar-block { max-width: 580px; margin-bottom: 10px; position: relative; }
+        .seatbar-block { max-width: 580px; margin-bottom: 10px; position: relative; min-height: 110px; }
         .seatbar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 10px; flex-wrap: wrap; }
         .seatbar-alert {
           display: inline-flex; align-items: center; gap: 8px;
