@@ -119,8 +119,9 @@
     }
 
     /* HERO */
-    .hero { min-height: 100vh; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
-    .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center top; opacity: 0.5; z-index: 0; background: #1a1045; }
+    .hero { min-height: auto; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; flex-direction: column; justify-content: flex-start; position: relative; overflow: hidden; }
+    .hero-bg-img { position: relative; width: 100%; height: 50vh; max-height: 520px; object-fit: contain; object-position: center; opacity: 0.95; z-index: 0; background: #1a1045; display: block; }
+    @media (max-width: 768px) { .hero-bg-img { height: 40vh; max-height: 360px; } }
 
     /* ===== SCREEN 1: Video at top, text stacked below ===== */
     .hero-video-screen {
