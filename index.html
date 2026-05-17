@@ -120,7 +120,7 @@
 
     /* HERO */
     .hero { min-height: 100vh; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
-    .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center top; opacity: 0.5; z-index: 0; background: #1a1045; }
+    .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.5; z-index: 0; background: #1a1045; }
 
     /* ===== SCREEN 1: Full-bleed video hero ===== */
     .hero-video-screen {
@@ -129,7 +129,7 @@
     }
     .hero-video-bg {
       position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; z-index: 0;
+      object-fit: contain; z-index: 0; background: #000;
     }
     .hero-video-overlay {
       position: absolute; inset: 0; z-index: 1;
@@ -153,17 +153,9 @@
       font-size: clamp(1rem, 1.4vw, 1.15rem); line-height: 1.55;
       text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
-    .hero-video-scroll {
-      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      color: rgba(255,255,255,0.7); font-size: 0.75rem; letter-spacing: 0.15em;
-      text-transform: uppercase; animation: scrollBob 2.2s ease-in-out infinite;
-    }
-    @keyframes scrollBob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 6px); } }
     @media (max-width: 768px) {
       .hero-video-screen { min-height: 560px; }
       .hero-video-content { padding: 0 20px; }
-      .hero-video-scroll { bottom: 18px; }
     }
     .hero-top { position: relative; z-index: 2; text-align: left; padding: 0 20px; }
     .hero-bottom { position: relative; z-index: 2; text-align: left; padding: 0 20px; min-height: 380px; }
@@ -886,10 +878,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-video-content">
       <h1 class="hero-video-h1">Some people feel and look 50 at age 70. <em>Others feel and look 70 at age 50.</em> Where do you stand?</h1>
       <p class="hero-video-sub">That gap isn't genetics or luck. It's protocol. On June 20, <strong>twelve physicians, longevity scientists, and peak-performance experts in one room</strong> — handing you the protocols and breakthroughs that decide which side you land on.<br/><strong>Show up. Walk out with a plan. Catch up to the people already winning.</strong></p>
-      <div class="hero-video-scroll" aria-hidden="true">
-        <span>scroll</span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
-      </div>
     </div>
   </section>
 
