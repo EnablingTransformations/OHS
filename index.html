@@ -492,14 +492,13 @@
       font-family: var(--font-body);
     }
     .stakes-close {
-      color: var(--accent);
+      color: #fff;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.35rem;
       margin-top: 36px;
-      line-height: 1.6;
-      font-family: var(--font-head);
-      font-style: italic;
+      line-height: 1.5;
     }
+    .stakes-close strong { color: var(--accent); }
     @media (max-width: 700px) { .stakes-list { grid-template-columns: 1fr; } }
 
     /* SUCCESS / TRANSFORMATION */
@@ -886,7 +885,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <source src="https://res.cloudinary.com/didlj0gdc/video/upload/q_auto,f_auto,vc_auto/v1778713849/grok-video-2_hn8ho8.mp4" type="video/mp4" />
     </video>
     <div class="hero-video-content">
-      <p class="hero-video-sub">That gap isn't genetics or luck. It's protocol. On June 20, <strong>twelve physicians, longevity scientists, and peak-performance experts in one room</strong> — handing you the protocols and breakthroughs that decide which side you land on.<br/><strong>Show up. Walk out with a plan. Catch up to the people already winning.</strong></p>
+      <p class="hero-video-sub">That gap isn't genetics or luck. It's protocol. On June 20 in San Diego, <strong>twelve physicians, longevity scientists, and peak-performance experts in one room</strong> — handing you the protocols and breakthroughs that decide which side you land on.<br/><strong>Show up. Walk out with a plan. Catch up to the people already winning.</strong></p>
     </div>
   </section>
 
@@ -914,6 +913,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div style="margin: 0 0 16px; color: rgba(255,255,255,0.95); font-size: 1.02rem; font-weight: 700; letter-spacing: 0.5px;">
         💎 <span style="color: var(--accent);">$197</span> GA / <span style="color: var(--accent);">$497</span> VIP / <span style="color: var(--accent);">$997</span> Ultra VIP / <span style="color: var(--accent);">$49</span> Virtual
+      </div>
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; margin:0 0 16px; background:rgba(255,212,77,0.12); border:1px solid rgba(255,212,77,0.35); border-radius:100px; color:#fff; font-size:0.92rem; font-weight:600;">
+        <span><span style="color: var(--accent); font-weight:800;">4.85/5</span> rating from 2025 attendees</span>
       </div>
       <div style="margin-top:24px; margin-bottom:16px;">
         <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.02rem;">📅 JUNE 20, 2026 · 8:30 AM – 6 PM</div><br/>
@@ -1025,7 +1027,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           transform: translateX(-50%);
         }
         .seatbar-tick.tick-end {
-          /* Right-aligned to prevent SOLD OUT overflow */
+          /* Right-aligned to prevent end label overflow */
           right: 0;
           left: auto;
           transform: none;
@@ -1047,7 +1049,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
         .seatbar-reg { font-family: var(--font-body); font-size: 0.95rem; font-weight: 800; color: #fff; letter-spacing: -0.005em; }
         .seatbar-reg .reg-icon { color: #5ef0d0; margin-right: 3px; }
-        .seatbar-total { font-size: 0.85rem; color: #fff; font-weight: 700; letter-spacing: 0.02em; white-space: nowrap; }
+        .seatbar-total { display: none; }
 
         @keyframes fireBob {
           0%,100% { transform: translateY(0) scale(1); }
@@ -1075,25 +1077,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- SOCIAL PROOF (HERO copy — keep in sync with the bottom CTA copy) -->
       <div class="seatbar-block">
-        <div class="seatbar-header">
-          <a href="#" onclick="openTicket(); return false;" class="seatbar-alert" aria-label="Reserve your seat now">
-            <span class="seatbar-fire">🔥</span>
-            Only 19 seats left
-          </a>
-        </div>
-        <div class="seatbar-track-wrap">
-          <div class="seatbar-floating-pct" style="left: 84%;">84%<span class="pct-sub">filled</span></div>
-          <div class="seatbar-track">
-            <div class="seatbar-fill" style="width: 84%;"></div>
-          </div>
-        </div>
-        <div class="seatbar-ticks">
-          <span class="seatbar-tick passed" style="left: 0;">0</span>
-          <span class="seatbar-tick tick-end">SOLD OUT</span>
-        </div>
         <div class="seatbar-footer">
-          <span class="seatbar-reg"><span class="reg-icon">✓</span> 101 Action-Takers Registered</span>
-          <span class="seatbar-total">of 120 total</span>
+          <span class="seatbar-reg"><span class="reg-icon">✓</span> 101 Action-Takers Registered, <strong style="color: var(--accent);">19 seats left</strong> out of 120 seats total</span>
         </div>
       </div>
 
@@ -1122,10 +1107,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 style="font-family: var(--font-head); color: #fff; font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin: 0 0 20px; line-height: 1.2;">What Makes This Event <em style="color: var(--accent); font-style: italic;">Different?</em></h2>
       <p style="color: rgba(255,255,255,0.95); font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.6; font-weight: 500;">
         It's so much more than just techniques and protocols.<br/>
-        You'll work with the experts in the room to <strong>permanently reprogram your daily habits and rewire your default mental state</strong> — so the transformation actually sticks.<br/><br/>
+        You'll work with the experts in the room to <em style="color: var(--accent); font-style: italic;">permanently reprogram your daily habits and rewire your default mental state — so the transformation actually sticks.</em><br/><br/>
         <em style="color: var(--accent); font-style: italic;">No temporary hype or buzz that disappears by Monday.</em><br/>
         You'll leave with the breakthroughs, clarity, and momentum to achieve your health and life goals.<br/><br/>
-        And the best part? You'll have <strong>direct access</strong> to ask them your most pressing questions and build real connections with them and 120+ others over breakfast, lunch and the after-event networking social.<br/><br/><strong style="color: var(--accent); font-size: 1.1em;">The ultimate and intimate alternative to the 2,000-person biohacking zoo</strong>
+        And the best part? You'll have <em style="color: var(--accent); font-style: italic;">direct access to ask them your most pressing questions</em> and build real connections with them and 120+ others over breakfast, lunch and the after-event networking social.<br/><br/><strong style="color: var(--accent); font-size: 1.1em;">The ultimate and intimate alternative to the 2,000-person biohacking zoo</strong>
         <span style="display:block; margin-top:14px; font-size:0.95rem; color: #fff; line-height:1.55;"><span style="display:inline-block; font-size:1.25rem; font-weight:800; color: var(--accent); background: rgba(255,212,77,0.12); padding: 4px 10px; border-radius: 6px; margin-bottom: 6px;">Healthy Biohacker-Approved Real Food Included<sup>*</sup></span><br/>High protein from non-processed meats, organic eggs and legumes, healthy fats, nuts, vegetables and fruits/berries, minimally processed carbs. No added sugars. No seed/vegetable oils. <em><sup>*</sup> But not limited to: Other popular food items will be available for enjoyment by everyone.</em></span>
       </p>
       <div style="margin-top: 30px;">
@@ -1143,19 +1128,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="rv">The Cost of Doing Nothing</h2>
       <div class="stakes-list rv">
         <div class="stakes-item">
+          <div class="stakes-icon-wrap">📉</div>
+          <div class="stakes-item-title">Falling Further Behind</div>
+          <div class="stakes-item-desc">The science of longevity is moving fast in 2026 — peptides, senolytics, NAD+ protocols. The question is whether you're moving with it.</div>
+        </div>
+        <div class="stakes-item">
           <div class="stakes-icon-wrap">⏳</div>
           <div class="stakes-item-title">Another Year of Declining Health</div>
           <div class="stakes-item-desc">Accumulating inflammation and missed opportunities to reverse the damage while it's still reversible.</div>
         </div>
         <div class="stakes-item">
           <div class="stakes-icon-wrap">🔄</div>
-          <div class="stakes-item-title">Following Unqualified Influencers</div>
+          <div class="stakes-item-title">Still Following Unqualified Influencers</div>
           <div class="stakes-item-desc">Cycling through random supplement stacks and protocols that don't work because they weren't designed for you.</div>
-        </div>
-        <div class="stakes-item">
-          <div class="stakes-icon-wrap">📉</div>
-          <div class="stakes-item-title">Falling Further Behind</div>
-          <div class="stakes-item-desc">The science of longevity is moving fast in 2026 — peptides, senolytics, NAD+ protocols. The question is whether you're moving with it.</div>
         </div>
         <div class="stakes-item">
           <div class="stakes-icon-wrap">🏝️</div>
@@ -1163,7 +1148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="stakes-item-desc">Still trying to figure it out alone instead of connecting with 120+ people and 12 experts who could change your trajectory in a single conversation.</div>
         </div>
       </div>
-      <p class="stakes-close rv">The connections you'll make with 120+ high performers? Those don't happen on a podcast.</p>
+      <p class="stakes-close rv">The connections you'll make with 120+ high performers? <strong>Those don't happen on a podcast.</strong></p>
     </div>
   </section>
 
@@ -1945,25 +1930,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- SOCIAL PROOF — Update count and percentage as registrations grow -->
       <div class="rv seatbar-block" style="margin: 32px auto 0;">
-        <div class="seatbar-header">
-          <a href="#" onclick="openTicket(); return false;" class="seatbar-alert" aria-label="Reserve your seat now">
-            <span class="seatbar-fire">🔥</span>
-            Only 19 seats left
-          </a>
-        </div>
-        <div class="seatbar-track-wrap">
-          <div class="seatbar-floating-pct" style="left: 84%;">84%<span class="pct-sub">filled</span></div>
-          <div class="seatbar-track">
-            <div class="seatbar-fill" style="width: 84%;"></div>
-          </div>
-        </div>
-        <div class="seatbar-ticks">
-          <span class="seatbar-tick passed" style="left: 0;">0</span>
-          <span class="seatbar-tick tick-end">SOLD OUT</span>
-        </div>
-        <div class="seatbar-footer">
-          <span class="seatbar-reg"><span class="reg-icon">✓</span> 101 Action-Takers Registered</span>
-          <span class="seatbar-total">of 120 total</span>
+        <div class="seatbar-footer" style="justify-content: center;">
+          <span class="seatbar-reg"><span class="reg-icon">✓</span> 101 Action-Takers Registered, <strong style="color: var(--accent);">19 seats left</strong> out of 120 seats total</span>
         </div>
       </div>
 
