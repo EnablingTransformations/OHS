@@ -913,14 +913,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span style="margin: 0 6px;">🤝🏻</span>
         <span>Social</span>
       </div>
-      <div style="margin: 0 0 16px; color: rgba(255,255,255,0.95); font-size: 1.02rem; font-weight: 700; letter-spacing: 0.5px;">
+      <div style="display: none; margin: 0 0 16px; color: rgba(255,255,255,0.95); font-size: 1.02rem; font-weight: 700; letter-spacing: 0.5px;">
         💎 <span style="color: var(--accent);">$197</span> GA / <span style="color: var(--accent);">$497</span> VIP / <span style="color: var(--accent);">$997</span> Ultra VIP / <span style="color: var(--accent);">$49</span> Virtual
       </div>
       <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; margin:0 0 16px; background:rgba(255,212,77,0.12); border:1px solid rgba(255,212,77,0.35); border-radius:100px; color:#fff; font-size:0.92rem; font-weight:600;">
         <span style="display:inline-flex; align-items:center; letter-spacing:2px; line-height:1; font-size:1.5em;">
           <span style="color: var(--accent);">★★★★</span><span style="background: linear-gradient(90deg, var(--accent) 50%, rgba(255,255,255,0.3) 50%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;">★</span>
         </span>
-        <span><span style="color: var(--accent); font-weight:800;">4.85/5</span> stars rating from 2025 attendees</span>
+        <span><span style="color: var(--accent); font-weight:800;">4.85/5</span> Stars from 50 Ratings from Last Year's Attendees</span>
       </div>
       <div style="margin-top:24px; margin-bottom:16px;">
         <div class="hero-badge" style="display:inline-flex; margin-bottom:6px; background:none; border:none; color:#fff; font-size:1.02rem;">📅 JUNE 20, 2026 · 8:30 AM – 6 PM</div><br/>
@@ -2188,6 +2188,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- TICKET MODAL -->
+  <!-- EMAIL GATE MODAL (captures lead before Luma checkout) -->
+  <div class="modal-overlay" id="emailGateModal">
+    <div class="modal" style="max-width: 460px;">
+      <button class="modal-close" onclick="closeEmailGate()">&times;</button>
+      <h2 style="font-family:var(--font-head); font-size:1.5rem; color:var(--dark); margin-bottom:8px; text-align:center;">Almost there! 🎟️</h2>
+      <p style="color:#555; font-size:0.95rem; text-align:center; margin-bottom:20px; line-height:1.5;">Where should we send your ticket confirmation &amp; event details?</p>
+      <input type="text" id="gateNameInput" placeholder="Your name" style="width:100%; padding:13px 16px; margin-bottom:12px; border:1.5px solid #ddd; border-radius:10px; font-size:1rem; font-family:var(--font-body);" />
+      <input type="email" id="gateEmailInput" placeholder="Your email" oninput="var e=document.getElementById('gateError'); if(e) e.style.display='none'; this.style.borderColor=''; window._gateTypoConfirmed=false; window._gateFakeConfirmed=false;" style="width:100%; padding:13px 16px; margin-bottom:16px; border:1.5px solid #ddd; border-radius:10px; font-size:1rem; font-family:var(--font-body);" />
+      <p id="gateError" style="display:none; color:#e53e3e; font-size:0.85rem; margin:-10px 0 14px; font-weight:600;">Please enter a valid email address.</p>
+      <button id="gateSubmitBtn" onclick="submitEmailGate()" style="width:100%; background:var(--accent); color:#fff; font-weight:800; padding:15px; border:none; border-radius:50px; font-size:1.05rem; cursor:pointer; font-family:var(--font-body);">Continue to Tickets →</button>
+    </div>
+  </div>
+
   <div class="modal-overlay" id="ticketModal">
     <div class="modal ticket-modal">
       <button class="modal-close" onclick="closeTicket()">&times;</button>
@@ -2315,7 +2328,153 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         setTimeout(() => { btn.textContent = '📋 Copy Code'; }, 2500);
       });
     }
+    // Entry point for all "Reserve" CTAs — shows email gate first (once per session)
     function openTicket() {
+      // If already captured this session, skip straight to checkout
+      if (window._ticketLeadCaptured) { openTicketCheckout(); return; }
+      openOverlay('emailGateModal');
+      setTimeout(function(){ var n = document.getElementById('gateNameInput'); if (n) n.focus(); }, 100);
+    }
+    function closeEmailGate() { closeOverlay('emailGateModal'); }
+    function skipEmailGate() {
+      closeOverlay('emailGateModal');
+      setTimeout(openTicketCheckout, 250);
+    }
+    // Stricter email format check
+    function isValidEmail(email) {
+      // Reject leading/trailing dots, consecutive dots, require 2+ char TLD
+      var re = /^[A-Za-z0-9]([A-Za-z0-9._%+-]*[A-Za-z0-9])?@([A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
+      if (!re.test(email)) return false;
+      if (email.indexOf('..') !== -1) return false;
+      return true;
+    }
+
+    // Heuristic check for fake / gibberish emails (imperfect — only flags clear garbage)
+    function looksFake(email) {
+      var parts = email.toLowerCase().split('@');
+      if (parts.length !== 2) return false;
+      var local = parts[0];
+      var domainFull = parts[1];
+      var domainParts = domainFull.split('.');
+      var tld = domainParts[domainParts.length - 1];
+      var sld = domainParts[domainParts.length - 2] || '';
+
+      // Common real TLDs + most country codes are 2 letters; anything 5+ letters is suspicious
+      var knownTlds = ['com','net','org','edu','gov','mil','int','io','co','us','uk','ca','au','de','fr','es','it','nl','se','no','fi','dk','ch','at','be','ie','nz','jp','cn','in','br','mx','ru','pl','pt','gr','cz','ro','hu','za','ae','sg','hk','tw','kr','info','biz','me','tv','app','dev','xyz','online','site','tech','store','pro','club','live','life','health','care','fit','coach'];
+      if (tld.length >= 5 && knownTlds.indexOf(tld) === -1) return true; // e.g. .weqfqwfe
+      if (tld.length < 2) return true;
+
+      // Gibberish test applied to the second-level domain (the "brand" part)
+      function isGibberish(s) {
+        if (!s || s.length < 5) return false;
+        var letters = s.replace(/[^a-z]/g, '');
+        if (letters.length < 5) return false;
+        var vowels = (letters.match(/[aeiou]/g) || []).length;
+        var vowelRatio = vowels / letters.length;
+        // Almost no vowels = likely mashed keys
+        if (vowelRatio < 0.12) return true;
+        // Very long consonant run (6+ in a row) — real words rarely do this
+        if (/[bcdfghjklmnpqrstvwxyz]{6,}/.test(letters)) return true;
+        // Keyboard-row mashing
+        if (/(qwert|werty|asdfg|sdfgh|zxcvb|xcvbn|tyuio)/.test(letters)) return true;
+        return false;
+      }
+      if (isGibberish(sld)) return true;
+      // Also catch wildly random local part combined with suspicious domain
+      if (isGibberish(local) && isGibberish(sld)) return true;
+      return false;
+    }
+
+    // Detect common domain typos, return suggested correction or null
+    function suggestEmailFix(email) {
+      var parts = email.split('@');
+      if (parts.length !== 2) return null;
+      var domain = parts[1].toLowerCase();
+      var fixes = {
+        'gmail.con':'gmail.com','gmail.co':'gmail.com','gmai.com':'gmail.com','gmial.com':'gmail.com','gmaill.com':'gmail.com','gnail.com':'gmail.com','gmail.cm':'gmail.com','gmail.om':'gmail.com',
+        'yahoo.con':'yahoo.com','yaho.com':'yahoo.com','yahooo.com':'yahoo.com','yahoo.co':'yahoo.com',
+        'hotmail.con':'hotmail.com','hotmial.com':'hotmail.com','hotmai.com':'hotmail.com','hotmal.com':'hotmail.com',
+        'outlook.con':'outlook.com','outlok.com':'outlook.com','outloo.com':'outlook.com',
+        'icloud.con':'icloud.com','iclould.com':'icloud.com','icloud.co':'icloud.com'
+      };
+      if (fixes[domain]) return parts[0] + '@' + fixes[domain];
+      return null;
+    }
+
+    function submitEmailGate() {
+      var nameEl = document.getElementById('gateNameInput');
+      var emailEl = document.getElementById('gateEmailInput');
+      var btn = document.getElementById('gateSubmitBtn');
+      var name = (nameEl.value || '').trim();
+      var email = (emailEl.value || '').trim();
+      var errEl = document.getElementById('gateError');
+
+      // 1. Format check
+      if (!email || !isValidEmail(email)) {
+        emailEl.style.borderColor = '#e53e3e';
+        if (errEl) {
+          errEl.innerHTML = !email ? 'Please enter your email address.' : 'Please enter a valid email address.';
+          errEl.style.display = 'block';
+        }
+        emailEl.focus();
+        return;
+      }
+
+      // 1b. Gibberish / fake-domain heuristic (allow override on 2nd click)
+      if (looksFake(email) && !window._gateFakeConfirmed) {
+        emailEl.style.borderColor = '#e53e3e';
+        if (errEl) {
+          errEl.innerHTML = 'That email doesn\u2019t look right. Please double-check it.';
+          errEl.style.display = 'block';
+        }
+        window._gateFakeConfirmed = true;
+        emailEl.focus();
+        return;
+      }
+
+      // 2. Typo suggestion (e.g. gmial.com -> gmail.com)
+      var suggestion = suggestEmailFix(email);
+      if (suggestion && !window._gateTypoConfirmed) {
+        emailEl.style.borderColor = '#E8913A';
+        if (errEl) {
+          errEl.innerHTML = 'Did you mean <a href="#" id="gateFixLink" style="color:#E8913A; font-weight:800; text-decoration:underline;">' + suggestion + '</a>?';
+          errEl.style.display = 'block';
+        }
+        // Wire the suggestion link to auto-correct
+        var fixLink = document.getElementById('gateFixLink');
+        if (fixLink) {
+          fixLink.onclick = function(e) {
+            e.preventDefault();
+            emailEl.value = suggestion;
+            emailEl.style.borderColor = '';
+            if (errEl) errEl.style.display = 'none';
+          };
+        }
+        // Let them override and proceed with what they typed on next click
+        window._gateTypoConfirmed = true;
+        return;
+      }
+
+      emailEl.style.borderColor = '';
+      if (errEl) errEl.style.display = 'none';
+
+      // Fire Meta Lead event
+      if (typeof fbq === 'function') fbq('track', 'Lead');
+
+      // Send to Formspree (abandoned-cart capture; source distinguishes from lead magnet)
+      fetch('https://formspree.io/f/mzdkpgpw', {
+        method: 'POST',
+        body: JSON.stringify({ name: name, email: email, source: 'ticket_intent' }),
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+      }).catch(function(){});
+
+      window._ticketLeadCaptured = true;
+      btn.textContent = 'Loading tickets…';
+      closeOverlay('emailGateModal');
+      setTimeout(openTicketCheckout, 250);
+    }
+
+    function openTicketCheckout() {
       // Track InitiateCheckout event for Meta Pixel
       if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
 
@@ -2340,20 +2499,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         iframe.setAttribute('allowfullscreen', 'true');
         c.appendChild(iframe);
       }
+
+      // Show tier reminder banner if a VIP/Ultra CTA triggered this
+      if (window._pendingTier === 'vip') {
+        const r = document.getElementById('vipReminderBanner'); if (r) r.style.display = 'block';
+      } else if (window._pendingTier === 'ultra') {
+        const r = document.getElementById('ultraVipReminderBanner'); if (r) r.style.display = 'block';
+      }
+      window._pendingTier = null;
     }
 
     function openVIPTicket() {
       // Same as openTicket but shows the VIP reminder banner above the iframe
       openTicket();
-      const reminder = document.getElementById('vipReminderBanner');
-      if (reminder) reminder.style.display = 'block';
+      window._pendingTier = 'vip';
     }
 
     function openUltraVIPTicket() {
       // Same as openTicket but shows the Ultra VIP reminder banner above the iframe
       openTicket();
-      const reminder = document.getElementById('ultraVipReminderBanner');
-      if (reminder) reminder.style.display = 'block';
+      window._pendingTier = 'ultra';
     }
     function closeTicket() { closeOverlay('ticketModal'); }
     function openModal()   { openOverlay('contactModal'); }
