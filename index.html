@@ -120,18 +120,18 @@
 
     /* HERO */
     .hero { min-height: auto; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; flex-direction: column; justify-content: flex-start; position: relative; overflow: hidden; }
-    .hero-bg-img { position: relative; width: 100%; height: 50vh; max-height: 520px; object-fit: contain; object-position: center; opacity: 0.95; z-index: 0; background: #1a1045; display: block; }
-    @media (max-width: 768px) { .hero-bg-img { height: 40vh; max-height: 360px; } }
+    .hero-bg-img { position: relative; width: 100%; aspect-ratio: 16 / 9; height: auto; max-height: 520px; object-fit: contain; object-position: center; opacity: 0.95; z-index: 0; background: #1a1045; display: block; }
+    @media (max-width: 768px) { .hero-bg-img { max-height: 360px; } }
 
     /* ===== SCREEN 1: Video at top, text stacked below ===== */
     .hero-video-screen {
-      position: relative; width: 100%; min-height: 100vh;
+      position: relative; width: 100%;
       overflow: hidden; background: #000;
       display: flex; flex-direction: column;
     }
     .hero-video-bg {
-      position: relative; width: 100%; height: 50vh; max-height: 520px;
-      object-fit: contain; background: #000; z-index: 0;
+      position: relative; width: 100%; aspect-ratio: 16 / 9; height: auto; max-height: 520px;
+      object-fit: cover; background: #000; z-index: 0;
       display: block;
     }
     .hero-video-overlay { display: none; }
@@ -160,8 +160,7 @@
       text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     @media (max-width: 768px) {
-      .hero-video-screen { min-height: auto; }
-      .hero-video-bg { height: 40vh; max-height: 360px; }
+      .hero-video-bg { max-height: 360px; }
       .hero-video-title { padding: 14px 20px 0; }
       .hero-video-content { padding: 4px 20px 28px; }
     }
@@ -1135,10 +1134,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span style="display:block; margin-top:14px; font-size:0.95rem; color: #fff; line-height:1.55;"><span style="display:inline-block; font-size:1.25rem; font-weight:800; color: var(--accent); background: rgba(255,212,77,0.12); padding: 4px 10px; border-radius: 6px; margin-bottom: 6px;">Healthy Biohacker-Approved Breakfast, Lunch &amp; Snacks Included<sup>*</sup></span><br/>High protein from non-processed meats, organic eggs and legumes, healthy fats, nuts, vegetables and fruits/berries, minimally processed carbs. No added sugars. No seed/vegetable oils. <em><sup>*</sup> But not limited to: Other popular food items will be available for enjoyment by everyone.</em></span>
       </p>
       <div style="margin-top: 24px; text-align: center;">
-        <img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_760/v1780207911/Brkfst_Lunch_yf6ags.jpg"
-             srcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_400/v1780207911/Brkfst_Lunch_yf6ags.jpg 400w,
-                     https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,w_760/v1780207911/Brkfst_Lunch_yf6ags.jpg 760w"
-             sizes="(max-width: 768px) 90vw, 720px"
+        <img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,w_640/v1780207911/Brkfst_Lunch_yf6ags.jpg"
+             srcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,w_400/v1780207911/Brkfst_Lunch_yf6ags.jpg 400w,
+                     https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,w_640/v1780207911/Brkfst_Lunch_yf6ags.jpg 640w"
+             sizes="(max-width: 768px) 90vw, 640px"
              width="720" height="405"
              alt="Healthy breakfast and lunch served at the Optimal Health Summit"
              loading="lazy"
