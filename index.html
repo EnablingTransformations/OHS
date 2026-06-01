@@ -120,8 +120,8 @@
 
     /* HERO */
     .hero { min-height: auto; background: linear-gradient(155deg, #0d0b2e 0%, #1e1a5e 40%, #3b2f7e 70%, #5a3fa0 100%); display: flex; flex-direction: column; justify-content: flex-start; position: relative; overflow: hidden; }
-    .hero-bg-img { position: relative; width: 100%; aspect-ratio: 16 / 9; height: auto; max-height: 520px; object-fit: contain; object-position: center; opacity: 0.95; z-index: 0; background: #1a1045; display: block; }
-    @media (max-width: 768px) { .hero-bg-img { max-height: 360px; } }
+    .hero-bg-img { position: relative; width: 100%; height: auto; object-fit: contain; object-position: center; opacity: 0.95; z-index: 0; background: #1a1045; display: block; }
+    @media (min-width: 769px) { .hero-bg-img { max-height: 540px; object-fit: cover; } }
 
     /* ===== SCREEN 1: Video at top, text stacked below ===== */
     .hero-video-screen {
@@ -815,7 +815,7 @@
       {
         "@type": "Offer",
         "name": "General Admission",
-        "price": "97",
+        "price": "247",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "url": "https://optimalhealthco.com",
@@ -824,7 +824,7 @@
       {
         "@type": "Offer",
         "name": "VIP",
-        "price": "247",
+        "price": "597",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "url": "https://optimalhealthco.com",
@@ -902,6 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="hero">
     <img class="hero-bg-img"
+         width="1920" height="1072"
          src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_1200/v1775790652/ohs_hero_bg_tfckxh.webp"
          srcset="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_768/v1775790652/ohs_hero_bg_tfckxh.webp 768w,
                  https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_960/v1775790652/ohs_hero_bg_tfckxh.webp 960w,
@@ -924,7 +925,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span>Social</span>
       </div>
       <div style="display: none; margin: 0 0 16px; color: rgba(255,255,255,0.95); font-size: 1.02rem; font-weight: 700; letter-spacing: 0.5px;">
-        💎 <span style="color: var(--accent);">$197</span> GA / <span style="color: var(--accent);">$497</span> VIP / <span style="color: var(--accent);">$997</span> Ultra VIP / <span style="color: var(--accent);">$49</span> Virtual
+        💎 <span style="color: var(--accent);">$247</span> GA / <span style="color: var(--accent);">$597</span> VIP / <span style="color: var(--accent);">$997</span> Ultra VIP / <span style="color: var(--accent);">$49</span> Virtual
       </div>
       <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; margin:0 0 16px; background:rgba(255,212,77,0.12); border:1px solid rgba(255,212,77,0.35); border-radius:100px; color:#fff; font-size:0.92rem; font-weight:600;">
         <span style="display:inline-flex; align-items:center; letter-spacing:2px; line-height:1; font-size:1.5em;">
@@ -1415,7 +1416,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="ticket-card ticket-ga">
             <div class="ticket-head">
               <div class="ticket-label" style="color: rgba(255,255,255,0.7);">General Admission</div>
-              <div class="ticket-price">$197</div>
+              <div class="ticket-price">$247</div>
             </div>
             <ul class="ticket-list" style="color: rgba(255,255,255,0.92);">
               <li><span class="check" style="color: #5ef0d0;">✓</span><span>All 13 expert keynotes &amp; panels</span></li>
@@ -1434,8 +1435,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="ticket-badge ticket-badge-orange">⭐ Best Value</div>
             <div class="ticket-head" style="border-color: rgba(255,255,255,0.15);">
               <div class="ticket-label" style="color: var(--accent); font-weight: 800;">VIP Experience</div>
-              <div class="ticket-price">$497</div>
-              <div class="ticket-sub" style="color: rgba(255,255,255,0.7);">$825+ in extras for just $300 more</div>
+              <div class="ticket-price">$597</div>
+              <div class="ticket-sub" style="color: rgba(255,255,255,0.7);">$825+ in extras for just $350 more</div>
             </div>
             <div class="ticket-includes" style="color: var(--accent);">Everything in GA, plus:</div>
             <ul class="ticket-list" style="color: #fff;">
@@ -1453,7 +1454,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="ticket-head" style="border-color: rgba(94,240,208,0.18);">
               <div class="ticket-label" style="color: #5ef0d0; font-weight: 800;">Ultra VIP</div>
               <div class="ticket-price">$997</div>
-              <div class="ticket-sub" style="color: rgba(255,255,255,0.7);">Available until June 1</div>
             </div>
             <div class="ticket-includes" style="color: #5ef0d0;">Everything in VIP, plus:</div>
             <ul class="ticket-list" style="color: #fff;">
@@ -1468,10 +1468,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="rv" style="margin-top: 30px; text-align: center;">
         <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; font-style: italic;">💻 Can't attend in person? <a href="#" onclick="openTicket(); return false;" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Join virtually from anywhere</a> for $49</p>
-      </div>
-
-      <div class="rv" style="text-align: center; margin-top: 18px;">
-        <div style="color:#ff6b6b; font-size:0.95rem; font-weight:700;">⚠️ Price increases on June 1st</div>
       </div>
 
       <div class="guarantee-inline rv" style="max-width:580px; margin:24px auto 0;">
@@ -1876,7 +1872,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="color: rgba(255,255,255,0.95); font-size: 0.92rem; line-height: 1.5; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-weight: 600;">This event is designed to help you find and achieve all the above.</p>
         </div>
         <div class="hl-box" style="text-align:left;"><h3>🎟️ Limited Seats</h3><ul>
-          <li><span>📈</span><span>Ticket prices increase as the event date approaches and event will also sell out.</span></li>
+          <li><span>📈</span><span>Seats are limited and the event is expected to sell out before the date.</span></li>
           <li><span>🏛️</span><span>This year's venue is 4 times as large as last year and limited to 120 people.</span></li>
           <li><span>💸</span><span>Full refund available up to 5 days before the event, transferable after that, plus <a href="#" onclick="openPolicy(); return false;" style="color:#5ef0d0; text-decoration:underline; font-weight:600;">100% Satisfaction Guarantee</a>.</span></li>
           <li><span>🎓</span><span>Scholarship tickets available for those reversing obesity or metabolic syndrome - contact us for details.</span></li>
@@ -1920,7 +1916,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- URGENCY BAR -->
   <div class="urgency-bar">
-    <p>⚠️ Current pricing ends June 1st — ticket prices go up after that. <strong>Lock in the lowest rate today.</strong></p>
+    <p>⚠️ Seats are limited and selling fast — once we're full, we're full. <strong>Reserve your spot today.</strong></p>
   </div>
 
 
@@ -2024,7 +2020,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-list rv">
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Who is this event for?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Anyone who wants to take control of their health — from wellness-curious beginners to experienced biohackers, health professionals, entrepreneurs, and executives. If you follow the longevity and biohacking movement — Blueprint, Huberman Lab, Dr. Mark Hyman, Bulletproof, the anti-aging science community — and want that caliber of knowledge in one accessible, affordable day — this is for you.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Who is this event NOT for?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>This isn't a medical consultation or a substitute for working with your doctor. It's also not a passive lecture series — it's an immersive, high-energy day for people who are ready to take action on their health.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the difference between General Admission, VIP, and Ultra VIP?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p><strong>General Admission ($197)</strong> includes all keynotes, meals, expo access, and networking.</p><p><strong>VIP ($497)</strong> adds metabolic testing, Phase Contrast Microscopy blood testing, a microbiome test kit at a discount, priority seating, and lunch with the speakers.</p><p><strong>Ultra VIP ($997)</strong> includes everything in VIP plus a 30-minute 1:1 with any speaker — at the event or later over video call — with up to 7 speakers available. Limited to a small number of seats; available until June 1.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the difference between General Admission, VIP, and Ultra VIP?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p><strong>General Admission ($247)</strong> includes all keynotes, meals, expo access, and networking.</p><p><strong>VIP ($597)</strong> adds metabolic testing, Phase Contrast Microscopy blood testing, a microbiome test kit at a discount, priority seating, and lunch with the speakers.</p><p><strong>Ultra VIP ($997)</strong> includes everything in VIP plus a 30-minute 1:1 with any speaker — at the event or later over video call — with up to 7 speakers available. Limited to a small number of seats.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What if I buy a ticket and can't make it?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>All tickets are fully refundable up to 5 days before the event. After that, tickets are transferable to another person — just let us know who's coming in your place.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What's the 100% Satisfaction Guarantee?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Check in on time and attend at least the first 4 hours. If you don't feel the event is worth your time, speak with Sid (the host) in person before leaving, and before the lunch break or 1 PM, and you'll receive a full refund. We're that confident this day will change your life.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Is parking available?</h4><span class="faq-icon">+</span></div><div class="faq-a"><p>Parking will be free on-site or discounted (max $10) at 1–3 nearby public lots within a 2–3 block walk. Parking details and validation instructions will be sent by email a few weeks before the event. ♿ ADA-accessible parking options are available at or near the venue. Contact us for additional info.</p></div></div>
@@ -2047,9 +2043,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="rv">Get the <strong>Top 10 Biohacks from the World's Leading Longevity Experts</strong> — the science-backed protocols from the world's leading longevity and biohacking experts. Start today.</p>
       <div class="leadmag-form rv">
         <input class="leadmag-input" id="leadmag-name" type="text" placeholder="Your full name" />
-        <input class="leadmag-input" id="leadmag-email" type="email" placeholder="Your email address" />
+        <input class="leadmag-input" id="leadmag-email" type="email" placeholder="Your email address" oninput="var e=document.getElementById('leadmagError'); if(e) e.style.display='none'; this.style.borderColor=''; window._leadmagTypoConfirmed=false; window._leadmagFakeConfirmed=false;" />
         <button class="leadmag-btn" id="leadmag-btn" onclick="claimGuide()">Get the Guide</button>
       </div>
+      <p id="leadmagError" class="rv" style="display:none; color:#e53e3e; font-size:0.85rem; margin:8px 0 0; font-weight:600;">Please enter a valid email address.</p>
       <p class="fine rv">No spam. Unsubscribe anytime. We'll also send you speaker announcements and event updates.</p>
       <div class="rv" style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(232,145,58,0.2); text-align: center;">
         <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 14px; font-style: italic;">Already convinced? Skip the guide.</p>
@@ -2104,8 +2101,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </footer>
 
-  <!-- DISCOUNT POPUP -->
-  <!-- DISCOUNT POPUP — HIDDEN. Reactivate on June 1st by removing style="display:none !important" -->
+  <!-- DISCOUNT POPUP (exit-intent, once per session) -->
   <!-- VIDEO MODAL -->
   <div id="videoModal" style="display:none; position:fixed; inset:0; z-index:400; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; padding:20px;" onclick="closeVideoModal(event)">
     <div style="position:relative; width:100%; max-width:380px; aspect-ratio:9/16; max-height:85vh;" onclick="event.stopPropagation()">
@@ -2123,7 +2119,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="discount-sub">Enter your email to receive your exclusive discount code.</p>
         <div class="discount-form">
           <input class="discount-input" id="discount-name" type="text" placeholder="Enter your full name" />
-          <input class="discount-input" id="discount-email" type="email" placeholder="Enter your email address" required />
+          <input class="discount-input" id="discount-email" type="email" placeholder="Enter your email address" oninput="var e=document.getElementById('discountError'); if(e) e.style.display='none'; this.style.borderColor=''; window._discountTypoConfirmed=false; window._discountFakeConfirmed=false;" required />
+          <p id="discountError" style="display:none; color:#ffb4b4; font-size:0.85rem; margin:2px 0 0; font-weight:600; text-align:left;">Please enter a valid email address.</p>
           <button class="discount-btn" onclick="claimDiscount()">Claim My Discount →</button>
         </div>
         <p class="discount-skip" onclick="closeDiscount()">No thanks, I'll pay full price</p>
@@ -2223,7 +2220,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="modal-close" onclick="closeTicket()">&times;</button>
       <h2 style="font-family:var(--font-head); font-size:1.4rem; color:var(--dark); margin-bottom:16px; text-align:center;">🎟️ Get Your Tickets</h2>
       <div id="vipReminderBanner" style="display:none; background: linear-gradient(135deg, #fff7ed, #ffe7c4); border: 2px solid var(--accent); border-radius: 12px; padding: 12px 18px; margin-bottom: 16px; text-align: center; font-weight: 800; color: #1a1040; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(232,145,58,0.18);">
-        ⬇️ Select <span style="color: var(--accent);">VIP — $497</span> below
+        ⬇️ Select <span style="color: var(--accent);">VIP — $597</span> below
       </div>
       <div id="ultraVipReminderBanner" style="display:none; background: linear-gradient(135deg, #ecfffa, #c7f9ed); border: 2px solid #5ef0d0; border-radius: 12px; padding: 12px 18px; margin-bottom: 16px; text-align: center; font-weight: 800; color: #0d0b2e; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(94,240,208,0.22);">
         ⬇️ Select <span style="color: #0a8a72;">Ultra VIP — $997</span> below
@@ -2572,11 +2569,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const nameInput = document.getElementById('leadmag-name');
       const emailInput = document.getElementById('leadmag-email');
       const btn = document.getElementById('leadmag-btn');
+      const errEl = document.getElementById('leadmagError');
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
-      const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
-      const hasTLD = email.includes('.') && email.lastIndexOf('.') > email.indexOf('@');
 
+      // Name required
       if (!name) {
         nameInput.style.borderColor = '#ff4444';
         nameInput.value = '';
@@ -2584,39 +2581,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         nameInput.focus();
         return;
       }
-      if (!email) {
+
+      // 1. Format check
+      if (!email || !isValidEmail(email)) {
         emailInput.style.borderColor = '#ff4444';
-        emailInput.value = '';
-        emailInput.placeholder = '⚠️ Please enter your email address';
-        emailInput.focus();
-        return;
-      }
-      if (!emailRegex.test(email) || !hasTLD) {
-        emailInput.style.borderColor = '#ff4444';
-        emailInput.value = '';
-        emailInput.placeholder = '⚠️ Invalid email — use format: you@example.com';
-        emailInput.focus();
-        return;
-      }
-      const tld = email.split('.').pop();
-      if (tld.length < 2) {
-        emailInput.style.borderColor = '#ff4444';
-        emailInput.value = '';
-        emailInput.placeholder = '⚠️ Invalid email — use format: you@example.com';
+        if (errEl) {
+          errEl.innerHTML = !email ? 'Please enter your email address.' : 'Please enter a valid email address.';
+          errEl.style.display = 'block';
+        }
         emailInput.focus();
         return;
       }
 
-      // ===== SMART TYPO CHECK =====
-      const qualityError = checkEmailQuality(email);
-      if (qualityError) {
+      // 1b. Gibberish / fake-domain heuristic (allow override on 2nd click)
+      if (looksFake(email) && !window._leadmagFakeConfirmed) {
         emailInput.style.borderColor = '#ff4444';
-        emailInput.placeholder = '⚠️ ' + qualityError;
-        emailInput.value = '';
+        if (errEl) {
+          errEl.innerHTML = 'That email doesn\u2019t look right. Please double-check it.';
+          errEl.style.display = 'block';
+        }
+        window._leadmagFakeConfirmed = true;
         emailInput.focus();
         return;
       }
 
+      // 2. Typo suggestion (e.g. gmial.com -> gmail.com), override on 2nd click
+      var suggestion = suggestEmailFix(email);
+      if (suggestion && !window._leadmagTypoConfirmed) {
+        emailInput.style.borderColor = '#E8913A';
+        if (errEl) {
+          errEl.innerHTML = 'Did you mean <a href="#" id="leadmagFixLink" style="color:#E8913A; font-weight:800; text-decoration:underline;">' + suggestion + '</a>?';
+          errEl.style.display = 'block';
+        }
+        var fixLink = document.getElementById('leadmagFixLink');
+        if (fixLink) {
+          fixLink.onclick = function(e) {
+            e.preventDefault();
+            emailInput.value = suggestion;
+            emailInput.style.borderColor = '';
+            if (errEl) errEl.style.display = 'none';
+          };
+        }
+        window._leadmagTypoConfirmed = true;
+        return;
+      }
+
+      if (errEl) errEl.style.display = 'none';
       nameInput.style.borderColor = '#10b981';
       emailInput.style.borderColor = '#10b981';
       btn.textContent = '✓ Opening Guide...';
@@ -2658,49 +2668,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function claimDiscount() {
       const nameInput = document.getElementById('discount-name');
       const emailInput = document.getElementById('discount-email');
+      const errEl = document.getElementById('discountError');
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
-      const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
-      const hasTLD = email.includes('.') && email.lastIndexOf('.') > email.indexOf('@');
 
+      // Name required
       if (!name) {
         nameInput.style.borderColor = '#ff4444';
         nameInput.placeholder = '⚠️ Please enter your full name';
         nameInput.focus();
         return;
       }
-      if (!email) {
+
+      // 1. Format check
+      if (!email || !isValidEmail(email)) {
         emailInput.style.borderColor = '#ff4444';
-        emailInput.placeholder = '⚠️ Please enter your email address';
-        emailInput.focus();
-        return;
-      }
-      if (!emailRegex.test(email) || !hasTLD) {
-        emailInput.style.borderColor = '#ff4444';
-        emailInput.value = '';
-        emailInput.placeholder = '⚠️ Invalid email — use format: you@example.com';
-        emailInput.focus();
-        return;
-      }
-      const tld = email.split('.').pop();
-      if (tld.length < 2) {
-        emailInput.style.borderColor = '#ff4444';
-        emailInput.value = '';
-        emailInput.placeholder = '⚠️ Invalid email — use format: you@example.com';
+        if (errEl) {
+          errEl.innerHTML = !email ? 'Please enter your email address.' : 'Please enter a valid email address.';
+          errEl.style.display = 'block';
+        }
         emailInput.focus();
         return;
       }
 
-      // ===== SMART TYPO CHECK =====
-      const qualityError = checkEmailQuality(email);
-      if (qualityError) {
+      // 1b. Gibberish / fake-domain heuristic (allow override on 2nd click)
+      if (looksFake(email) && !window._discountFakeConfirmed) {
         emailInput.style.borderColor = '#ff4444';
-        emailInput.placeholder = '⚠️ ' + qualityError;
-        emailInput.value = '';
+        if (errEl) {
+          errEl.innerHTML = 'That email doesn\u2019t look right. Please double-check it.';
+          errEl.style.display = 'block';
+        }
+        window._discountFakeConfirmed = true;
         emailInput.focus();
         return;
       }
 
+      // 2. Typo suggestion (e.g. gmial.com -> gmail.com), override on 2nd click
+      var suggestion = suggestEmailFix(email);
+      if (suggestion && !window._discountTypoConfirmed) {
+        emailInput.style.borderColor = '#E8913A';
+        if (errEl) {
+          errEl.innerHTML = 'Did you mean <a href="#" id="discountFixLink" style="color:#E8913A; font-weight:800; text-decoration:underline;">' + suggestion + '</a>?';
+          errEl.style.display = 'block';
+        }
+        var fixLink = document.getElementById('discountFixLink');
+        if (fixLink) {
+          fixLink.onclick = function(e) {
+            e.preventDefault();
+            emailInput.value = suggestion;
+            emailInput.style.borderColor = '';
+            if (errEl) errEl.style.display = 'none';
+          };
+        }
+        window._discountTypoConfirmed = true;
+        return;
+      }
+
+      if (errEl) errEl.style.display = 'none';
       nameInput.style.borderColor = '#10b981';
       emailInput.style.borderColor = '#10b981';
 
