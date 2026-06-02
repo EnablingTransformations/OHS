@@ -170,9 +170,19 @@
       text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     @media (max-width: 768px) {
-      .hero-video-bg { max-height: 360px; }
-      .hero-video-title { padding: 14px 20px 0; }
-      .hero-video-content { padding: 4px 20px 28px; }
+      .hero-video-bg { display: none; }
+      /* Use the hero image as the backdrop behind the title + subtitle (video hidden on mobile) */
+      .hero-video-screen {
+        background:
+          linear-gradient(180deg, rgba(13,11,46,0.55) 0%, rgba(13,11,46,0.45) 45%, rgba(13,11,46,0.85) 100%),
+          url('https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_960,h_1100/v1775790652/ohs_hero_bg_tfckxh.webp');
+        background-size: cover;
+        background-position: center;
+      }
+      .hero-video-title { padding: 40px 20px 0; }
+      .hero-video-content { padding: 12px 20px 44px; background: none; }
+      /* Hide the duplicate image banner in Screen 2 (it's now the Screen 1 backdrop) */
+      .hero-bg-img { display: none; }
     }
     .hero-top { position: relative; z-index: 2; text-align: left; padding: 0 20px; }
     .hero-bottom { position: relative; z-index: 2; text-align: left; padding: 0 20px; min-height: 380px; }
@@ -2791,7 +2801,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const isMobile = window.innerWidth < 768;
 
       if (isMobile) {
-        // Signal 1: user has been on page > 4s AND scrolled > 10%, then minimizes/switches tab
+        // Signal 1: user has been on page > 8s AND scrolled > 10%, then minimizes/switches tab
         let scrolledDeep = false;
         let timeOnPage = 0;
         setInterval(() => { timeOnPage++; }, 1000);
@@ -2816,7 +2826,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // Tab switch / app switch / screen lock (visibility change)
         document.addEventListener('visibilitychange', () => {
-          if (document.visibilityState === 'hidden' && scrolledDeep && timeOnPage > 4) {
+          if (document.visibilityState === 'hidden' && scrolledDeep && timeOnPage > 8) {
             triggerExitIntent();
           }
         });
@@ -2830,13 +2840,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         });
 
-        // Signal 3: user idle for 7s after scrolling deep
+        // Signal 3: user idle for 14s after scrolling deep
         let idleTimer = null;
         const resetIdle = () => {
           if (idleTimer) clearTimeout(idleTimer);
           idleTimer = setTimeout(() => {
             if (scrolledDeep) triggerExitIntent();
-          }, 7000);
+          }, 14000);
         };
         window.addEventListener('scroll', resetIdle, { passive: true });
         window.addEventListener('touchstart', resetIdle, { passive: true });
