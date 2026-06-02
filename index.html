@@ -169,20 +169,22 @@
       font-size: clamp(1.15rem, 1.7vw, 1.4rem); line-height: 1.5;
       text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
+    /* Mobile hero picture (real img); hidden on desktop */
+    .hero-mobile-pic { display: none; }
     @media (max-width: 768px) {
-      .hero-video-bg { display: none; }
-      /* Use the hero image as the backdrop behind the title + subtitle (video hidden on mobile) */
-      .hero-video-screen {
-        background:
-          linear-gradient(180deg, rgba(13,11,46,0.55) 0%, rgba(13,11,46,0.45) 45%, rgba(13,11,46,0.85) 100%),
-          url('https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_960,h_1100/v1775790652/ohs_hero_bg_tfckxh.webp');
-        background-size: cover;
-        background-position: center;
+      .hero-video-bg { display: none; }            /* hide video on mobile */
+      .hero-video-title { position: relative; overflow: hidden; padding: 28px 20px 24px; }
+      .hero-mobile-pic {
+        display: block;
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover; object-position: center;
+        opacity: 0.30;                              /* 30% opaque background */
+        z-index: 0;
       }
-      .hero-video-title { padding: 40px 20px 0; }
-      .hero-video-content { padding: 12px 20px 44px; background: none; }
-      /* Hide the duplicate image banner in Screen 2 (it's now the Screen 1 backdrop) */
-      .hero-bg-img { display: none; }
+      .hero-video-h1 { position: relative; z-index: 1; }
+      .hero-video-content { padding: 4px 20px 28px; }  /* subtitle sits below the title block */
+    }
     }
     .hero-top { position: relative; z-index: 2; text-align: left; padding: 0 20px; }
     .hero-bottom { position: relative; z-index: 2; text-align: left; padding: 0 20px; min-height: 380px; }
@@ -900,6 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        ============================================ -->
   <section class="hero-video-screen">
     <div class="hero-video-title">
+      <img class="hero-mobile-pic" src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_960/v1775790652/ohs_hero_bg_tfckxh.webp" alt="" aria-hidden="true" />
       <h1 class="hero-video-h1">Some people feel and look 50 at age 70. <em>Others feel and look 70 at age 50.</em> Where do you stand?</h1>
     </div>
     <video class="hero-video-bg" width="800" height="450" autoplay muted loop playsinline preload="metadata" poster="https://res.cloudinary.com/didlj0gdc/video/upload/so_0,f_jpg,q_auto:eco,w_800/v1778713849/grok-video-2_hn8ho8.jpg" aria-hidden="true">
