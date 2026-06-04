@@ -388,7 +388,17 @@
   }
   #discountLauncher.hidden { display: none; }
   @media (max-width: 768px) {
-    #discountLauncher { bottom: 76px; right: 14px; padding: 10px 15px; font-size: 0.88rem; }
+    /* Smaller badge, vertically centered against the right edge */
+    #discountLauncher {
+      bottom: auto; top: 50%; right: 0;
+      transform: translateY(-50%);
+      gap: 0; padding: 9px 11px;
+      border-radius: 50px 0 0 50px;
+      box-shadow: -4px 6px 18px rgba(0,0,0,0.4), 0 0 0 3px rgba(232,145,58,0.18);
+    }
+    #discountLauncher .dl-text { display: none; }   /* icon only on mobile */
+    #discountLauncher .dl-icon { font-size: 1.35rem; }
+    #discountLauncher:hover { transform: translateY(-50%) scale(1.05); }
   }
   @media (prefers-reduced-motion: reduce) {
     #discountLauncher { animation: none; }
@@ -416,6 +426,21 @@
   .discount-success h3 { font-family: var(--font-head); font-size: 1.6rem; color: #fff; margin-bottom: 8px; }
   .discount-success p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.6; }
   .discount-code { display: inline-block; background: var(--accent); color: #fff; font-size: 1.3rem; font-weight: 900; padding: 10px 28px; border-radius: 12px; letter-spacing: 3px; margin: 14px 0; }
+
+  @media (max-width: 768px) {
+    /* Smaller, more compact discount modal on mobile */
+    .discount-modal { padding: 26px 20px; max-width: 320px; margin: 16px; border-radius: 20px; }
+    .discount-badge { font-size: 0.62rem; padding: 4px 12px; margin-bottom: 10px; letter-spacing: 1.5px; }
+    .discount-title { font-size: 1.55rem; }
+    .discount-sub { font-size: 0.82rem; line-height: 1.5; margin-bottom: 18px; }
+    .discount-form { gap: 9px; }
+    .discount-input { padding: 10px 14px; font-size: 0.88rem; }
+    .discount-btn { padding: 11px; font-size: 0.9rem; }
+    .discount-success .big-check { font-size: 2.3rem; }
+    .discount-code { font-size: 1.05rem; padding: 8px 18px; letter-spacing: 2px; }
+    .discount-close { top: 8px; right: 12px; font-size: 1.3rem; }
+    .discount-skip { font-size: 0.74rem; }
+  }
 
     /* PROBLEM SECTION */
     .problem { background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%); padding: 80px 0; position: relative; overflow: hidden; }
@@ -2824,9 +2849,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Popup stays open until user closes it manually
     }
 
-    // Discount is now accessed via the floating launcher icon (openDiscountModal).
-    // Auto exit-intent popup disabled — keep the block guarded off.
-    if (false) {
+    // Discount is accessible via the floating launcher icon AND auto-pops on exit intent (once per session).
+    if (!sessionStorage.getItem('discountSeen')) {
       let discountTriggered = false;
       const triggerExitIntent = () => {
         if (discountTriggered) return;
@@ -2835,7 +2859,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Don't pop it on top of any open modal
         if (document.querySelector('.modal-overlay.open, .discount-overlay.open')) return;
         discountTriggered = true;
-        openOverlay('discountModal');
+        openDiscountModal();
       };
 
       // ----- DESKTOP: mouse leaving toward top of page -----
