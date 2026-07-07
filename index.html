@@ -2630,6 +2630,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function closeTicket() { closeOverlay('ticketModal'); }
     function openModal()   { window._ctaEngaged = true; openOverlay('contactModal'); }
     function closeModal()  { closeOverlay('contactModal'); }
+    // Auto-open the contact form when the URL hash is #contact (public deep-link)
+    function _maybeOpenContactFromHash() {
+      if ((window.location.hash || '').toLowerCase() === '#contact') {
+        openModal();
+      }
+    }
+    window.addEventListener('load', _maybeOpenContactFromHash);
+    window.addEventListener('hashchange', _maybeOpenContactFromHash);
     function openPolicy()  { openOverlay('policyModal'); }
     function closePolicy() { closeOverlay('policyModal'); }
     function openPrivacy() { openOverlay('privacyModal'); }
