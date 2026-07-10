@@ -107,6 +107,8 @@
     @media (max-width: 768px) {
       .nav-logo .brand-full { display: none; }
       .nav-logo .brand-tight { display: inline; }
+      .nav-logo-text { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+      .nav-logo-date { font-size: 0.72em; }
     }
     .nav-logo span { color: var(--accent); }
     /* Attendee shorts: 2-row grid on desktop; horizontal-scroll carousel on mobile */
@@ -943,7 +945,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- NAV -->
   <nav class="nav" id="mainNav">
     <div class="wrap nav-inner">
-      <a href="#" class="nav-logo" style="display:flex; align-items:center; gap:10px;"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_fill,w_76,h_76/v1775712040/ohs_surprise.jpg" alt="Optimal Health Summit Logo" width="38" height="38" decoding="async" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;" /><span class="brand-full">Optimal <span>Health</span> Summit</span><span class="brand-tight">Optimal<span>Health</span>Summit</span> <span style="color:var(--accent); white-space:nowrap;">OCTOBER 3–4 · <span style="color:var(--white);">Los Angeles, CA</span></span></a>
+      <a href="#" class="nav-logo" style="display:flex; align-items:center; gap:10px;"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_fill,w_76,h_76/v1775712040/ohs_surprise.jpg" alt="Optimal Health Summit Logo" width="38" height="38" decoding="async" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;" /><span class="nav-logo-text"><span class="brand-full">Optimal <span>Health</span> Summit</span><span class="brand-tight">Optimal<span>Health</span>Summit</span> <span class="nav-logo-date" style="color:var(--accent); white-space:nowrap;">OCTOBER 3–4 · <span style="color:var(--white);">Los Angeles, CA</span></span></span></a>
       <ul class="nav-links">
         <li><a href="#speakers">Experts</a></li>
         <li><a href="#schedule">Schedule</a></li>
