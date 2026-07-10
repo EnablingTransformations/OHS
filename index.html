@@ -974,7 +974,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hero-video-screen">
     <div class="hero-video-title">
       <img class="hero-mobile-pic" src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto:eco,c_limit,w_960/v1775790652/ohs_hero_bg_tfckxh.webp" alt="" aria-hidden="true" />
-      <h1 class="hero-video-h1">About 7 out of 10 Americans (~70%) will suffer from Chronic Disease (Heart Disease, Cancer, Diabetes, etc.) after age 40. <em>The good news is that you can avoid or reverse that and live a vibrant life with vitality! This event will show you how!</em></h1>
+      <h1 class="hero-video-h1">~70% of Americans develop Chronic Disease (Heart Disease, Cancer, Diabetes) after 40. <em>The good news? You can avoid or reverse it — and this event shows you how.</em></h1>
     </div>
     <video class="hero-video-bg" width="800" height="450" autoplay muted loop playsinline preload="metadata" poster="https://res.cloudinary.com/didlj0gdc/video/upload/so_0,f_jpg,q_auto:eco,w_800/v1778713849/grok-video-2_hn8ho8.jpg" aria-hidden="true">
       <source src="https://res.cloudinary.com/didlj0gdc/video/upload/q_auto,f_auto,vc_auto,w_960/v1778713849/grok-video-2_hn8ho8.mp4" type="video/mp4" />
@@ -2094,6 +2094,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="social-bar">
     <p>Follow &amp; Connect for Event Updates</p>
     <div class="social-icons">
+      <a href="https://www.youtube.com/@EnablingTransformations" target="_blank" rel="noopener" aria-label="YouTube" style="color:#FF0000; transition:all 0.3s;" onmouseover="this.style.color='#ff3333'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#FF0000'; this.style.transform='none'">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+      </a>
       <a href="https://www.facebook.com/optimalhealthsummit/" target="_blank" rel="noopener" aria-label="Facebook" style="color:#1877F2; transition:all 0.3s;" onmouseover="this.style.color='#4293f5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#1877F2'; this.style.transform='none'">
         <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.927-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
       </a>
@@ -2140,7 +2143,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- Floating discount launcher removed -->
+  <!-- FLOATING DISCOUNT LAUNCHER (click to expand the discount offer) -->
+  <button id="discountLauncher" onclick="openDiscountModal()" aria-label="Get a discount on your ticket">
+    <span class="dl-icon">🎁</span>
+    <span class="dl-text">Get a Discount</span>
+  </button>
 
   <div class="discount-overlay" id="discountModal">
     <div class="discount-modal">
@@ -2268,7 +2275,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div id="formWrap">
         <h2>Get in Touch</h2>
         <p>Have a question? We'll get back to you shortly.</p>
-        <form id="contactForm" action="https://formspree.io/f/mzdkpgpw" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/meebbaqr" method="POST">
           <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
           <div class="form-group"><label for="cf-name">Your Name</label><input id="cf-name" type="text" name="name" placeholder="Jane Smith" required /></div>
           <div class="form-group"><label for="cf-email">Email Address</label><input id="cf-email" type="email" name="email" placeholder="jane@example.com" required /></div>
@@ -2510,7 +2517,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (typeof fbq === 'function') fbq('track', 'Lead');
 
       // Send to Formspree (abandoned-cart capture; source distinguishes from lead magnet)
-      fetch('https://formspree.io/f/mzdkpgpw', {
+      fetch('https://formspree.io/f/xaqggeye', {
         method: 'POST',
         body: JSON.stringify({ name: name, email: email, source: 'ticket_intent' }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
@@ -2688,7 +2695,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       btn.style.background = '#10b981';
 
       // Send to Formspree for CSV collection
-      fetch('https://formspree.io/f/mzdkpgpw', {
+      fetch('https://formspree.io/f/mbdvnbld', {
         method: 'POST',
         body: JSON.stringify({ name: name, email: email, source: 'lead_magnet_guide' }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
@@ -2794,7 +2801,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
 
       // Send to Formspree for email collection
-      fetch('https://formspree.io/f/mzdkpgpw', {
+      fetch('https://formspree.io/f/mzdlleba', {
         method: 'POST',
         body: JSON.stringify({ name: name, email: email, code: (window.DISCOUNT_CODE || 'HEALTHISWEALTH'), source: 'discount_popup' }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
@@ -2819,8 +2826,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Popup stays open until user closes it manually
     }
 
-    // Discount popup disabled for the new event (launcher removed). Guarded off.
-    if (false) {
+    // Discount is accessible via the floating launcher icon AND auto-pops on exit intent (once per session).
+    if (!sessionStorage.getItem('discountSeen')) {
       let discountTriggered = false;
       const triggerExitIntent = () => {
         if (discountTriggered) return;
