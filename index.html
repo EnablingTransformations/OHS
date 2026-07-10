@@ -101,7 +101,27 @@
     .nav.scrolled { background: rgba(10,8,30,0.97); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .nav-logo { font-family: var(--font-head); font-size: 1.05rem; color: var(--white); white-space: nowrap; }
+    .nav-logo .brand-full, .nav-logo .brand-tight { color: var(--white); }
+    .nav-logo .brand-full > span, .nav-logo .brand-tight > span { color: var(--accent); }
+    .nav-logo .brand-tight { display: none; }
+    @media (max-width: 768px) {
+      .nav-logo .brand-full { display: none; }
+      .nav-logo .brand-tight { display: inline; }
+    }
     .nav-logo span { color: var(--accent); }
+    /* Attendee shorts: 2-row grid on desktop; horizontal-scroll carousel on mobile */
+    @media (min-width: 769px) {
+      #shortsCarousel {
+        display: grid !important;
+        grid-template-columns: repeat(5, 160px) !important;
+        justify-content: center !important;
+        gap: 16px !important;
+        overflow: visible !important;
+      }
+      #shortsCarousel .short-card { flex: none !important; width: 160px; }
+      .shorts-nav { display: none !important; }
+    }
+
     .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
     .nav-links a { color: rgba(255,255,255,0.65); font-size: 0.88rem; font-weight: 500; transition: color 0.25s; }
     .nav-links a:hover { color: var(--white); }
@@ -923,7 +943,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- NAV -->
   <nav class="nav" id="mainNav">
     <div class="wrap nav-inner">
-      <a href="#" class="nav-logo" style="display:flex; align-items:center; gap:10px;"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_fill,w_76,h_76/v1775712040/ohs_surprise.jpg" alt="Optimal Health Summit Logo" width="38" height="38" decoding="async" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;" />Optimal <span>Health</span> Summit <span style="color:var(--accent); white-space:nowrap;">OCTOBER 3–4 · Los Angeles, CA</span></a>
+      <a href="#" class="nav-logo" style="display:flex; align-items:center; gap:10px;"><img src="https://res.cloudinary.com/didlj0gdc/image/upload/f_auto,q_auto,c_fill,w_76,h_76/v1775712040/ohs_surprise.jpg" alt="Optimal Health Summit Logo" width="38" height="38" decoding="async" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;" /><span class="brand-full">Optimal <span>Health</span> Summit</span><span class="brand-tight">Optimal<span>Health</span>Summit</span> <span style="color:var(--accent); white-space:nowrap;">OCTOBER 3–4 · <span style="color:var(--white);">Los Angeles, CA</span></span></a>
       <ul class="nav-links">
         <li><a href="#speakers">Experts</a></li>
         <li><a href="#schedule">Schedule</a></li>
@@ -1238,56 +1258,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="position:relative;">
         <div class="shorts-carousel" id="shortsCarousel" style="display:flex; gap:16px; overflow-x:auto; scroll-behavior:smooth; padding:10px 0; scrollbar-width:none; -ms-overflow-style:none;">
           <div class="short-card rv" style="flex:0 0 160px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('gCFe1Z37rH8')">
-              <img src="https://img.youtube.com/vi/gCFe1Z37rH8/0.jpg" alt="Summit Short 1" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('S5XTTBHQBSA')">
+              <img src="https://img.youtube.com/vi/S5XTTBHQBSA/0.jpg" alt="Attendee Testimonial 1" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
           <div class="short-card rv" style="flex:0 0 160px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('3vQTUm5UIgQ')">
-              <img src="https://img.youtube.com/vi/3vQTUm5UIgQ/0.jpg" alt="Summit Short" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('6f6rJtt6vdI')">
+              <img src="https://img.youtube.com/vi/6f6rJtt6vdI/0.jpg" alt="Attendee Testimonial 2" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
           <div class="short-card rv" style="flex:0 0 160px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('EBCOuJ3eZg8')">
-              <img src="https://img.youtube.com/vi/EBCOuJ3eZg8/0.jpg" alt="Summit Short 2" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('U_xeKfdJ6vA')">
+              <img src="https://img.youtube.com/vi/U_xeKfdJ6vA/0.jpg" alt="Attendee Testimonial 3" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
           <div class="short-card rv" style="flex:0 0 160px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('KiT6OZwirs8')">
-              <img src="https://img.youtube.com/vi/KiT6OZwirs8/0.jpg" alt="Summit Short 3" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('0hqcoOiPgiE')">
+              <img src="https://img.youtube.com/vi/0hqcoOiPgiE/0.jpg" alt="Attendee Testimonial 4" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
           <div class="short-card rv" style="flex:0 0 160px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('lAy-nO-kcxs')">
-              <img src="https://img.youtube.com/vi/lAy-nO-kcxs/0.jpg" alt="Summit Short 4" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('qHYF9t4DU6E')">
+              <img src="https://img.youtube.com/vi/qHYF9t4DU6E/0.jpg" alt="Attendee Testimonial 5" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
           <div class="short-card rv" style="flex:0 0 160px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('xwiiR_TfWWk')">
-              <img src="https://img.youtube.com/vi/xwiiR_TfWWk/0.jpg" alt="Summit Highlight" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('ziJlruu_olo')">
+              <img src="https://img.youtube.com/vi/ziJlruu_olo/0.jpg" alt="Attendee Testimonial 6" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
           <div class="short-card rv" style="flex:0 0 160px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('0cfgGXQGQVc')">
-              <img src="https://img.youtube.com/vi/0cfgGXQGQVc/0.jpg" alt="Summit Short 5" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('iDRphZi13-8')">
+              <img src="https://img.youtube.com/vi/iDRphZi13-8/0.jpg" alt="Attendee Testimonial 7" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
           <div class="short-card rv" style="flex:0 0 160px;">
-            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('mVCQ8a9yOog')">
-              <img src="https://img.youtube.com/vi/mVCQ8a9yOog/0.jpg" alt="Attendee Testimonial" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('ebL1VJJiT_k')">
+              <img src="https://img.youtube.com/vi/ebL1VJJiT_k/0.jpg" alt="Attendee Testimonial 8" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
             </div>
           </div>
-        </div>
-        <button onclick="document.getElementById('shortsCarousel').scrollBy({left:-240,behavior:'smooth'})" style="position:absolute;left:-16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);z-index:3;" aria-label="Previous">←</button>
-        <button onclick="document.getElementById('shortsCarousel').scrollBy({left:240,behavior:'smooth'})" style="position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);z-index:3;" aria-label="Next">→</button>
+          <div class="short-card rv" style="flex:0 0 160px;">
+            <div style="aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; cursor:pointer; position:relative;" onclick="openVideoModal('-qRaTVv31LI')">
+              <img src="https://img.youtube.com/vi/-qRaTVv31LI/0.jpg" alt="Attendee Testimonial 9" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);"><svg width="50" height="50" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div>
+            </div>
+          </div>
+                </div>
+        <button class="shorts-nav" onclick="document.getElementById('shortsCarousel').scrollBy({left:-240,behavior:'smooth'})" style="position:absolute;left:-16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);z-index:3;" aria-label="Previous">←</button>
+        <button class="shorts-nav" onclick="document.getElementById('shortsCarousel').scrollBy({left:240,behavior:'smooth'})" style="position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);z-index:3;" aria-label="Next">→</button>
       </div>
     </div>
   </section>
