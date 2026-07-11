@@ -105,10 +105,8 @@
     .nav-logo .brand-full > span, .nav-logo .brand-tight > span { color: var(--accent); }
     .nav-logo .brand-tight { display: none; }
     @media (max-width: 768px) {
-      .nav-logo .brand-full { display: none; }
-      .nav-logo .brand-tight { display: inline; }
       .nav-logo-text { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
-      .nav-logo-date { font-size: 0.72em; }
+      .nav-logo-date { white-space: normal !important; }
     }
     .nav-logo span { color: var(--accent); }
     /* Attendee shorts: 2-row grid on desktop; horizontal-scroll carousel on mobile */
@@ -1860,7 +1858,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- PROBLEM (NEW - StoryBrand Element #2) -->
-  <section class="problem" style="background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%) !important; padding: 80px 0;">
+  <section class="problem" style="display:none; background: linear-gradient(160deg, #1a1040 0%, #2a1850 50%, #1a1045 100%) !important; padding: 80px 0;">
     <div class="wrap problem-content">
       <span class="section-tag tag-orange">The Problem</span>
       <h2 class="rv" style="color:#fff;">You Have Access to More Health Advice, Supplements, and Therapies Than Ever<br/>So Why Aren't You Feeling <em style="color:#E8913A;">Better?</em></h2>
